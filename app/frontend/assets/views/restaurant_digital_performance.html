@@ -1,0 +1,104 @@
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Restaurant Digital Performance</h4>
+    <div ncy-breadcrumb class="pull-right"></div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC TABLE -->
+<div class="container-fluid container-fullw" ng-controller="restaurantDigitalPerformanceYear">
+    <div ng-if="params.fetching_data">fetching data...</div>
+    <div class="row margin-bottom-15" ng-if="!params.fetching_data">
+        <div class="col-xs-6">
+            <a class="btn btn-wide btn-primary" href="" ng-click="params.changePeriod(-1)">{{params.period - 1}}</a>
+        </div>
+        <div class="col-xs-6" ng-if="params.period !== params.current_year">
+            <a class="btn btn-wide btn-primary pull-right" href="" ng-click="params.changePeriod(+1)">{{params.period + 1}}</i></a>
+        </div>
+    </div>
+    <div class="row" ng-if="!params.fetching_data">
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h5 class="over-title margin-bottom-15">  <span class="text-bold">Facebook</span>  ({{params.period}})</h5>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="center">Month</th>
+                            <th>Likes</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="dp in params.digital_performance">
+                            <td class="center">{{dp.month}}</td>
+                            <td>{{dp.facebook}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h5 class="over-title margin-bottom-15">  <span class="text-bold">Twitter</span>  ({{params.period}})</h5>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="center">Month</th>
+                            <th>Likes</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="dp in params.digital_performance">
+                            <td class="center">{{dp.month}}</td>
+                            <td>{{dp.twitter}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h5 class="over-title margin-bottom-15">  <span class="text-bold">Gift Voucher Sales</span>  ({{params.period}})</h5>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="center">Month</th>
+                            <th>Sales</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="dp in params.digital_performance">
+                            <td class="center">{{dp.month}}</td>
+                            <td>{{dp.gift_vouchers}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h5 class="over-title margin-bottom-15">  <span class="text-bold">Database Size</span>  ({{params.period}})</h5>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="center">Month</th>
+                            <th>Size</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="dp in params.digital_performance">
+                            <td class="center">{{dp.month}}</td>
+                            <td>{{dp.database_split}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
