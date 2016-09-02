@@ -1,0 +1,109 @@
+<!-- start: REGISTRATION -->
+<div class="row margin-top-20" ng-controller="signUpCtrl">
+    <div class="main-login col-xs-8 col-xs-offset-2" ng-if="!params.fetching_data">
+        <div class="logo text-center">
+            <img src="assets/images/logo-big.png" alt="{{app.name}}" class="img-responsive"/>
+        </div>
+        <p class="text-center text-dark text-bold text-extra-large margin-top-15">
+            Sign Up
+        </p>
+        <p class="text-center">
+            Enter your personal details below:
+        </p>
+        <!-- start: REGISTER BOX -->
+        <div class="box-register">
+            <form class="form-register" novalidate ng-submit="submitForm()">
+                <div class="form-group" ng-class="{ 'has-error' : params.errors.firstName }">
+                    <label> Required Input <span class="symbol required"></span> </label>
+                    <input type="text" class="form-control" ng-model="formData.firstName" name="firstName"
+                           placeholder="First Name">
+                    <span class="help-block" ng-show="params.errors.firstName">{{ params.errors.firstName }}</span>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' : params.errors.lastName }">
+                    <label> Required Input <span class="symbol required"></span> </label>
+                    <input type="text" class="form-control" ng-model="formData.lastName" name="lastName"
+                           placeholder="Last Name">
+                    <span class="help-block" ng-show="params.errors.lastName">{{ params.errors.lastName }}</span>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' : params.errors.restaurant }">
+                    <label> Required Input <span class="symbol required"></span> </label>
+                    <label> Select your restaurant </label>
+                    <tags-input ng-model="formData.restaurants"
+                                display-property="full_name"
+                                add-from-autocomplete-only="true"
+                                replace-spaces-with-dashes="false"
+                                key-property="id">
+                        <auto-complete source="params.getRestaurants()"></auto-complete>
+                    </tags-input>
+
+                    <span class="help-block" ng-show="params.errors.restaurant">{{ params.errors.restaurant }}</span>
+                </div>
+
+
+
+
+                <div class="form-group" ng-class="{ 'has-error' : params.errors.position }">
+                    <label> Required Input <span class="symbol required"></span> </label>
+                    <input type="text" class="form-control" ng-model="formData.position" name="position"
+                           placeholder="Position">
+                    <span class="help-block" ng-show="params.errors.position">{{ params.errors.position }}</span>
+                </div>
+                <p>
+                    Enter your account details below:
+                </p>
+                <div class="form-group" ng-class="{ 'has-error' : params.errors.email }">
+                    <label> Required Input <span class="symbol required"></span> </label>
+                    <input type="text" class="form-control" ng-model="formData.email" name="email" placeholder="Email">
+                    <span class="help-block" ng-show="params.errors.email">{{ params.errors.email }}</span>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' : params.errors.password }">
+                    <label> Required Input <span class="symbol required"></span> </label>
+                    <input type="password" class="form-control" ng-model="formData.password" id="password"
+                           name="password" placeholder="Password">
+                    <span class="help-block" ng-show="params.errors.password">{{ params.errors.password }}</span>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' : params.errors.password2 }">
+                    <label> Required Input <span class="symbol required"></span> </label>
+                    <input type="password" class="form-control" ng-model="formData.password2" name="password2"
+                           placeholder="Password Again">
+                    <span class="help-block" ng-show="params.errors.password2">{{ params.errors.password2 }}</span>
+                </div>
+                <div class="form-actions">
+                    <p class="text-center">
+                        Already have an account?
+                        <a ui-sref="login.signin">
+                            Log-in
+                        </a>
+                    </p>
+                    <button type="submit" class="btn btn-red btn-block">
+                        Submit
+                    </button>
+                </div>
+                <hr/>
+                <!--<p class="margin-top-10 text-center">-->
+                    <!--Or sign up with a social network-->
+                <!--</p>-->
+                <!--<div class="social-icons text-center">-->
+                    <!--<ul>-->
+                        <!--<li class="social-twitter" uib-tooltip="Twitter" tooltip-placement="top">-->
+                            <!--<a target="_blank" href="#"> Twitter </a>-->
+                        <!--</li>-->
+                        <!--<li class="social-google" uib-tooltip="Google" tooltip-placement="top">-->
+                            <!--<a target="_blank" href="#"> Google </a>-->
+                        <!--</li>-->
+                        <!--<li class="social-facebook" uib-tooltip="Facebook" tooltip-placement="top">-->
+                            <!--<a target="_blank" href="#"> Facebook </a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            </form>
+            <!-- start: COPYRIGHT -->
+            <div class="copyright">
+                {{app.year}} &copy; {{ app.name }} by {{ app.author }}.
+            </div>
+            <!-- end: COPYRIGHT -->
+        </div>
+        <!-- end: REGISTER BOX -->
+    </div>
+</div>
+<!-- end: REGISTRATION -->

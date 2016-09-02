@@ -1,0 +1,47 @@
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Restaurant BookATable</h4>
+    <div ncy-breadcrumb class="pull-right"></div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC TABLE -->
+<div class="container-fluid container-fullw" ng-controller="restaurantBookATableMonth">
+    <div ng-if="params.fetching_data">fetching data...</div>
+    <div class="row margin-bottom-15" ng-if="!params.fetching_data">
+        <div class="col-xs-6" ng-style="{opacity:params.previous_month}">
+            <a class="btn btn-wide btn-primary" href="" ng-click="params.changePeriod(-1)">{{params.previous_month | monthName}} {{params.period | date:'yyyy'}}</a>
+        </div>
+        <div class="col-xs-6" ng-if="params.period_month !== params.current_month">
+            <a class="btn btn-wide btn-primary pull-right" href="" ng-click="params.changePeriod(+1)">{{params.next_month | monthName}} {{params.period | date:'yyyy'}}</a>
+        </div>
+    </div>
+    <div class="row" ng-if="!params.fetching_data">
+        <div class="col-xs-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h5 class="over-title margin-bottom-15">  <span class="text-bold">BookaTable</span>  ({{params.period | date:'MMMM'}} {{params.period | date:'yyyy'}})</h5>
+                    <table class="table no-margin">
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>New Bookings</th>
+                            <th>Re Booked</th>
+                            <th>No Show</th>
+                            <th>Cancelled Bookings</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="booka_table in params.booka_table">
+                            <td>{{booka_table.date}}</td>
+                            <td>{{booka_table.new_bookings}}</td>
+                            <td>{{booka_table.re_booked}}</td>
+                            <td>{{booka_table.no_show}}</td>
+                            <td>{{booka_table.cancelled}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

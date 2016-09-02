@@ -1,0 +1,44 @@
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Restaurant Trip Advisor</h4>
+    <div ncy-breadcrumb class="pull-right"></div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC TABLE -->
+<div class="container-fluid container-fullw" ng-controller="restaurantTripAdvisorYear">
+    <div ng-if="params.fetching_data">fetching data...</div>
+    <div class="row margin-bottom-15" ng-if="!params.fetching_data">
+        <div class="col-xs-6">
+            <a class="btn btn-wide btn-primary" href="" ng-click="params.changePeriod(-1)">{{params.period - 1}}</a>
+        </div>
+        <div class="col-xs-6" ng-if="params.period !== params.current_year">
+            <a class="btn btn-wide btn-primary pull-right" href="" ng-click="params.changePeriod(+1)">{{params.period + 1}}</i></a>
+        </div>
+    </div>
+    <div class="row" ng-if="!params.fetching_data">
+        <div class="col-xs-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h5 class="over-title margin-bottom-15">  <span class="text-bold">Trip Advisor</span>  ({{params.period}})</h5>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Rating</th>
+                            <th>Review</th>
+                            <th>Comment</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="trip_advisor in params.trip_advisor">
+
+                            <td class="width-135"> <star-rating ng-model="trip_advisor['rating']" readonly="true"></star-rating></td>
+                            <td>{{trip_advisor['review']}}</td>
+                            <td>{{trip_advisor['comment']}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
