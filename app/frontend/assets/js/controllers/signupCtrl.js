@@ -9,8 +9,8 @@ app.controller('signUpCtrl', ['$scope', 'userService','ngNotify','navCtrlService
                 firstName: null,
                 lastName: null,
                 address: null,
-                country: null,
-                gender: null,
+                country: '',
+                gender: '',
                 email: null,
                 restaurant: null,
                 position: null,
@@ -30,7 +30,7 @@ app.controller('signUpCtrl', ['$scope', 'userService','ngNotify','navCtrlService
 
             //Check if there is no filed with null
             angular.forEach($scope.formData, function (value, name) {
-                if ($scope.formData[name]) {
+                if ($scope.formData[name] !== null) {
                     $scope.params.errors[name] = null
                 } else {
                     formValidated = false;
@@ -67,8 +67,8 @@ app.controller('signUpCtrl', ['$scope', 'userService','ngNotify','navCtrlService
                     $scope.formData = {
                         firstName: null,
                         lastName: null,
-                        country: null,
-                        gender: null,
+                        country: '',
+                        gender: '',
                         email: null,
                         restaurants: [],
                         position: null,
@@ -89,8 +89,8 @@ app.controller('signUpCtrl', ['$scope', 'userService','ngNotify','navCtrlService
         $scope.formData = {
             firstName: null,
             lastName: null,
-            country: null,
-            gender: null,
+            country: '',
+            gender: '',
             email: null,
             restaurants: [],
             position: null,

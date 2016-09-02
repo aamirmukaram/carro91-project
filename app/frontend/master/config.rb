@@ -6,13 +6,13 @@
 
 http_path = "/"
 
-css_dir = "layout-1/STANDARD/assets/css"
+css_dir = "app/frontend/assets/css"
 
 sass_dir = "sass"
 
-images_dir = "layout-1/STANDARD/assets/images"
+images_dir = "app/frontend/assets/images"
 
-javascripts_dir = "layout-1/STANDARD/assets/js"
+javascripts_dir = "app/frontend/assets/js"
 
 line_comments = false
 # You can select your preferred output style here (can be overridden via the command line):

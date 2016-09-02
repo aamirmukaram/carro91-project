@@ -43,8 +43,8 @@ function ($rootScope, $state, $stateParams) {
         picture: 'app/img/user/02.jpg'
     };
 	//$rootScope.pathToBackend = 'http://www.aamirmukaram.com/freelancingFiles/carro91/layout-1/backend/';
-	$rootScope.pathToBackend = 'http://localhost:8080/carro91/master-files/app/backend/';
-	//$rootScope.pathToBackend = 'http://dash.flintxsystems.com/app/backend/';
+	//$rootScope.pathToBackend = 'http://localhost:8080/carro91/master-branch/app/backend/';
+	$rootScope.pathToBackend = 'http://dash.flintxsystems.com/app/backend/';
 	//$rootScope.pathToBackend = 'http://127.0.0.1:8080/packet-project/carro91-angularjs/LAYOUT-1/backend/';
 }]);
 // translate config
@@ -176,7 +176,7 @@ app.run(["$templateCache","$rootScope","PermRoleStore","$state", function ($temp
                 return true;
             }
             else {
-                return true;
+                return false;
             }
         });
     PermRoleStore
@@ -185,7 +185,7 @@ app.run(["$templateCache","$rootScope","PermRoleStore","$state", function ($temp
                 return true;
             }
             else {
-                return true;
+                return false;
             }
         });
     PermRoleStore
@@ -194,7 +194,7 @@ app.run(["$templateCache","$rootScope","PermRoleStore","$state", function ($temp
                 return true;
             }
             else {
-                return true;
+                return false;
             }
         });
     PermRoleStore
@@ -203,7 +203,7 @@ app.run(["$templateCache","$rootScope","PermRoleStore","$state", function ($temp
                 return true;
             }
             else {
-                return true;
+                return false;
             }
         });
 

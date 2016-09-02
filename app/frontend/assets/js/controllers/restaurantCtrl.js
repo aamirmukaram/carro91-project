@@ -32,6 +32,38 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
             fetching_data: true
         };
 
+        var restaurantRevenueCoverResponsePadding = function(data){
+            var new_labels = angular.copy(data.labels);
+            var new_data = angular.copy(data.data);
+            var months = [
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December'
+            ];
+
+
+            for (var x = 0; x < 12; x++) {
+                if (data.labels[x] !== months[x]) {
+                    new_labels.splice(x, 0, months[x]);
+                    new_data.splice(x, 0, '0');
+                }
+            }
+
+            data.labels = new_labels;
+            data.data = new_data;
+
+            return data;
+        };
+
         var fetchChartData = function (filter) {
             filter = filter || $scope.params.current_year;
             $scope.params.current_period = filter;
@@ -49,6 +81,8 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
                 })
             }).then(function (response) {
                 $scope.params.fetching_data = false;
+                response.fetchTotalRevenues = restaurantRevenueCoverResponsePadding(response.fetchTotalRevenues);
+                response.fetchTotalCovers = restaurantRevenueCoverResponsePadding(response.fetchTotalCovers);
                 $scope.labels = response.fetchTotalRevenues.labels;
                 $scope.data = [];
                 $scope.data.push(response.fetchTotalRevenues.data);
