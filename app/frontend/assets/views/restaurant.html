@@ -9,17 +9,16 @@
 <!-- start: FIRST SECTION -->
 <div class="container-fluid container-fullw padding-bottom-10">
     <div class="row">
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12" ng-controller="restaurantRevenueCoverYear">
             <div class="panel panel-white no-radius no-border">
                 <div class="panel-heading border-bottom padding-right-70">
                     <h4 class="inline-block"> Revenue and Covers for the Year </h4>
-                    <ct-paneltool class="panel-tools" tool-refresh=""
+                    <ct-paneltool class="panel-tools" tool-refresh="params.refresh_signal"
                                   tool-expand="tool-expand"></ct-paneltool>
                 </div>
                 <div class="panel-wrapper">
                     <div class="panel-body">
                         <!-- /// controller:  'restaurantRevenueCoverYear' -  location: assets/js/controllers/dashboardCtrl.js /// -->
-                        <div ng-controller="restaurantRevenueCoverYear">
                             <div class="block">
                                 <div class="pull-left">
                                     <h3 class="inline-block text-red text-bold"> {{params.current_period}} </h3>
@@ -54,31 +53,30 @@
                                 <p class="margin-top-10 bg-danger text-center"
                                    ng-if="!(data.length && (data[0].length || data[1].length))">No data found</p>
                             </div>
-                        </div>
                         <div class="row padding-top-25">
                             <div class="col-xs-4 text-center">
                                 <div class="margin-bottom-10">
                                     <letter-icon data="Revenue" color="#8dc63f" size="sm"
                                                  class="margin-right-10"></letter-icon>
-                                    <span class="text-extra-large text-bold">+5,04 %</span>
+                                    <span class="text-large text-bold">{{params.total_revenues}} £</span>
                                 </div>
-                                Total Revenue (for the Year)
+                                Total Revenue
                             </div>
                             <div class="col-xs-4 text-center">
                                 <div class="margin-bottom-10">
                                     <letter-icon data="Covers" color="#8dc63f" size="sm"
                                                  class="margin-right-10"></letter-icon>
-                                    <span class="text-extra-large text-bold">+2,21 %</span>
+                                    <span class="text-large text-bold">{{params.total_covers}}</span>
                                 </div>
-                                Total Covers (for the Year)
+                                Total Covers
                             </div>
                             <div class="col-xs-4 text-center">
                                 <div class="margin-bottom-10">
                                     <letter-icon data="Spend" color="#8dc63f" size="sm"
                                                  class="margin-right-10"></letter-icon>
-                                    <span class="text-extra-large text-bold">+0,68 %</span>
+                                    <span class="text-large text-bold">{{params.average}}</span>
                                 </div>
-                                Average Spend (for the Year)
+                                Average Spend
                             </div>
                         </div>
                     </div>
@@ -91,17 +89,17 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12" ng-controller="restaurantRevenueCoverMonth">
             <div class="panel panel-white no-radius no-border">
                 <div class="panel-heading border-bottom padding-right-70">
                     <h4 class="inline-block"> Revenues and Covers by Month </h4>
-                    <ct-paneltool class="panel-tools" tool-refresh=""
+                    <ct-paneltool class="panel-tools" tool-refresh="params.refresh_signal"
                                   tool-expand="tool-expand"></ct-paneltool>
                 </div>
                 <div class="panel-wrapper">
                     <div class="panel-body">
                         <!-- /// controller:  'restaurantRevenueCoverMonth' -  location: assets/js/controllers/dashboardCtrl.js /// -->
-                        <div ng-controller="restaurantRevenueCoverMonth">
+                        <div>
                             <div class="block">
                                 <div class="pull-left">
                                     <h3 class="inline-block text-red text-bold"> {{params.current_period}} </h3>
@@ -142,25 +140,25 @@
                                     <div class="margin-bottom-10">
                                         <letter-icon data="Revenue" color="#8dc63f" size="sm"
                                                      class="margin-right-10"></letter-icon>
-                                        <span class="text-extra-large text-bold">+5,04 %</span>
+                                        <span class="text-large text-bold">{{params.total_revenues}} £</span>
                                     </div>
-                                    Total Revenue (for the month)
+                                    Total Revenue
                                 </div>
                                 <div class="col-xs-4 text-center">
                                     <div class="margin-bottom-10">
                                         <letter-icon data="Covers" color="#8dc63f" size="sm"
                                                      class="margin-right-10"></letter-icon>
-                                        <span class="text-extra-large text-bold">+2,21 %</span>
+                                        <span class="text-large text-bold">{{params.total_covers}}</span>
                                     </div>
-                                    Total Covers (for the month)
+                                    Total Covers
                                 </div>
                                 <div class="col-xs-4 text-center">
                                     <div class="margin-bottom-10">
                                         <letter-icon data="Spend" color="#8dc63f" size="sm"
                                                      class="margin-right-10"></letter-icon>
-                                        <span class="text-extra-large text-bold">+0,68 %</span>
+                                        <span class="text-large text-bold">{{params.average}} £</span>
                                     </div>
-                                    Average Spend (for the month)
+                                    Average Spend
                                 </div>
                             </div>
                         </div>

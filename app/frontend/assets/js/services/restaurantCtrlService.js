@@ -207,8 +207,62 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
 
             return deferred.promise;
         },
-        fetchRestaurants: function(){
+        restaurantRevenueCoverResponseYearPadding:function(data){
 
+            var new_labels = angular.copy(data.labels);
+            var new_data = angular.copy(data.data);
+            var months = [
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December'
+            ];
+
+
+            for (var x = 0; x < 12; x++) {
+                if (data.labels[x] !== months[x]) {
+                    new_labels.splice(x, 0, months[x]);
+                    new_data.splice(x, 0, '0');
+                }
+            }
+
+            data.labels = new_labels;
+            data.data = new_data;
+
+            return data;
+        },
+        restaurantRevenueCoverResponseMonthPadding:function(data){
+
+            var new_labels = angular.copy(data.labels);
+            var new_data = angular.copy(data.data);
+            var weeks = [
+                'Week 1',
+                'Week 2',
+                'Week 3',
+                'Week 4',
+                'Week 5'
+            ];
+
+
+            for (var x = 0; x < 12; x++) {
+                if (data.labels[x] !== weeks[x]) {
+                    new_labels.splice(x, 0, weeks[x]);
+                    new_data.splice(x, 0, '0');
+                }
+            }
+
+            data.labels = new_labels;
+            data.data = new_data;
+
+            return data;
         }
 
     }

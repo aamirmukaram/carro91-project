@@ -29,40 +29,14 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
             },
             current_period: null,
             current_year: (new Date().getFullYear()),
-            fetching_data: true
+            fetching_data: true,
+            total_covers : null,
+            total_revenues : null,
+            average:null,
+            refresh_signal : 'restaurant-revenue-cover-year-refresh'
         };
 
-        var restaurantRevenueCoverResponsePadding = function(data){
-            var new_labels = angular.copy(data.labels);
-            var new_data = angular.copy(data.data);
-            var months = [
-                'January',
-                'February',
-                'March',
-                'April',
-                'May',
-                'June',
-                'July',
-                'August',
-                'September',
-                'October',
-                'November',
-                'December'
-            ];
-
-
-            for (var x = 0; x < 12; x++) {
-                if (data.labels[x] !== months[x]) {
-                    new_labels.splice(x, 0, months[x]);
-                    new_data.splice(x, 0, '0');
-                }
-            }
-
-            data.labels = new_labels;
-            data.data = new_data;
-
-            return data;
-        };
+        var responsePadding = restaurantCtrlService.restaurantRevenueCoverResponseYearPadding;
 
         var fetchChartData = function (filter) {
             filter = filter || $scope.params.current_year;
@@ -81,8 +55,25 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
                 })
             }).then(function (response) {
                 $scope.params.fetching_data = false;
-                response.fetchTotalRevenues = restaurantRevenueCoverResponsePadding(response.fetchTotalRevenues);
-                response.fetchTotalCovers = restaurantRevenueCoverResponsePadding(response.fetchTotalCovers);
+                response.fetchTotalRevenues = responsePadding(response.fetchTotalRevenues);
+                response.fetchTotalCovers = responsePadding(response.fetchTotalCovers);
+
+
+                $scope.params.total_covers = response.fetchTotalCovers.data.reduce(function(current_value,next_value,ind,arry){
+                    return Number(current_value) + Number(next_value);
+                },0);
+                $scope.params.total_covers = Math.round($scope.params.total_covers);
+
+
+                $scope.params.total_revenues = response.fetchTotalRevenues.data.reduce(function(current_value,next_value,ind,arry){
+                    return Number(current_value) + Number(next_value);
+                },0);
+                $scope.params.total_revenues = Math.round($scope.params.total_revenues);
+
+                $scope.params.average = ($scope.params.total_revenues / $scope.params.total_covers);
+                $scope.params.average > -1 ?  $scope.params.average = Math.round($scope.params.average) : $scope.params.average = 0;
+
+
                 $scope.labels = response.fetchTotalRevenues.labels;
                 $scope.data = [];
                 $scope.data.push(response.fetchTotalRevenues.data);
@@ -91,7 +82,19 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
             });
         };
 
-        fetchChartData();
+        var init = function(){
+            fetchChartData();
+        };
+
+        init();
+
+        $(document).on($scope.params.refresh_signal, '.panel', function (e, panel) {
+            init();
+            setTimeout(function () {
+                panel.removeSpinner();
+            }, 1000);
+
+        });
 
     }]);
 app.controller('restaurantRevenueCoverMonth', ["$scope", "restaurantCtrlService", '$q', '$state',
@@ -120,8 +123,14 @@ app.controller('restaurantRevenueCoverMonth', ["$scope", "restaurantCtrlService"
             },
             current_period: null,
             current_month: (new Date().getMonth()) + 1,
-            fetching_data: true
+            fetching_data: true,
+            total_covers : null,
+            total_revenues : null,
+            refresh_signal : 'restaurant-revenue-cover-month-refresh',
+            average : null
         };
+
+        var responsePadding = restaurantCtrlService.restaurantRevenueCoverResponseMonthPadding;
 
         var fetchChartData = function (filter) {
             filter = filter || $scope.params.current_month;
@@ -140,6 +149,22 @@ app.controller('restaurantRevenueCoverMonth', ["$scope", "restaurantCtrlService"
                 })
             }).then(function (response) {
                 $scope.params.fetching_data = false;
+                response.fetchTotalRevenues = responsePadding(response.fetchTotalRevenues);
+                response.fetchTotalCovers = responsePadding(response.fetchTotalCovers);
+
+                $scope.params.total_covers = response.fetchTotalCovers.data.reduce(function(current_value,next_value,ind,arry){
+                    return Number(current_value) + Number(next_value);
+                },0);
+                $scope.params.total_covers = Math.round($scope.params.total_covers);
+
+                $scope.params.total_revenues = response.fetchTotalRevenues.data.reduce(function(current_value,next_value,ind,arry){
+                    return Number(current_value) + Number(next_value);
+                },0);
+                $scope.params.total_revenues = Math.round($scope.params.total_revenues);
+
+                $scope.params.average = ($scope.params.total_revenues / $scope.params.total_covers);
+                $scope.params.average > -1 ?  $scope.params.average = Math.round($scope.params.average) : $scope.params.average = 0;
+
                 $scope.labels = response.fetchTotalRevenues.labels;
                 $scope.data = [];
                 $scope.data.push(response.fetchTotalRevenues.data);
@@ -148,7 +173,19 @@ app.controller('restaurantRevenueCoverMonth', ["$scope", "restaurantCtrlService"
             });
         };
 
-        fetchChartData();
+        var init = function(){
+            fetchChartData();
+        };
+
+        init();
+
+        $(document).on($scope.params.refresh_signal, '.panel', function (e, panel) {
+            init();
+            setTimeout(function () {
+                panel.removeSpinner();
+            }, 1000);
+
+        });
 
     }]);
 app.filter('abs', function () {
