@@ -22,6 +22,7 @@ if (isset($_GET['restaurant_id']) && is_numeric($_GET['restaurant_id'])) {
         while ($row = $result->fetch_assoc()) {
             $data[] = $row;
         }
+        $data = utf8ize($data);
         $return = array('data' => $data);
         echo json_encode(array('success' => true, 'data' => $return, 'message' => 'Your data has been fetched'));
     }

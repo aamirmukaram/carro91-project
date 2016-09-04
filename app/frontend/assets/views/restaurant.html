@@ -369,10 +369,6 @@
                             <a href="{{params.trip_advisor.page_url}}" target="_blank">
                                 <p class="margin-bottom-10">{{params.trip_advisor.rating}}</p>
                             </a>
-                            <p class="margin-bottom-10" class="no-margin">
-                                <a href="#"><i class="fa fa-arrow-circle-o-down text-green"></i></a>
-                                <span class="text-light margin-left-10">Show more details </span>
-                            </p>
                         </div>
                         <div class="col-md-4">
                             <h5 class="text-bold text-center">Traveller ratings</h5>
@@ -433,6 +429,14 @@
                             </uib-progressbar>
                         </div>
                     </div>
+                </div>
+                <div class="panel-footer no-border padding-top-0">
+                    <p class="no-margin">
+                        <a ui-sref="app.restaurantView.tripAdvisor({id:$state.params.id})"><i
+                                class="fa fa-arrow-circle-o-down text-green"></i>
+                            <span class="text-light margin-left-10">Show more details </span>
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
