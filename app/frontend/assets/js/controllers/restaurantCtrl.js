@@ -3,38 +3,22 @@
  * controllers used for the dashboard
  */
 
+app.filter('monthName', [function () {
+    return function (monthNumber) { //1 = January
+        var monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'];
+        return monthNames[monthNumber - 1];
+    }
+}]);
+app.filter('abs', function () {
+    return function (val) {
+        val = val || 0
+        return Math.abs(val);
+    }
+});
+
 app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService", '$q', '$state',
     function ($scope, restaurantCtrlService, $q, $state) {
-        $scope.params = {
-            chartsJs: {
-                datasetOverride: [
-                    {
-                        label: 'Total Revenues',
-                        borderWidth: 1,
-                        type: 'bar'
-                    },
-                    {
-                        label: 'Total Counts',
-                        borderWidth: 3,
-                        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-                        hoverBorderColor: 'rgba(255,99,132,1)',
-                        type: 'line'
-                    }
-                ]
-            },
-            changePeriod: function (minus_year) {
-                var year = (new Date().getFullYear());
-                year = year - minus_year;
-                fetchChartData(year);
-            },
-            current_period: null,
-            current_year: (new Date().getFullYear()),
-            fetching_data: true,
-            total_covers : null,
-            total_revenues : null,
-            average:null,
-            refresh_signal : 'restaurant-revenue-cover-year-refresh'
-        };
 
         var responsePadding = restaurantCtrlService.restaurantRevenueCoverResponseYearPadding;
 
@@ -83,6 +67,36 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
         };
 
         var init = function(){
+            $scope.params = {
+                chartsJs: {
+                    datasetOverride: [
+                        {
+                            label: 'Total Revenues',
+                            borderWidth: 1,
+                            type: 'bar'
+                        },
+                        {
+                            label: 'Total Counts',
+                            borderWidth: 3,
+                            hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+                            hoverBorderColor: 'rgba(255,99,132,1)',
+                            type: 'line'
+                        }
+                    ]
+                },
+                changePeriod: function (minus_year) {
+                    var year = (new Date().getFullYear());
+                    year = year - minus_year;
+                    fetchChartData(year);
+                },
+                current_period: null,
+                current_year: (new Date().getFullYear()),
+                fetching_data: true,
+                total_covers : null,
+                total_revenues : null,
+                average:null,
+                refresh_signal : 'restaurant-revenue-cover-year-refresh'
+            };
             fetchChartData();
         };
 
@@ -188,20 +202,14 @@ app.controller('restaurantRevenueCoverMonth', ["$scope", "restaurantCtrlService"
         });
 
     }]);
-app.filter('abs', function () {
-    return function (val) {
-        val = val || 0
-        return Math.abs(val);
-    }
-});
 app.controller('restaurantDigitalPerformanceMonth', ["$scope", "restaurantCtrlService", '$q', '$state',
     function ($scope, restaurantCtrlService, $q, $state) {
-        $scope.params = {
-            digital_performance: null,
-            fetching_data: true,
-            refresh_signal: 'digital-performance-refresh'
-        };
         var init = function () {
+            $scope.params = {
+                digital_performance: null,
+                fetching_data: true,
+                refresh_signal: 'digital-performance-refresh'
+            };
             $scope.params.fetching_data = true;
             restaurantCtrlService.fetchDigitalPerformance({
                 restaurant_id: $state.params.id,
@@ -252,13 +260,13 @@ app.controller('restaurantDigitalPerformanceYear', ["$scope", "restaurantCtrlSer
     }]);
 app.controller('restaurantTripAdvisorMonth', ["$scope", "restaurantCtrlService", '$q', '$state',
     function ($scope, restaurantCtrlService, $q, $state) {
-        $scope.params = {
-            trip_advisor: null,
-            fetching_data: true,
-            refresh_signal: 'trip-advisor-refresh'
-        };
 
         var init = function () {
+            $scope.params = {
+                trip_advisor: null,
+                fetching_data: true,
+                refresh_signal: 'trip-advisor-refresh'
+            };
             $scope.params.fetching_data = true;
             restaurantCtrlService.fetchTripAdvisor({
                 restaurant_id: $state.params.id,
@@ -312,43 +320,44 @@ app.controller('restaurantTripAdvisorYear', ["$scope", "restaurantCtrlService", 
 app.controller('restaurantBookATableWeek', ["$scope", "restaurantCtrlService", '$q', '$state', '$compile', '$timeout', 'uiCalendarConfig',
     function ($scope, restaurantCtrlService, $q, $state, $compile, $timeout, uiCalendarConfig) {
 
-        $scope.params = {
-            this_week: null,
-            next_week: null,
-            this_year: null,
-            bookings: {
-                color: '#86bc61',
-                textColor: 'white',
-                events: []
-            },
-            covers: {
-                color: '#f2c52b',
-                textColor: 'white',
-                events: []
-            },
-            cancelled: {
-                color: '#f48e3f',
-                textColor: 'white',
-                events: []
-            },
-            events: [],
-            fetching_data: true,
-            refresh_signal: 'booka-table-refresh',
-            eventSources: null,
-            uiConfig: {
-                calendar: {
-                    height: 450,
-                    editable: true,
-                    header: {
-                        left: 'title',
-                        center: '',
-                        right: 'today prev,next'
+        var init = function () {
+            $scope.params = {
+                this_week: null,
+                next_week: null,
+                this_year: null,
+                bookings: {
+                    color: '#86bc61',
+                    textColor: 'white',
+                    events: []
+                },
+                covers: {
+                    color: '#f2c52b',
+                    textColor: 'white',
+                    events: []
+                },
+                cancelled: {
+                    color: '#f48e3f',
+                    textColor: 'white',
+                    events: []
+                },
+                events: [],
+                fetching_data: true,
+                refresh_signal: 'booka-table-refresh',
+                eventSources: null,
+                uiConfig: {
+                    calendar: {
+                        height: 450,
+                        editable: true,
+                        header: {
+                            left: 'title',
+                            center: '',
+                            right: 'today prev,next'
+                        }
                     }
                 }
-            }
-        };
+            };
 
-        var init = function () {
+
             $scope.params.fetching_data = true;
             $q.all({
                 'this_week': restaurantCtrlService.fetchBookatable({
@@ -418,13 +427,6 @@ app.controller('restaurantBookATableWeek', ["$scope", "restaurantCtrlService", '
 
 
     }]);
-app.filter('monthName', [function () {
-    return function (monthNumber) { //1 = January
-        var monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'];
-        return monthNames[monthNumber - 1];
-    }
-}]);
 app.controller('restaurantBookATableMonth', ["$scope", "restaurantCtrlService", '$q', '$state',
     function ($scope, restaurantCtrlService, $q, $state) {
         $scope.params = {
@@ -472,61 +474,73 @@ app.controller('restaurantBookATableMonth', ["$scope", "restaurantCtrlService", 
 
 
     }]);
-
 app.controller('restaurantBookingMade', ["$scope", "restaurantCtrlService", '$q', '$state',
     function ($scope, restaurantCtrlService, $q, $state) {
-        $scope.params = {
-            today: null,
-            yesterday: null,
-            next_week: null,
-            this_month: null,
-            last_month_new_cust: null,
-            last_month_return_cust: null,
-            fetching_data: true
+        var init = function () {
+            $scope.params = {
+                today: null,
+                yesterday: null,
+                next_week: null,
+                this_month: null,
+                last_month_new_cust: null,
+                last_month_return_cust: null,
+                fetching_data: true,
+                refresh_signal: 'booking-made-refresh'
+            };
+            $q.all({
+                'today': restaurantCtrlService.fetchBookingMade({
+                    restaurant_id: $state.params.id,
+                    filter: 'daily',
+                    period: 0
+                }),
+                'yesterday': restaurantCtrlService.fetchBookingMade({
+                    restaurant_id: $state.params.id,
+                    filter: 'daily',
+                    period: -1
+                }),
+                'next_week': restaurantCtrlService.fetchBookingMade({
+                    restaurant_id: $state.params.id,
+                    filter: 'weekly',
+                    period: 1
+                }),
+                'this_month': restaurantCtrlService.fetchBookingMade({
+                    restaurant_id: $state.params.id,
+                    filter: 'monthly',
+                    period: (new Date().getMonth()) + 1
+                }),
+                'last_month_return_cust': restaurantCtrlService.fetchBookingMade({
+                    restaurant_id: $state.params.id,
+                    filter: 'returning-customers',
+                    period: (new Date().getMonth()) + 1
+                }),
+                'last_month_new_cust': restaurantCtrlService.fetchBookingMade({
+                    restaurant_id: $state.params.id,
+                    filter: 'new-customers',
+                    period: (new Date().getMonth()) + 1
+                })
+            }).then(function (resp) {
+                resp.today ? $scope.params.today = resp.today[0] : angular.noop();
+                resp.yesterday ? $scope.params.yesterday = resp.yesterday[0] : angular.noop();
+                resp.next_week ? $scope.params.next_week = resp.next_week[0] : angular.noop();
+                resp.this_month ? $scope.params.this_month = resp.this_month[0] : angular.noop();
+                resp.last_month_new_cust ? $scope.params.last_month_new_cust = resp.last_month_new_cust.length : angular.noop();
+                resp.last_month_return_cust ? $scope.params.last_month_return_cust = resp.last_month_return_cust.length : angular.noop();
+                $scope.params.fetching_data = false;
+            });
         };
 
-        $q.all({
-            'today': restaurantCtrlService.fetchBookingMade({
-                restaurant_id: $state.params.id,
-                filter: 'daily',
-                period: 0
-            }),
-            'yesterday': restaurantCtrlService.fetchBookingMade({
-                restaurant_id: $state.params.id,
-                filter: 'daily',
-                period: -1
-            }),
-            'next_week': restaurantCtrlService.fetchBookingMade({
-                restaurant_id: $state.params.id,
-                filter: 'weekly',
-                period: 1
-            }),
-            'this_month': restaurantCtrlService.fetchBookingMade({
-                restaurant_id: $state.params.id,
-                filter: 'monthly',
-                period: (new Date().getMonth()) + 1
-            }),
-            'last_month_return_cust': restaurantCtrlService.fetchBookingMade({
-                restaurant_id: $state.params.id,
-                filter: 'returning-customers',
-                period: (new Date().getMonth()) + 1
-            }),
-            'last_month_new_cust': restaurantCtrlService.fetchBookingMade({
-                restaurant_id: $state.params.id,
-                filter: 'new-customers',
-                period: (new Date().getMonth()) + 1
-            })
-        }).then(function (resp) {
-            resp.today ? $scope.params.today = resp.today[0] : angular.noop();
-            resp.yesterday ? $scope.params.yesterday = resp.yesterday[0] : angular.noop();
-            resp.next_week ? $scope.params.next_week = resp.next_week[0] : angular.noop();
-            resp.this_month ? $scope.params.this_month = resp.this_month[0] : angular.noop();
-            resp.last_month_new_cust ? $scope.params.last_month_new_cust = resp.last_month_new_cust.length : angular.noop();
-            resp.last_month_return_cust ? $scope.params.last_month_return_cust = resp.last_month_return_cust.length : angular.noop();
-            $scope.params.fetching_data = false;
+        init();
+
+        $(document).on($scope.params.refresh_signal, '.panel', function (e, panel) {
+            init();
+            setTimeout(function () {
+                panel.removeSpinner();
+            }, 1000);
+
         });
-    }])
-;
+
+
+    }]);
 
 
 app.controller('SalesCtrl', ["$scope", function ($scope) {

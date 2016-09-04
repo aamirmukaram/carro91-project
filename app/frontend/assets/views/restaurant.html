@@ -338,6 +338,43 @@
                     </div>
                     <div class="row" ng-if="!params.fetching_data && params.trip_advisor">
                         <div class="col-md-4">
+                            <h5 class="text-bold margin-bottom-10 text-center">Reviews</h5>
+
+                            <div class="margin-bottom-10">
+                                <div><b>Average</b></div>
+                                <star-rating ng-model="params.trip_advisor.score" readonly="true"></star-rating>
+                                <b>(<i>{{params.trip_advisor.reviews}}</i> Reviews)</b>
+                            </div>
+
+                            <div class="margin-bottom-10">
+                                <div><b>Food</b></div>
+                                <star-rating ng-model="params.trip_advisor.food" readonly="true"></star-rating>
+                            </div>
+
+                            <div class="margin-bottom-10">
+                                <div><b>Service</b></div>
+                                <star-rating ng-model="params.trip_advisor.service" readonly="true"></star-rating>
+                            </div>
+
+                            <div class="margin-bottom-10">
+                                <div><b>Value</b></div>
+                                <star-rating ng-model="params.trip_advisor.value" readonly="true"></star-rating>
+                            </div>
+
+                            <div class="margin-bottom-10">
+                                <div><b>Atmosphere</b></div>
+                                <star-rating ng-model="params.trip_advisor.atmosphere" readonly="true"></star-rating>
+                            </div>
+
+                            <a href="{{params.trip_advisor.page_url}}" target="_blank">
+                                <p class="margin-bottom-10">{{params.trip_advisor.rating}}</p>
+                            </a>
+                            <p class="margin-bottom-10" class="no-margin">
+                                <a href="#"><i class="fa fa-arrow-circle-o-down text-green"></i></a>
+                                <span class="text-light margin-left-10">Show more details </span>
+                            </p>
+                        </div>
+                        <div class="col-md-4">
                             <h5 class="text-bold text-center">Traveller ratings</h5>
                             <div>Excellent</div>
                             <uib-progressbar value="params.trip_advisor.excellent"
@@ -395,43 +432,6 @@
                                 {{params.trip_advisor.friends}}
                             </uib-progressbar>
                         </div>
-                        <div class="col-md-4">
-                            <h5 class="text-bold margin-bottom-10 text-center">Reviews</h5>
-
-                            <div class="margin-bottom-10">
-                                <div><b>Average</b></div>
-                                <star-rating ng-model="params.trip_advisor.score" readonly="true"></star-rating>
-                                <b>(<i>{{params.trip_advisor.reviews}}</i> Reviews)</b>
-                            </div>
-
-                            <div class="margin-bottom-10">
-                                <div><b>Food</b></div>
-                                <star-rating ng-model="params.trip_advisor.food" readonly="true"></star-rating>
-                            </div>
-
-                            <div class="margin-bottom-10">
-                                <div><b>Service</b></div>
-                                <star-rating ng-model="params.trip_advisor.service" readonly="true"></star-rating>
-                            </div>
-
-                            <div class="margin-bottom-10">
-                                <div><b>Value</b></div>
-                                <star-rating ng-model="params.trip_advisor.value" readonly="true"></star-rating>
-                            </div>
-
-                            <div class="margin-bottom-10">
-                                <div><b>Atmosphere</b></div>
-                                <star-rating ng-model="params.trip_advisor.atmosphere" readonly="true"></star-rating>
-                            </div>
-
-                            <a href="{{params.trip_advisor.page_url}}" target="_blank">
-                                <p class="margin-bottom-10">{{params.trip_advisor.rating}}</p>
-                            </a>
-                            <p class="margin-bottom-10" class="no-margin">
-                                <a href="#"><i class="fa fa-arrow-circle-o-down text-green"></i></a>
-                                <span class="text-light margin-left-10">Show more details </span>
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -443,146 +443,13 @@
 
     <div class="row">
         <div class="col-sm-6">
-            <div ng-controller="restaurantBookATableWeek">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="panel panel-white no-radius">
-                            <div class="panel-heading border-bottom border-bottom">
-                                <h4 class="panel-title">Bookatable</h4>
-                                <ct-paneltool class="panel-tools" tool-refresh="params.refresh_signal"
-                                              tool-expand="tool-expand"></ct-paneltool>
-                            </div>
-                            <div class="panel-body">
-                                <div class="row" ng-if="params.fetching_data">
-                                    <div class="col-xs-12">fetching data...</div>
-                                </div>
-                                <div class="row" ng-if="!params.fetching_data">
-                                    <uib-tabset class="tabbable no-padding no-margin">
-                                        <uib-tab heading="This Week" class="padding-top-5 padding-left-5">
-                                            <p ng-if="!params.this_week.length"
-                                               class="margin-top-10 bg-danger text-center">No data found</p>
-                                            <table class="table no-margin" ng-if="params.this_week.length">
-                                                <thead>
-                                                <tr>
-                                                    <th>Date</th>
-                                                    <th>New Bookings</th>
-                                                    <th>Re Booked</th>
-                                                    <th>No Show</th>
-                                                    <th>Cancelled Bookings</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr ng-repeat="this_week in params.this_week">
-                                                    <td>
-                                                        <div class="booka-table-calender">
-                                                            <figure>
-                                                                <header>
-                                                                    {{this_week.day_name}}
-                                                                </header>
-                                                                <section>
-                                                                    {{this_week.date}}
-                                                                </section>
-                                                            </figure>
-                                                        </div>
-                                                    </td>
-                                                    <td>{{this_week.new_bookings}}</td>
-                                                    <td>{{this_week.re_booked}}</td>
-                                                    <td>{{this_week.no_show}}</td>
-                                                    <td>{{this_week.cancelled}}</td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </uib-tab>
-                                        <uib-tab heading="Next Week" class="padding-top-5 padding-left-5">
-                                            <p ng-if="!params.next_week.length"
-                                               class="margin-top-10 bg-danger text-center">No data found</p>
-                                            <table class="table no-margin" ng-if="params.next_week.length">
-                                                <thead>
-                                                <tr>
-                                                    <th>Date</th>
-                                                    <th>New Bookings</th>
-                                                    <th>Re Booked</th>
-                                                    <th>No Show</th>
-                                                    <th>Cancelled Bookings</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr ng-repeat="next_week in params.next_week">
-                                                    <td>
-                                                        <div class="booka-table-calender">
-                                                            <figure>
-                                                                <header>
-                                                                    {{next_week.day_name}}
-                                                                </header>
-                                                                <section>
-                                                                    {{next_week.date}}
-                                                                </section>
-                                                            </figure>
-                                                        </div>
-                                                    </td>
-                                                    <td>{{next_week.new_bookings}}</td>
-                                                    <td>{{next_week.re_booked}}</td>
-                                                    <td>{{next_week.no_show}}</td>
-                                                    <td>{{next_week.cancelled}}</td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </uib-tab>
-                                    </uib-tabset>
-                                </div>
-                            </div>
-                            <div class="panel-footer no-border padding-top-0">
-                                <p class="no-margin">
-                                    <a ui-sref="app.restaurantView.bookaTable({id:$state.params.id})"><i
-                                            class="fa fa-arrow-circle-o-down text-light"></i>
-                                        <span class="text-light margin-left-10">Show more details </span>
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="panel panel-white no-radius">
-                            <div class="panel-heading border-bottom border-bottom">
-                                <h4 class="panel-title">Heading</h4>
-                            </div>
-                            <div class="panel-body">
-                                <div class="row" ng-if="params.fetching_data">
-                                    <div class="col-xs-12">fetching data...</div>
-                                </div>
-                                <div class="row" ng-if="!params.fetching_data">
-                                    <div ng-if="!params.fetching_data">
-                                        <div class="col-xs-12">
-                                            <div class="panel panel-white">
-                                                <div class="panel-body">
-                                                    <div class="calendar" ng-model="params.eventSources"
-                                                         calendar="myCalendar1"
-                                                         ui-calendar="params.uiConfig.calendar"></div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel-footer no-border padding-top-0">
-                                <p class="no-margin">
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
             <div class="row" ng-controller="restaurantBookingMade">
                 <div class="col-xs-12">
                     <div class="panel panel-white no-radius">
                         <div class="panel-heading border-bottom border-bottom">
                             <h4 class="panel-title">Booking Made</h4>
+                            <ct-paneltool class="panel-tools" tool-refresh="params.refresh_signal"
+                                          tool-expand="tool-expand"></ct-paneltool>
                         </div>
                         <div class="panel-body">
                             <div class="row" ng-if="params.fetching_data">
@@ -670,6 +537,146 @@
                 </div>
             </div>
         </div>
+        <div ng-controller="restaurantBookATableWeek">
+            <div class="col-sm-6">
+                <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel panel-white no-radius">
+                                <div class="panel-heading border-bottom border-bottom">
+                                    <h4 class="panel-title">Bookatable</h4>
+                                    <ct-paneltool class="panel-tools" tool-refresh="params.refresh_signal"
+                                                  tool-expand="tool-expand"></ct-paneltool>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row" ng-if="params.fetching_data">
+                                        <div class="col-xs-12">fetching data...</div>
+                                    </div>
+                                    <div class="row" ng-if="!params.fetching_data">
+                                        <uib-tabset class="tabbable no-padding no-margin">
+                                            <uib-tab heading="This Week" class="padding-top-5 padding-left-5">
+                                                <p ng-if="!params.this_week.length"
+                                                   class="margin-top-10 bg-danger text-center">No data found</p>
+                                                <table class="table no-margin" ng-if="params.this_week.length">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>New Bookings</th>
+                                                        <th>Re Booked</th>
+                                                        <th>No Show</th>
+                                                        <th>Cancelled Bookings</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr ng-repeat="this_week in params.this_week">
+                                                        <td>
+                                                            <div class="booka-table-calender">
+                                                                <figure>
+                                                                    <header>
+                                                                        {{this_week.day_name}}
+                                                                    </header>
+                                                                    <section>
+                                                                        {{this_week.date}}
+                                                                    </section>
+                                                                </figure>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{this_week.new_bookings}}</td>
+                                                        <td>{{this_week.re_booked}}</td>
+                                                        <td>{{this_week.no_show}}</td>
+                                                        <td>{{this_week.cancelled}}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </uib-tab>
+                                            <uib-tab heading="Next Week" class="padding-top-5 padding-left-5">
+                                                <p ng-if="!params.next_week.length"
+                                                   class="margin-top-10 bg-danger text-center">No data found</p>
+                                                <table class="table no-margin" ng-if="params.next_week.length">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>New Bookings</th>
+                                                        <th>Re Booked</th>
+                                                        <th>No Show</th>
+                                                        <th>Cancelled Bookings</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr ng-repeat="next_week in params.next_week">
+                                                        <td>
+                                                            <div class="booka-table-calender">
+                                                                <figure>
+                                                                    <header>
+                                                                        {{next_week.day_name}}
+                                                                    </header>
+                                                                    <section>
+                                                                        {{next_week.date}}
+                                                                    </section>
+                                                                </figure>
+                                                            </div>
+                                                        </td>
+                                                        <td>{{next_week.new_bookings}}</td>
+                                                        <td>{{next_week.re_booked}}</td>
+                                                        <td>{{next_week.no_show}}</td>
+                                                        <td>{{next_week.cancelled}}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </uib-tab>
+                                        </uib-tabset>
+                                    </div>
+                                </div>
+                                <div class="panel-footer no-border padding-top-0">
+                                    <p class="no-margin">
+                                        <a ui-sref="app.restaurantView.bookaTable({id:$state.params.id})"><i
+                                                class="fa fa-arrow-circle-o-down text-light"></i>
+                                            <span class="text-light margin-left-10">Show more details </span>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel panel-white no-radius">
+                        <div class="panel-heading border-bottom border-bottom">
+                            <h4 class="panel-title">Heading</h4>
+                            <ct-paneltool class="panel-tools" tool-refresh="params.refresh_signal"
+                                          tool-expand="tool-expand"></ct-paneltool>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row" ng-if="params.fetching_data">
+                                <div class="col-xs-12">fetching data...</div>
+                            </div>
+                            <div class="row" ng-if="!params.fetching_data">
+                                <div ng-if="!params.fetching_data">
+                                    <div class="col-xs-12">
+                                        <div class="panel panel-white">
+                                            <div class="panel-body">
+                                                <div class="calendar" ng-model="params.eventSources"
+                                                     calendar="myCalendar1"
+                                                     ui-calendar="params.uiConfig.calendar"></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer no-border padding-top-0">
+                            <p class="no-margin">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
