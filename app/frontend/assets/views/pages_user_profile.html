@@ -19,7 +19,7 @@
                             <div class="col-md-4">
                                 <div class="user-left">
                                     <div class="center">
-                                        <h4>{{userInfo.firstName}} {{userInfo.lastName}}</h4>
+                                        <h4>{{$root.user.name}}</h4>
                                         <div flow-init="{singleFile:true}" flow-name="obj.flow" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
                                             <div class="user-image">
                                                 <div class="thumbnail">
@@ -44,36 +44,36 @@
                                             </div>
                                         </div>
                                         <hr>
-                                        <div class="social-icons block">
-                                            <ul>
-                                                <li data-placement="top" data-original-title="Twitter" class="social-twitter tooltips">
-                                                    <a href="#" target="_blank">
-                                                        Twitter
-                                                    </a>
-                                                </li>
-                                                <li data-placement="top" data-original-title="Facebook" class="social-facebook tooltips">
-                                                    <a href="#" target="_blank">
-                                                        Facebook
-                                                    </a>
-                                                </li>
-                                                <li data-placement="top" data-original-title="Google" class="social-google tooltips">
-                                                    <a href="#" target="_blank">
-                                                        Google+
-                                                    </a>
-                                                </li>
-                                                <li data-placement="top" data-original-title="LinkedIn" class="social-linkedin tooltips">
-                                                    <a href="#" target="_blank">
-                                                        LinkedIn
-                                                    </a>
-                                                </li>
-                                                <li data-placement="top" data-original-title="Github" class="social-github tooltips">
-                                                    <a href="#" target="_blank">
-                                                        Github
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <hr>
+                                        <!--<div class="social-icons block">-->
+                                            <!--<ul>-->
+                                                <!--<li data-placement="top" data-original-title="Twitter" class="social-twitter tooltips">-->
+                                                    <!--<a href="#" target="_blank">-->
+                                                        <!--Twitter-->
+                                                    <!--</a>-->
+                                                <!--</li>-->
+                                                <!--<li data-placement="top" data-original-title="Facebook" class="social-facebook tooltips">-->
+                                                    <!--<a href="#" target="_blank">-->
+                                                        <!--Facebook-->
+                                                    <!--</a>-->
+                                                <!--</li>-->
+                                                <!--<li data-placement="top" data-original-title="Google" class="social-google tooltips">-->
+                                                    <!--<a href="#" target="_blank">-->
+                                                        <!--Google+-->
+                                                    <!--</a>-->
+                                                <!--</li>-->
+                                                <!--<li data-placement="top" data-original-title="LinkedIn" class="social-linkedin tooltips">-->
+                                                    <!--<a href="#" target="_blank">-->
+                                                        <!--LinkedIn-->
+                                                    <!--</a>-->
+                                                <!--</li>-->
+                                                <!--<li data-placement="top" data-original-title="Github" class="social-github tooltips">-->
+                                                    <!--<a href="#" target="_blank">-->
+                                                        <!--Github-->
+                                                    <!--</a>-->
+                                                <!--</li>-->
+                                            <!--</ul>-->
+                                        <!--</div>-->
+                                        <!--<hr>-->
                                     </div>
                                     <table class="table table-condensed">
                                         <thead>
@@ -82,34 +82,34 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>url</td>
-                                                <td>
-                                                    <a href="#">
-                                                        {{userInfo.url}}
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                            <!--<tr>-->
+                                                <!--<td>url</td>-->
+                                                <!--<td>-->
+                                                    <!--<a href="#">-->
+                                                        <!--{{userInfo.url}}-->
+                                                    <!--</a>-->
+                                                <!--</td>-->
+                                            <!--</tr>-->
                                             <tr>
                                                 <td>email:</td>
                                                 <td>
                                                     <a href>
-                                                        {{userInfo.email}}
+                                                        {{$root.user.email}}
                                                     </a>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>phone:</td>
-                                                <td>{{userInfo.phone}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>skye</td>
-                                                <td>
-                                                    <a href>
-                                                        {{userInfo.skype}}
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                            <!--<tr>-->
+                                                <!--<td>phone:</td>-->
+                                                <!--<td>{{userInfo.phone}}</td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td>skye</td>-->
+                                                <!--<td>-->
+                                                    <!--<a href>-->
+                                                        <!--{{userInfo.skype}}-->
+                                                    <!--</a>-->
+                                                <!--</td>-->
+                                            <!--</tr>-->
                                         </tbody>
                                     </table>
                                     <table class="table table-condensed">
@@ -121,28 +121,28 @@
                                         <tbody>
                                             <tr>
                                                 <td>Position</td>
-                                                <td>UI Designer</td>
+                                                <td>{{$root.user.position}}</td>
                                             </tr>
-                                            <tr>
-                                                <td>Last Logged In</td>
-                                                <td>56 min</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Position</td>
-                                                <td>Senior Marketing Manager</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Supervisor</td>
-                                                <td>
-                                                    <a href="#">
-                                                        Kenneth Ross
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Status</td>
-                                                <td><span class="label label-sm label-info">Administrator</span></td>
-                                            </tr>
+                                            <!--<tr>-->
+                                                <!--<td>Last Logged In</td>-->
+                                                <!--<td>56 min</td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td>Position</td>-->
+                                                <!--<td>Senior Marketing Manager</td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td>Supervisor</td>-->
+                                                <!--<td>-->
+                                                    <!--<a href="#">-->
+                                                        <!--Kenneth Ross-->
+                                                    <!--</a>-->
+                                                <!--</td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td>Status</td>-->
+                                                <!--<td><span class="label label-sm label-info">Administrator</span></td>-->
+                                            <!--</tr>-->
                                         </tbody>
                                     </table>
                                     <table class="table table-condensed">
