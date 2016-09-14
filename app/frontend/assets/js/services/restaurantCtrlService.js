@@ -226,11 +226,14 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
                 'December'
             ];
 
-
+            var counter = 0;
             for (var x = 0; x < 12; x++) {
-                if (data.labels[x] !== months[x]) {
+                if (data.labels[counter] !== months[x]) {
                     new_labels.splice(x, 0, months[x]);
                     new_data.splice(x, 0, '0');
+                }
+                else {
+                    counter = counter + 1;
                 }
             }
 
@@ -251,11 +254,14 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
                 'Week 5'
             ];
 
-
+            var counter = 0;
             for (var x = 0; x < 12; x++) {
-                if (data.labels[x] !== weeks[x]) {
+                if (data.labels[counter] !== weeks[x]) {
                     new_labels.splice(x, 0, weeks[x]);
                     new_data.splice(x, 0, '0');
+                }
+                else {
+                    counter = counter + 1;
                 }
             }
 
