@@ -578,7 +578,13 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
 	}).state('login.lockscreen', {
 	    url: '/lock',
         resolve: loadSequence('ngNotify','lockCtrl'),
-	    templateUrl: "assets/views/login_lock_screen.html"
+	    templateUrl: "assets/views/login_lock_screen.html",
+        data: {
+            permissions: {
+                only: ['SUPER_USER', 'ADMIN', 'MANAGEMENT', 'USER'],
+                redirectTo: 'login.signin'
+            }
+        }
 	})
 
 	// Landing Page route
