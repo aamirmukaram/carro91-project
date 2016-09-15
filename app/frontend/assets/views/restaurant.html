@@ -49,6 +49,7 @@
                                 <canvas ng-if="data.length && (data[0].length || data[1].length)"
                                         class="chart chart-bar" chart-data="data" chart-labels="labels"
                                         chart-colors=""
+                                        chart-options="params.chartsJs.options"
                                         chart-dataset-override="params.chartsJs.datasetOverride"></canvas>
                                 <p class="margin-top-10 bg-danger text-center"
                                    ng-if="!(data.length && (data[0].length || data[1].length))">No data found</p>
@@ -131,6 +132,7 @@
                                         ng-if="data.length && (data[0].length || data[1].length)" chart-data="data"
                                         chart-labels="labels"
                                         chart-colors=""
+                                        chart-options="params.chartsJs.options"
                                         chart-dataset-override="params.chartsJs.datasetOverride"></canvas>
                                 <p class="margin-top-10 bg-danger text-center"
                                    ng-if="!(data.length && (data[0].length || data[1].length))">No data found</p>

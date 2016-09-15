@@ -73,16 +73,31 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
                         {
                             label: 'Total Revenues',
                             borderWidth: 1,
-                            type: 'bar'
+                            type: 'bar',
+                            yAxisID:'A'
                         },
                         {
                             label: 'Total Counts',
                             borderWidth: 3,
                             hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                             hoverBorderColor: 'rgba(255,99,132,1)',
-                            type: 'line'
+                            type: 'line',
+                            yAxisID:'B'
                         }
-                    ]
+                    ],
+                    options:{
+                        scales: {
+                            yAxes: [{
+                                id: 'A',
+                                type: 'linear',
+                                position: 'left'
+                            }, {
+                                id: 'B',
+                                type: 'linear',
+                                position: 'right'
+                            }]
+                        }
+                    }
                 },
                 changePeriod: function (minus_year) {
                     var year = (new Date().getFullYear());
@@ -119,16 +134,31 @@ app.controller('restaurantRevenueCoverMonth', ["$scope", "restaurantCtrlService"
                     {
                         label: 'Total Revenues',
                         borderWidth: 1,
-                        type: 'bar'
+                        type: 'bar',
+                        yAxisID:'A'
                     },
                     {
                         label: 'Total Counts',
                         borderWidth: 3,
                         hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                         hoverBorderColor: 'rgba(255,99,132,1)',
-                        type: 'line'
+                        type: 'line',
+                        yAxisID:'B'
                     }
-                ]
+                ],
+                options:{
+                    scales: {
+                        yAxes: [{
+                            id: 'A',
+                            type: 'linear',
+                            position: 'left'
+                        }, {
+                            id: 'B',
+                            type: 'linear',
+                            position: 'right'
+                        }]
+                    }
+                }
             },
             changePeriod: function (minus_year) {
                 var year = (new Date().getMonth()) + 1;

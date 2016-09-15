@@ -16,7 +16,7 @@ app.constant('JS_REQUIRES', {
         'd3': '../../bower_components/d3/d3.min.js',
 
         //*** jQuery Plugins
-        'chartjs': 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js',
+        'chartjs': 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.js',
         'ckeditor-plugin': '../../bower_components/ckeditor/ckeditor.js',
         'jquery-nestable-plugin': ['../../bower_components/jquery-nestable/jquery.nestable.js'],
         'touchspin-plugin': ['../../bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js', '../../bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css'],
@@ -87,7 +87,7 @@ app.constant('JS_REQUIRES', {
         files: ['../../bower_components/ngmap/build/scripts/ng-map.min.js']
     }, {
         name: 'chart.js',
-        files: ['../..//bower_components/angular-chart.js/dist/angular-chart.min.js']
+        files: ['../..//bower_components/angular-chart.js/dist/angular-chart.js']
     }, {
         name: 'flow',
         files: ['../../bower_components/ng-flow/dist/ng-flow-standalone.min.js']
