@@ -8,13 +8,16 @@ app.directive('ctPaneltool', function () {
         collapse: "<a href='#' class='btn btn-transparent btn-sm' panel-collapse='' tooltip-placement='top' uib-tooltip='Collapse' ng-click='{{panelId}} = !{{panelId}}' ng-init='{{panelId}}=false'>" + "<i ng-if='{{panelId}}' class='ti-plus'></i>" + "<i ng-if='!{{panelId}}' class='ti-minus'></i>" + "</a>",
         refresh: "<a href='#' class='btn btn-transparent btn-sm' panel-refresh='{{refreshEvent}}' tooltip-placement='top' uib-tooltip='Refresh' data-spinner='load1'>" + "<i class='fa fa-circle-o'></i>" + "</a>",
         expand: "<a href='#' class='btn btn-transparent btn-sm hidden-sm hidden-xs' panel-expand=''>" + "<i class='fa fa-expand' ng-show='!isPanelFullscreen'></i><i class='fa fa-compress' ng-show='isPanelFullscreen'></i>" + "</a>",
-        dismiss: "<a href='#' class='btn btn-transparent btn-sm' panel-dismiss='' tooltip-placement='top' uib-tooltip='Close'>" + "<i class='ti-close'></i>" + "</a>"
+        dismiss: "<a href='#' class='btn btn-transparent btn-sm' panel-dismiss='' tooltip-placement='top' uib-tooltip='Close'>" + "<i class='ti-close'></i>" + "</a>",
+        help: "<a class='btn btn-transparent btn-sm hidden-sm hidden-xs' href='#' uib-popover='{{popoverMessage}}' popover-trigger='mouseenter' popover-append-to-body='true' popover-placement='top' popover-title=''><i class='fa fa-question-circle text-dark-transparent margin-left-5'></i></a>"
     };
 
     return {
         restrict: 'E',
         template: function (elem, attrs) {
             var temp = '';
+            if (attrs.toolHelp){
+                temp += templates.help.replace(/{{popoverMessage}}/g, attrs.toolHelp);}
             if (attrs.toolCollapse)
                 temp += templates.collapse.replace(/{{panelId}}/g, (elem.parent().parent().attr('id')));
             if (attrs.toolRefresh){
