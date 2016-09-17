@@ -1,0 +1,62 @@
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Restaurant Revenue Cover Month</h4>
+    <div ncy-breadcrumb class="pull-right"></div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC TABLE -->
+<div class="container-fluid container-fullw" ng-controller="restaurantRevenueCoverMonth">
+    <div ng-if="params.fetching_data">fetching data...</div>
+    <div class="row margin-bottom-15" ng-if="!params.fetching_data">
+        <div class="col-xs-6">
+            <a class="btn btn-wide btn-primary" href="" ng-click="params.changePeriodRC(-1)">{{(params.period - 1) | monthName}}</a>
+        </div>
+        <div class="col-xs-6" ng-if="params.period !== params.current_year">
+            <a class="btn btn-wide btn-primary pull-right" href="" ng-click="params.changePeriodRC(+1)">{{(params.period + 1) | monthName}}</i></a>
+        </div>
+    </div>
+    <div class="row" ng-if="!params.fetching_data">
+        <div class="col-md-6">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h5 class="over-title margin-bottom-15">  <span class="text-bold">Revenue Year</span>  ({{params.period | monthName}})</h5>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="center">Month</th>
+                            <th>Revenue</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="row in params.revenue_labels">
+                            <td class="center">{{row}}</td>
+                            <td>{{params.revenue_data[$index]}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h5 class="over-title margin-bottom-15">  <span class="text-bold">Cover Year</span>  ({{params.period | monthName}})</h5>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="center">Month</th>
+                            <th>Cover</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="row in params.covers_labels">
+                            <td class="center">{{row}}</td>
+                            <td>{{params.covers_data[$index]}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

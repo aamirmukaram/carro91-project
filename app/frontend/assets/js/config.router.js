@@ -94,6 +94,22 @@ function ($stateProvider, $urlRouterProvider, $controllerProvider, $compileProvi
             ncyBreadcrumb: {
                 label: 'Restaurant Digital Performance'
             }
+    }).state('app.restaurantView.revenueCoverYear', {
+            url: "/:id/revenue-cover-year",
+            templateUrl: "assets/views/restaurant_revenue_cover_year.html",
+            resolve: loadSequence('d3', 'ui.knob', 'countTo', 'restaurantCtrl'),
+            title: 'Revenue Cover Year',
+            ncyBreadcrumb: {
+                label: 'Revenue Cover Year'
+            }
+    }).state('app.restaurantView.revenueCoverMonth', {
+            url: "/:id/revenue-cover-month",
+            templateUrl: "assets/views/restaurant_revenue_cover_month.html",
+            resolve: loadSequence('d3', 'ui.knob', 'countTo', 'restaurantCtrl'),
+            title: 'Revenue Cover Month',
+            ncyBreadcrumb: {
+                label: 'Revenue Cover Month'
+            }
     }).state('app.restaurantView.tripAdvisor', {
             url: "/:id/trip-advisor",
             templateUrl: "assets/views/restaurant_trip_advisor.html",
