@@ -2,9 +2,6 @@
 require '../../config/config.php';
 require '../../helpers/helpers.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS')
-    return;
-
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 

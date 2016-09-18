@@ -1,7 +1,7 @@
 <?php
 require '../../../config/config.php';
 require '../../../helpers/helpers.php';
-
+require '../../../config/secure.php';
 
 //
 // Required : $_GET['period'] : 0 , 1 : 0==> Current , 1 ==> Next

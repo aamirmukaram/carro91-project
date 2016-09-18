@@ -33,5 +33,7 @@ angular.module("packet", [
 	'permission',
 	'permission.ui',
 	'ngTagsInput',
-	'ui.calendar'
+	'ui.calendar',
+	'auth0.lock',
+	'angular-jwt'
 ]);
