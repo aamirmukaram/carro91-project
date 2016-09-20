@@ -99,10 +99,10 @@ app.config(['$httpProvider', 'lockProvider', 'jwtOptionsProvider', 'jwtIntercept
             clientID: 'gL6JcPiKiYL6fzjBOUZydQb2HHJMeH24',
             domain: 'grahame.eu.auth0.com',
             options: {
-                container: 'root',
                 auth: {
                     redirect: false
-                }
+                },
+                autoclose: true
             }
         });
 
@@ -202,49 +202,6 @@ app.run(["$templateCache","$rootScope","PermRoleStore","$state", function ($temp
 	    "</table>\n" +
 	    "");
 
-//////////////// Authorisation section ////////////////
-
-    PermRoleStore
-        .defineRole('SUPER_USER', function () {
-            if($rootScope.user.access_level && $rootScope.user.access_level == 2) {
-                return true;
-            }
-            else {
-                return true;
-            }
-        });
-    PermRoleStore
-        .defineRole('MANAGEMENT', function () {
-            if($rootScope.user.access_level && $rootScope.user.access_level == 3) {
-                return true;
-            }
-            else {
-                return true;
-            }
-        });
-    PermRoleStore
-        .defineRole('ADMIN', function () {
-            if($rootScope.user.access_level && $rootScope.user.access_level == 1) {
-                return true;
-            }
-            else {
-                return true;
-            }
-        });
-    PermRoleStore
-        .defineRole('USER', function () {
-            if($rootScope.user.access_level && $rootScope.user.access_level == 4) {
-                return true;
-            }
-            else {
-                return true;
-            }
-        });
-
-    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
-        $state.previous = fromState;
-    });
-
 }]);
 
 app.run(function($rootScope, authService, authManager) {
@@ -266,3 +223,7 @@ app.run(function($rootScope, authService, authManager) {
     // the user to the login page
     authManager.redirectWhenUnauthenticated();
 });
+
+
+app.controller('mainController',[function(){
+}]);

@@ -4,7 +4,9 @@
  */
 app.factory('userService', ['$rootScope', '$q', '$http', function ($rootScope, $q, $http) {
     var user = {};
-    $rootScope.user = user;
+    var userProfile = JSON.parse(localStorage.getItem('profile')) || {};
+    angular.copy(userProfile,user);
+    angular.copy(user,$rootScope.user);
 
 
     return {
