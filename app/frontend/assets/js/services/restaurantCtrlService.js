@@ -16,6 +16,51 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
         return totalCovers[restaurant_id] && totalCovers[restaurant_id][filter] && totalCovers[restaurant_id][filter][period];
     };
 
+    var restaurant_compliance = {
+      1:{
+          iframe:'<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+      }
+    };
+    var restaurant_nightly_feedback = {
+      1:{
+          iframe:'<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+      }
+    };
+    var restaurant_adjustments = {
+      1:{
+          iframe:'<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+      }
+    };
+    var restaurant_sales_mix = {
+      1:{
+          iframe:'<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+      }
+    };
+    var restaurant_invoices = {
+      1:{
+          iframe:'<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+      }
+    };
+    var restaurant_audit = {
+      1:{
+          iframe:'<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+      }
+    };
+    var restaurant_trip_advisor_extended = {
+      1:{
+          iframe:'<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+      }
+    };
+    var restaurant_mystery_guest_extended = {
+      1:{
+          iframe:'<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+      }
+    };
+    var restaurant_training = {
+      1:{
+          iframe:'<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+      }
+    };
 
     return {
         fetchTotalRevenues: function (params, doRefresh) {
@@ -269,7 +314,15 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
             data.data = new_data;
 
             return data;
-        }
-
+        },
+        restaurant_compliance:restaurant_compliance,
+        restaurant_nightly_feedback:restaurant_nightly_feedback,
+        restaurant_adjustments:restaurant_adjustments,
+        restaurant_sales_mix:restaurant_sales_mix,
+        restaurant_invoices:restaurant_invoices,
+        restaurant_audit:restaurant_audit,
+        restaurant_trip_advisor_extended:restaurant_trip_advisor_extended,
+        restaurant_mystery_guest_extended:restaurant_mystery_guest_extended,
+        restaurant_training:restaurant_training
     }
 }]);
