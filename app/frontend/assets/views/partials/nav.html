@@ -76,7 +76,80 @@
                 <a href="javascript:;">{{brand.brand_name}} <i class="icon-arrow"></i> </a>
                 <ul class="sub-menu">
                     <li ng-repeat="restaurant in brand.restaurants">
-                        <a href="" ui-sref="app.restaurantView.restaurant({id:restaurant.id})"> <span>{{restaurant.name}}</span></a>
+                        <a href="javascript:;"> <span>{{restaurant.name}}</span> <i class="icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="" ui-sref="app.restaurantView.restaurant({id:restaurant.id})"> <span>{{restaurant.name}}</span></a>
+                            </li>
+                            <li>
+                                <a href=""> <span>Compliance</span></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;"> <span>Submission Upload</span> <i class="icon-arrow"></i> </a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="#"> Nightly Feedback  </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Adjustments  </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Sales Mix   </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:;"> <span>Finance</span> <i class="icon-arrow"></i> </a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="#"> Invoices  </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Audit  </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""> <span>TripAdvisor</span></a>
+                            </li>
+
+                            <li>
+                                <a href=""> <span>Mystery Guest</span></a>
+                            </li>
+                            <li>
+                                <a href=""> <span>Training</span></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;"> <span>Management Reports</span> <i class="icon-arrow"></i> </a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="#"> Compliance Report </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Digital Performance Report </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> GP Tracker </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Mystery Guest Reports</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Nightly Feedback </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Sales Mix Report  </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> TripAdvisor Report   </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Users Report   </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
                     </li>
                 </ul>
             </li>
