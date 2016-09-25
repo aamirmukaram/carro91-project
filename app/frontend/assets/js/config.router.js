@@ -270,6 +270,134 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             ncyBreadcrumb: {
                 label: 'Restaurant Training'
             }
+        }).state('app.restaurantView.managementCompliance', {
+            url: "/:id/managementCompliance",
+            template: '<div ng-bind-html="view"></div>',
+            controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
+                var restaurant_id = $state.params.id;
+                if (restaurantCtrlService.management_compliance[restaurant_id]) {
+                    $scope.view = $sce.trustAsHtml(restaurantCtrlService.management_compliance[restaurant_id].iframe);
+                }
+                else {
+                    $scope.view = '<p>No template found</p>';
+                }
+            }],
+            title: 'Restaurant Management Compliance',
+            ncyBreadcrumb: {
+                label: 'Restaurant Management Compliance'
+            }
+        }).state('app.restaurantView.managementDigitalPerformance', {
+            url: "/:id/managementDigitalPerformance",
+            template: '<div ng-bind-html="view"></div>',
+            controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
+                var restaurant_id = $state.params.id;
+                if (restaurantCtrlService.managementDigital_performance[restaurant_id]) {
+                    $scope.view = $sce.trustAsHtml(restaurantCtrlService.managementDigital_performance[restaurant_id].iframe);
+                }
+                else {
+                    $scope.view = '<p>No template found</p>';
+                }
+            }],
+            title: 'Restaurant Management Digital Performance',
+            ncyBreadcrumb: {
+                label: 'Restaurant Management Digital Performance'
+            }
+        }).state('app.restaurantView.managementGPTracker', {
+            url: "/:id/managementGPTracker",
+            template: '<div ng-bind-html="view"></div>',
+            controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
+                var restaurant_id = $state.params.id;
+                if (restaurantCtrlService.management_GPTracker[restaurant_id]) {
+                    $scope.view = $sce.trustAsHtml(restaurantCtrlService.management_GPTracker[restaurant_id].iframe);
+                }
+                else {
+                    $scope.view = '<p>No template found</p>';
+                }
+            }],
+            title: 'Restaurant Management GP Tracker',
+            ncyBreadcrumb: {
+                label: 'Restaurant Management GP Tracker'
+            }
+        }).state('app.restaurantView.managementMysteryGuestReports', {
+            url: "/:id/managementMysteryGuestReports",
+            template: '<div ng-bind-html="view"></div>',
+            controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
+                var restaurant_id = $state.params.id;
+                if (restaurantCtrlService.management_mystery_guest_reports[restaurant_id]) {
+                    $scope.view = $sce.trustAsHtml(restaurantCtrlService.management_mystery_guest_reports[restaurant_id].iframe);
+                }
+                else {
+                    $scope.view = '<p>No template found</p>';
+                }
+            }],
+            title: 'Restaurant Management Mystery Guest Reports',
+            ncyBreadcrumb: {
+                label: 'Restaurant Management Mystery Guest Reports'
+            }
+        }).state('app.restaurantView.managementNightlyFeedback', {
+            url: "/:id/managementNightlyFeedback",
+            template: '<div ng-bind-html="view"></div>',
+            controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
+                var restaurant_id = $state.params.id;
+                if (restaurantCtrlService.management_nightly_feedback[restaurant_id]) {
+                    $scope.view = $sce.trustAsHtml(restaurantCtrlService.management_nightly_feedback[restaurant_id].iframe);
+                }
+                else {
+                    $scope.view = '<p>No template found</p>';
+                }
+            }],
+            title: 'Restaurant Management Nightly Feedback',
+            ncyBreadcrumb: {
+                label: 'Restaurant Management Nightly Feedback'
+            }
+        }).state('app.restaurantView.managementSalesMixReport', {
+            url: "/:id/managementSalesMixReport",
+            template: '<div ng-bind-html="view"></div>',
+            controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
+                var restaurant_id = $state.params.id;
+                if (restaurantCtrlService.management_sales_mix_report[restaurant_id]) {
+                    $scope.view = $sce.trustAsHtml(restaurantCtrlService.management_sales_mix_report[restaurant_id].iframe);
+                }
+                else {
+                    $scope.view = '<p>No template found</p>';
+                }
+            }],
+            title: 'Restaurant Management Sales Mix Report',
+            ncyBreadcrumb: {
+                label: 'Restaurant Management Sales Mix Report'
+            }
+        }).state('app.restaurantView.managementTripAdvisorReport', {
+            url: "/:id/managementTripAdvisorReport",
+            template: '<div ng-bind-html="view"></div>',
+            controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
+                var restaurant_id = $state.params.id;
+                if (restaurantCtrlService.management_trip_advisor_report[restaurant_id]) {
+                    $scope.view = $sce.trustAsHtml(restaurantCtrlService.management_trip_advisor_report[restaurant_id].iframe);
+                }
+                else {
+                    $scope.view = '<p>No template found</p>';
+                }
+            }],
+            title: 'Restaurant Management TripAdvisor Report',
+            ncyBreadcrumb: {
+                label: 'Restaurant Management TripAdvisor Report'
+            }
+        }).state('app.restaurantView.managementUsersReport', {
+            url: "/:id/managementUsersReport",
+            template: '<div ng-bind-html="view"></div>',
+            controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
+                var restaurant_id = $state.params.id;
+                if (restaurantCtrlService.management_users_report[restaurant_id]) {
+                    $scope.view = $sce.trustAsHtml(restaurantCtrlService.management_users_report[restaurant_id].iframe);
+                }
+                else {
+                    $scope.view = '<p>No template found</p>';
+                }
+            }],
+            title: 'Restaurant Management Users Report',
+            ncyBreadcrumb: {
+                label: 'Restaurant Management Users Report'
+            }
         }).state('app.brandView', {
             url: '/brand',
             template: '<div ui-view class="fade-in-up"></div>',
