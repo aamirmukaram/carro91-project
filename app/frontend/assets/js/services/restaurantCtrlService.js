@@ -16,6 +16,93 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
         return totalCovers[restaurant_id] && totalCovers[restaurant_id][filter] && totalCovers[restaurant_id][filter][period];
     };
 
+    var restaurant_iframes = {
+        1: {            //restaurant_id
+            'compliance': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            },
+            'nightly_feedback': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                },
+                title: 'This is title'
+            }, 'adjustments': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }, 'sales_mix': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }, 'invoices': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }, 'audit': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }, 'tripAdvisorExtended': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }, 'mysteryGuestExtended': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }, 'managementCompliance': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }, 'managementDigitalPerformance': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }, 'managementGPTracker': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }, 'managementMysteryGuestReports': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }, 'managementNightlyFeedback': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }, 'managementSalesMixReport': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }, 'managementTripAdvisorReport': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }, 'managementUsersReport': {
+                2016: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+                , title: 'This is title'
+            }
+        }
+    };
+
     var restaurant_compliance = {
         1: {
             iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
@@ -503,6 +590,7 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
         management_nightly_feedback: management_nightly_feedback,
         management_sales_mix_report: management_sales_mix_report,
         management_trip_advisor_report: management_trip_advisor_report,
-        management_users_report: management_users_report
+        management_users_report: management_users_report,
+        restaurant_iframes: restaurant_iframes
     }
 }]);

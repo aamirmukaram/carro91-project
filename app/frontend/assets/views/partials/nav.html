@@ -82,19 +82,19 @@
                                 <a href="" ui-sref="app.restaurantView.restaurant({id:restaurant.id})"> <span>{{restaurant.name}}</span></a>
                             </li>
                             <li ui-sref-active="active">
-                                <a href="" ui-sref="app.restaurantView.compliance({id:restaurant.id})"><span>Compliance</span></a>
+                                <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'compliance'})"><span>Compliance</span></a>
                             </li>
                             <li>
                                 <a href="javascript:;"> <span>Submission Upload</span> <i class="icon-arrow"></i> </a>
                                 <ul class="sub-menu">
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.nightly_feedback({id:restaurant.id})"> Nightly Feedback  </a>
+                                        <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'nightly_feedback'})"> Nightly Feedback  </a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.adjustments({id:restaurant.id})"> Adjustments  </a>
+                                        <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'adjustments'})"> Adjustments  </a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.sales_mix({id:restaurant.id})"> Sales Mix   </a>
+                                        <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'sales_mix'})"> Sales Mix   </a>
                                     </li>
                                 </ul>
                             </li>
@@ -102,49 +102,49 @@
                                 <a href="javascript:;"> <span>Finance</span> <i class="icon-arrow"></i> </a>
                                 <ul class="sub-menu">
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.invoices({id:restaurant.id})"> Invoices  </a>
+                                        <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'invoices'})"> Invoices  </a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.audit({id:restaurant.id})"> Audit  </a>
+                                        <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'audit'})"> Audit  </a>
                                     </li>
                                 </ul>
                             </li>
                             <li ui-sref-active="active">
-                                <a href="" ui-sref="app.restaurantView.tripAdvisorExtended({id:restaurant.id})"> <span>TripAdvisor</span></a>
+                                <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'tripAdvisorExtended'})"> <span>TripAdvisor</span></a>
                             </li>
 
                             <li ui-sref-active="active">
-                                <a href="" ui-sref="app.restaurantView.mysteryGuestExtended({id:restaurant.id})"> <span>Mystery Guest</span></a>
+                                <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'mysteryGuestExtended'})"> <span>Mystery Guest</span></a>
                             </li>
                             <li ui-sref-active="active">
-                                <a href=""  ui-sref="app.restaurantView.training({id:restaurant.id})"> <span>Training</span></a>
+                                <a href=""  ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'training'})"> <span>Training</span></a>
                             </li>
                             <li>
                                 <a href="javascript:;"> <span>Management Reports</span> <i class="icon-arrow"></i> </a>
                                 <ul class="sub-menu">
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.managementCompliance({id:restaurant.id})"> Compliance Report </a>
+                                        <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'managementCompliance'})"> Compliance Report </a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.managementDigitalPerformance({id:restaurant.id})"> Digital Performance Report </a>
+                                        <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'managementDigitalPerformance'})"> Digital Performance Report </a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.managementGPTracker({id:restaurant.id})"> GP Tracker </a>
+                                        <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'managementGPTracker'})"> GP Tracker </a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.managementMysteryGuestReports({id:restaurant.id})"> Mystery Guest Reports</a>
+                                        <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'managementMysteryGuestReports'})"> Mystery Guest Reports</a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.managementNightlyFeedback({id:restaurant.id})"> Nightly Feedback </a>
+                                        <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'managementNightlyFeedback'})"> Nightly Feedback </a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.managementSalesMixReport({id:restaurant.id})"> Sales Mix Report  </a>
+                                        <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'managementSalesMixReport'})"> Sales Mix Report  </a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.managementTripAdvisorReport({id:restaurant.id})"> TripAdvisor Report   </a>
+                                        <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'managementTripAdvisorReport'})"> TripAdvisor Report   </a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.managementUsersReport({id:restaurant.id})"> Users Report   </a>
+                                        <a href="" ui-sref="app.restaurantView.iframe({id:restaurant.id,type:'managementUsersReport'})"> Users Report   </a>
                                     </li>
                                 </ul>
                             </li>

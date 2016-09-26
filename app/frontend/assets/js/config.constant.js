@@ -25,6 +25,7 @@ app.constant('JS_REQUIRES', {
 
         //*** Controllers
         'dashboardCtrl': 'assets/js/controllers/dashboardCtrl.js',
+        'restaurantIframe': 'assets/js/controllers/restaurantIframeCtrl.js',
         'signupCtrl': 'assets/js/controllers/signupCtrl.js',
         'signinCtrl': 'assets/js/controllers/signinCtrl.js',
         'lockCtrl': 'assets/js/controllers/lockCtrl.js',

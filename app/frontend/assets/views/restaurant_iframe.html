@@ -1,9 +1,34 @@
+<div ng-controller="restaurantIframeCtrl">
 <!-- start: BREADCRUMB -->
 <div class="breadcrumb-wrapper">
     <h4 class="mainTitle no-margin" translate="dashboard.WELCOME" translate-values="{ appName: app.name }">WELCOME TO
         CLIP-TWO</h4>
     <span class="mainDescription">overview &amp; stats </span>
-    <div ncy-breadcrumb class="pull-right"></div>
+    <div class="pull-right">
+        <ul class="pull-right breadcrumb">
+            <li><a ui-sref="app.dashboard" href="#/app/dashboard"><i class="fa fa-home margin-right-5 text-large text-dark"></i>Home</a></li>
+            <li>{{params.title}}</li>
+        </ul>
+
+
+    </div>
 </div>
 <!-- end: BREADCRUMB -->
-<div ng-bind-html="view"></div>
+<div class="container-fluid container-fullw">
+        <div class="row margin-bottom-15">
+            <div class="col-xs-6">
+                <a class="btn btn-wide btn-primary" href="" ng-click="params.changePeriod(-1)">{{params.period - 1}}</a>
+            </div>
+            <div class="col-xs-6" ng-if="params.period !== params.current_year">
+                <a class="btn btn-wide btn-primary pull-right" href="" ng-click="params.changePeriod(+1)">{{params.period + 1}}</i></a>
+            </div>
+        </div>
+        <div class="row" ng-if="!params.fetching_data">
+            <div class="col-sm-12">
+                <div ng-bind-html="params.view"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
