@@ -128,7 +128,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.compliance', {
             url: "/:id/compliance",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.restaurant_compliance[restaurant_id]) {
@@ -144,7 +144,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.nightly_feedback', {
             url: "/:id/nightly_feedback",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.restaurant_nightly_feedback[restaurant_id]) {
@@ -160,7 +160,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.adjustments', {
             url: "/:id/adjustments",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.restaurant_adjustments[restaurant_id]) {
@@ -176,7 +176,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.sales_mix', {
             url: "/:id/sales_mix",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.restaurant_sales_mix[restaurant_id]) {
@@ -192,7 +192,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.invoices', {
             url: "/:id/invoices",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.restaurant_invoices[restaurant_id]) {
@@ -208,7 +208,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.audit', {
             url: "/:id/audit",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.restaurant_audit[restaurant_id]) {
@@ -224,7 +224,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.tripAdvisorExtended', {
             url: "/:id/trip-advisor-extended",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.restaurant_trip_advisor_extended[restaurant_id]) {
@@ -240,7 +240,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.mysteryGuestExtended', {
             url: "/:id/mystery-guest-extended",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.restaurant_mystery_guest_extended[restaurant_id]) {
@@ -256,7 +256,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.training', {
             url: "/:id/training",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.restaurant_training[restaurant_id]) {
@@ -272,7 +272,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.managementCompliance', {
             url: "/:id/managementCompliance",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.management_compliance[restaurant_id]) {
@@ -288,7 +288,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.managementDigitalPerformance', {
             url: "/:id/managementDigitalPerformance",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.managementDigital_performance[restaurant_id]) {
@@ -304,7 +304,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.managementGPTracker', {
             url: "/:id/managementGPTracker",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.management_GPTracker[restaurant_id]) {
@@ -320,7 +320,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.managementMysteryGuestReports', {
             url: "/:id/managementMysteryGuestReports",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.management_mystery_guest_reports[restaurant_id]) {
@@ -336,7 +336,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.managementNightlyFeedback', {
             url: "/:id/managementNightlyFeedback",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.management_nightly_feedback[restaurant_id]) {
@@ -352,7 +352,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.managementSalesMixReport', {
             url: "/:id/managementSalesMixReport",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.management_sales_mix_report[restaurant_id]) {
@@ -368,7 +368,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.managementTripAdvisorReport', {
             url: "/:id/managementTripAdvisorReport",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.management_trip_advisor_report[restaurant_id]) {
@@ -384,7 +384,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             }
         }).state('app.restaurantView.managementUsersReport', {
             url: "/:id/managementUsersReport",
-            template: '<div ng-bind-html="view"></div>',
+            templateUrl: 'assets/views/restaurant_iframe.html',
             controller: ['restaurantCtrlService', '$state', '$scope', '$sce', function (restaurantCtrlService, $state, $scope, $sce) {
                 var restaurant_id = $state.params.id;
                 if (restaurantCtrlService.management_users_report[restaurant_id]) {
