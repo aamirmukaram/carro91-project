@@ -1,11 +1,11 @@
 <!-- start: MAIN NAVIGATION MENU -->
 <div class="navbar-title">
-    <span translate="sidebar.heading.NAVIGATION">Main Navigation</span>
+    <span translate="sidebar.heading.NAVIGATION" ng-if="!params.fetching_data">Main Navigation</span>
 </div>
-<ul class="main-navigation-menu" ng-controller="navCtrl">
+<ul class="main-navigation-menu" ng-if="!params.fetching_data">
 
     <!-- Dashboard -->
-    <li ui-sref-active="active" ng-if="!params.fetching_data" permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
+    <li ui-sref-active="active" permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
         <a ui-sref="app.dashboard">
             <div class="item-content">
                 <div class="item-media">
@@ -19,7 +19,7 @@
         </a>
     </li>
 
-    <li ng-class="{'active open':$state.includes('app.brandView')}" ng-if="!params.fetching_data" permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
+    <li ng-class="{'active open':$state.includes('app.brandView')}"  permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
         <a href="javascript:void(0)">
             <div class="item-content">
                 <div class="item-media">
@@ -39,7 +39,7 @@
     </li>
 
 
-    <!--<li ng-class="{'active open':$state.includes('app.restaurantView')}" ng-if="!params.fetching_data"  permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN','USER']">-->
+    <!--<li ng-class="{'active open':$state.includes('app.restaurantView')}"   permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN','USER']">-->
         <!--<a href="javascript:void(0)">-->
             <!--<div class="item-content">-->
                 <!--<div class="item-media">-->
@@ -158,7 +158,7 @@
 
 
 
-    <li ui-sref-active="active" ng-if="!params.fetching_data" permission permission-only="['SUPER_USER','ADMIN']">
+    <li ui-sref-active="active"  permission permission-only="['SUPER_USER','ADMIN']">
         <a ui-sref="app.users">
             <div class="item-content">
                 <div class="item-media">
@@ -170,42 +170,18 @@
             </div>
         </a>
     </li>
-    <li ui-sref-active="active" ng-if="!params.fetching_data" permission permission-only="['SUPER_USER','ADMIN']">
-        <a ui-sref="login.registration">
-            <div class="item-content">
-                <div class="item-media">
-                    <letter-icon data="New User" char-count="2" size="sm"></letter-icon>
-                </div>
-                <div class="item-inner">
-                    <span class="title"> New User </span>
-                </div>
-            </div>
-        </a>
-    </li>
-    <li ui-sref-active="active" ng-if="!params.fetching_data">
-        <a ui-sref="login.signin">
-            <div class="item-content">
-                <div class="item-media">
-                    <letter-icon data="Sign In" char-count="2" size="sm"></letter-icon>
-                </div>
-                <div class="item-inner">
-                    <span class="title"> Sign in </span>
-                </div>
-            </div>
-        </a>
-    </li>
-    <li ng-if="!params.fetching_data">
-        <a ui-sref="login.signin"  ui-sref-opts="{reload: true}">
-            <div class="item-content">
-                <div class="item-media">
-                    <letter-icon data="Log Out" char-count="2" size="sm"></letter-icon>
-                </div>
-                <div class="item-inner">
-                    <span class="title">Log Out</span>
-                </div>
-            </div>
-        </a>
-    </li>
+    <!--<li ui-sref-active="active"  permission permission-only="['SUPER_USER','ADMIN']">-->
+        <!--<a ui-sref="login.registration">-->
+            <!--<div class="item-content">-->
+                <!--<div class="item-media">-->
+                    <!--<letter-icon data="New User" char-count="2" size="sm"></letter-icon>-->
+                <!--</div>-->
+                <!--<div class="item-inner">-->
+                    <!--<span class="title"> New User </span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</a>-->
+    <!--</li>-->
 
 
 
@@ -652,10 +628,10 @@
 <!-- start: FEATURES -->
 
 
-<div class="navbar-title">
+<div class="navbar-title" ng-if="!params.fetching_data">
     <span translate="sidebar.heading.FEATURES">Core Features</span>
 </div>
-<ul class="folders">
+<ul class="folders" ng-if="!params.fetching_data">
     <li>
         <a ui-sref="landing.welcome">
             <div class="item-content">
@@ -668,18 +644,43 @@
             </div>
         </a>
     </li>
-    <li>
-        <a href="http://www.cliptheme.com/demo/packet/LAYOUT-RTL-1/" target="_blank">
+    <li ui-sref-active="active" >
+        <a ui-sref="login.signin">
             <div class="item-content">
                 <div class="item-media">
-                    <letter-icon data="{{ 'sidebar.nav.rtl.MAIN' | translate }}" char-count="2" size="sm"></letter-icon>
+                    <letter-icon data="Sign In" char-count="2" size="sm"></letter-icon>
                 </div>
                 <div class="item-inner">
-                    <span class="title" translate="sidebar.nav.rtl.MAIN"> RTL Version </span>
+                    <span class="title"> Sign in </span>
                 </div>
             </div>
         </a>
     </li>
+    <li >
+        <a ui-sref="login.signin"  ui-sref-opts="{reload: true}">
+            <div class="item-content">
+                <div class="item-media">
+                    <letter-icon data="Log Out" char-count="2" size="sm"></letter-icon>
+                </div>
+                <div class="item-inner">
+                    <span class="title">Log Out</span>
+                </div>
+            </div>
+        </a>
+    </li>
+
+    <!--<li>-->
+        <!--<a href="http://www.cliptheme.com/demo/packet/LAYOUT-RTL-1/" target="_blank">-->
+            <!--<div class="item-content">-->
+                <!--<div class="item-media">-->
+                    <!--<letter-icon data="{{ 'sidebar.nav.rtl.MAIN' | translate }}" char-count="2" size="sm"></letter-icon>-->
+                <!--</div>-->
+                <!--<div class="item-inner">-->
+                    <!--<span class="title" translate="sidebar.nav.rtl.MAIN"> RTL Version </span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</a>-->
+    <!--</li>-->
 </ul>
 
 
