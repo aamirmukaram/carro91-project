@@ -54,7 +54,7 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
                 $scope.params.total_revenues = Math.round($scope.params.total_revenues);
 
                 $scope.params.average = ($scope.params.total_revenues / $scope.params.total_covers);
-                $scope.params.average > -1 ?  $scope.params.average = Math.round($scope.params.average) : $scope.params.average = 0;
+                $scope.params.average > -1 ?  $scope.params.average = $scope.params.average.toFixed(2) : $scope.params.average = 0;
 
 
                 $scope.labels = response.fetchTotalRevenues.labels;
@@ -231,7 +231,7 @@ app.controller('restaurantRevenueCoverMonth', ["$scope", "restaurantCtrlService"
                 $scope.params.total_revenues = Math.round($scope.params.total_revenues);
 
                 $scope.params.average = ($scope.params.total_revenues / $scope.params.total_covers);
-                $scope.params.average > -1 ?  $scope.params.average = Math.round($scope.params.average) : $scope.params.average = 0;
+                $scope.params.average > -1 ?  $scope.params.average = $scope.params.average.toFixed(2) : $scope.params.average = 0;
 
                 $scope.labels = response.fetchTotalRevenues.labels;
                 $scope.data = [];
