@@ -1,0 +1,26 @@
+<div ng-controller="restaurantIframeOnlyCtrl">
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin" translate="dashboard.WELCOME" translate-values="{ appName: app.name }">WELCOME TO
+        CLIP-TWO</h4>
+    <span class="mainDescription">overview &amp; stats </span>
+    <div class="pull-right">
+        <ul class="pull-right breadcrumb">
+            <li><a ui-sref="app.dashboard" href="#/app/dashboard"><i class="fa fa-home margin-right-5 text-large text-dark"></i>Home</a></li>
+            <li>{{params.title}}</li>
+        </ul>
+
+
+    </div>
+</div>
+<!-- end: BREADCRUMB -->
+<div class="container-fluid container-fullw">
+        <div class="row">
+            <div class="col-sm-12">
+                <div ng-bind-html="params.view"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

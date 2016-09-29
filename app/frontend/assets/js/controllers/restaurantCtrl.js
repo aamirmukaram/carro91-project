@@ -443,7 +443,6 @@ app.controller('restaurantBookATableWeek', ["$scope", "restaurantCtrlService", '
 
 
                 angular.forEach($scope.params.this_year, function (data) {
-                    console.log(data);
 
                     $scope.params.bookings.events.push({
                         title: data.new_bookings + " Booked",

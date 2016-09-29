@@ -126,9 +126,24 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             ncyBreadcrumb: {
                 label: 'Restaurant BookATable'
             }
-        }).state('app.restaurantView.iframe', {
+        }).state('app.restaurantView.iframWithYear', {
+            url: "/:id/:type/year",
+            templateUrl: 'assets/views/restaurant_iframe_with_year.html',
+            resolve: loadSequence('restaurantIframe'),
+            title: 'Restaurant Reports'
+        }).state('app.restaurantView.iframOnly', {
             url: "/:id/:type",
-            templateUrl: 'assets/views/restaurant_iframe.html',
+            templateUrl: 'assets/views/restaurant_iframe_only.html',
+            resolve: loadSequence('restaurantIframe'),
+            title: 'Restaurant Reports'
+        }).state('app.restaurantView.iframeWithForm', {
+            url: "/:id/:type/form",
+            templateUrl: 'assets/views/restaurant_iframe_with_form.html',
+            resolve: loadSequence('restaurantIframe'),
+            title: 'Restaurant Reports'
+        }).state('app.restaurantView.iframeWithButton', {
+            url: "/:id/:type/upload",
+            templateUrl: 'assets/views/restaurant_iframe_with_button.html',
             resolve: loadSequence('restaurantIframe'),
             title: 'Restaurant Reports'
         }).state('app.brandView.brand', {
