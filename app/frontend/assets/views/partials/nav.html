@@ -1,4 +1,9 @@
 <!-- start: MAIN NAVIGATION MENU -->
+
+<div ng-if="params.fetching_data">
+    <p class="text-center">Fetching data..</p>
+</div>
+
 <div class="navbar-title">
     <span ng-if="!params.fetching_data">Main Navigation</span>
 </div>
@@ -695,7 +700,7 @@
 
 
 <div class="navbar-title" ng-if="!params.fetching_data">
-    <span translate="sidebar.heading.FEATURES">Core Features</span>
+    <span>Core Features</span>
 </div>
 <ul class="folders" ng-if="!params.fetching_data">
     <li>
@@ -723,7 +728,7 @@
         </a>
     </li>
     <li >
-        <a ui-sref="login.signin"  ui-sref-opts="{reload: true}">
+        <a ui-sref="login.signin">
             <div class="item-content">
                 <div class="item-media">
                     <letter-icon data="Log Out" char-count="2" size="sm"></letter-icon>
