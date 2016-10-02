@@ -1,6 +1,6 @@
 <!-- start: MAIN NAVIGATION MENU -->
 <div class="navbar-title">
-    <span translate="sidebar.heading.NAVIGATION" ng-if="!params.fetching_data">Main Navigation</span>
+    <span ng-if="!params.fetching_data">Main Navigation</span>
 </div>
 <ul class="main-navigation-menu" ng-if="!params.fetching_data">
 
@@ -13,7 +13,7 @@
                                  size="sm"></letter-icon>
                 </div>
                 <div class="item-inner">
-                    <span class="title" translate="sidebar.nav.dashboard.MAIN"> Dashboard </span>
+                    <span class="title"> Dashboard </span>
                 </div>
             </div>
         </a>
@@ -167,6 +167,75 @@
             </div>
         </a>
     </li>
+
+
+
+    <li ui-sref-active="active"  permission permission-only="['SUPER_USER','ADMIN']">
+        <a href="">
+            <div class="item-content">
+                <div class="item-media">
+                    <letter-icon data="MGT" char-count="3" size="sm"></letter-icon>
+                </div>
+                <div class="item-inner">
+                    <span class="title"> Management </span>
+                </div>
+            </div>
+        </a>
+    </li>
+
+    <li ui-sref-active="active">
+        <a href="">
+            <div class="item-content">
+                <div class="item-media">
+                    <letter-icon data="BS" char-count="2" size="sm"></letter-icon>
+                </div>
+                <div class="item-inner">
+                    <span class="title">  Brand Standards </span>
+                </div>
+            </div>
+        </a>
+    </li>
+
+    <li ui-sref-active="active">
+        <a href="">
+            <div class="item-content">
+                <div class="item-media">
+                    <letter-icon data="FS" char-count="2" size="sm"></letter-icon>
+                </div>
+                <div class="item-inner">
+                    <span class="title"> Food Standards </span>
+                </div>
+            </div>
+        </a>
+    </li>
+
+    <li ui-sref-active="active">
+        <a href="">
+            <div class="item-content">
+                <div class="item-media">
+                    <letter-icon data="M" char-count="1" size="sm"></letter-icon>
+                </div>
+                <div class="item-inner">
+                    <span class="title"> Marketing </span>
+                </div>
+            </div>
+        </a>
+    </li>
+
+    <li ui-sref-active="active">
+        <a href="">
+            <div class="item-content">
+                <div class="item-media">
+                    <letter-icon data="?" char-count="1" size="sm"></letter-icon>
+                </div>
+                <div class="item-inner">
+                    <span class="title"> Help </span>
+                </div>
+            </div>
+        </a>
+    </li>
+
+
     <!--<li ui-sref-active="active"  permission permission-only="['SUPER_USER','ADMIN']">-->
         <!--<a ui-sref="login.registration">-->
             <!--<div class="item-content">-->

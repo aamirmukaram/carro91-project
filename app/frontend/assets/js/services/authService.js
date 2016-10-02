@@ -14,7 +14,7 @@ app.factory('authService', ['$rootScope', 'lock', 'authManager', '$state', 'user
                     return true;
                 }
                 else {
-                    return true;
+                    return false;
                 }
             });
 
@@ -24,7 +24,7 @@ app.factory('authService', ['$rootScope', 'lock', 'authManager', '$state', 'user
                     return true;
                 }
                 else {
-                    return true;
+                    return false;
                 }
             });
         PermRoleStore
@@ -33,7 +33,7 @@ app.factory('authService', ['$rootScope', 'lock', 'authManager', '$state', 'user
                     return true;
                 }
                 else {
-                    return true;
+                    return false;
                 }
             });
         PermRoleStore
@@ -42,7 +42,7 @@ app.factory('authService', ['$rootScope', 'lock', 'authManager', '$state', 'user
                     return true;
                 }
                 else {
-                    return true;
+                    return false;
                 }
             });
 
