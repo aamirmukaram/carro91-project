@@ -699,3 +699,15 @@ tags-input > .host > .tags > .input{
     }
 
 }
+
+.auth0-lock-header {
+    height:auto !important;
+    .auth0-lock-header-logo {
+        width: auto !important;
+        height: auto !important;
+    }
+    .auth0-lock-name {
+        display: none;
+    }
+
+}
