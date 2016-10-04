@@ -1,7 +1,7 @@
 <?php
 require '../../../config/config.php';
 require '../../../helpers/helpers.php';
-
+require '../../../config/secure.php';
 
 //
 // Required : $_GET['period'] : 8,7

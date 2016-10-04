@@ -1,11 +1,16 @@
 <!-- start: MAIN NAVIGATION MENU -->
-<div class="navbar-title">
-    <span translate="sidebar.heading.NAVIGATION">Main Navigation</span>
+
+<div ng-if="params.fetching_data">
+    <p class="text-center">Fetching data..</p>
 </div>
-<ul class="main-navigation-menu" ng-controller="navCtrl">
+
+<div class="navbar-title">
+    <span ng-if="!params.fetching_data">Main Navigation</span>
+</div>
+<ul class="main-navigation-menu" ng-if="!params.fetching_data">
 
     <!-- Dashboard -->
-    <li ui-sref-active="active" ng-if="!params.fetching_data" permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
+    <li ui-sref-active="active" permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
         <a ui-sref="app.dashboard">
             <div class="item-content">
                 <div class="item-media">
@@ -13,20 +18,20 @@
                                  size="sm"></letter-icon>
                 </div>
                 <div class="item-inner">
-                    <span class="title" translate="sidebar.nav.dashboard.MAIN"> Dashboard </span>
+                    <span class="title"> Dashboard </span>
                 </div>
             </div>
         </a>
     </li>
 
-    <li ng-class="{'active open':$state.includes('app.brandView')}" ng-if="!params.fetching_data" permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
+    <li ng-class="{'active open':$state.includes('app.brandView')}"  permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
         <a href="javascript:void(0)">
             <div class="item-content">
                 <div class="item-media">
                     <letter-icon data="Brands" char-count="2" size="sm"></letter-icon>
                 </div>
                 <div class="item-inner">
-                    <span class="title">Brands</span><i class="icon-arrow"></i>
+                    <span class="title">Brands</span><i class="text-green icon-arrow"></i>
                 </div>
             </div>
         </a>
@@ -39,14 +44,14 @@
     </li>
 
 
-    <!--<li ng-class="{'active open':$state.includes('app.restaurantView')}" ng-if="!params.fetching_data"  permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN','USER']">-->
+    <!--<li ng-class="{'active open':$state.includes('app.restaurantView')}"   permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN','USER']">-->
         <!--<a href="javascript:void(0)">-->
             <!--<div class="item-content">-->
                 <!--<div class="item-media">-->
                     <!--<letter-icon data="Restaurants" char-count="2" size="sm"></letter-icon>-->
                 <!--</div>-->
                 <!--<div class="item-inner">-->
-                    <!--<span class="title">Restaurants</span><i class="icon-arrow"></i>-->
+                    <!--<span class="title">Restaurants</span><i class="text-green icon-arrow"></i>-->
                 <!--</div>-->
             <!--</div>-->
         <!--</a>-->
@@ -60,23 +65,93 @@
     <!--</li>-->
 
 
-    <li>
+    <li ng-class="{'active open':$state.includes('app.restaurantView')}">
         <a href="javascript:void(0)">
             <div class="item-content">
                 <div class="item-media">
                     <letter-icon data="Restaurants" char-count="2" size="sm"></letter-icon>
                 </div>
                 <div class="item-inner">
-                    <span class="title"> Restaurants </span><i class="icon-arrow"></i>
+                    <span class="title"> Restaurants </span><i class="text-green icon-arrow"></i>
                 </div>
             </div>
         </a>
         <ul class="sub-menu">
             <li ng-repeat="brand in categorize_restaurants">
-                <a href="javascript:;">{{brand.brand_name}} <i class="icon-arrow"></i> </a>
+                <a href="javascript:;">{{brand.brand_name}} <i class="text-green icon-arrow"></i> </a>
                 <ul class="sub-menu">
                     <li ng-repeat="restaurant in brand.restaurants">
-                        <a href="" ui-sref="app.restaurantView.restaurant({id:restaurant.id})"> <span>{{restaurant.name}}</span></a>
+                        <a href="javascript:;"> <span class="text-bold">{{restaurant.name}}</span> <i class="text-green icon-arrow text-green"></i> </a>
+                        <ul class="sub-menu">
+                            <li ui-sref-active="active">
+                                <a href="" ui-sref="app.restaurantView.restaurant({id:restaurant.id})"> <span>Dashboard</span></a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:;"> <span>Finance</span> <i class="text-green icon-arrow"></i> </a>
+                                <ul class="sub-menu">
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'invoice'})"> Invoices  </a>
+                                    </li>
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'audit'})"> Audit  </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:;"> <span>Reports</span> <i class="text-green icon-arrow"></i> </a>
+                                <ul class="sub-menu">
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframWithYear({id:restaurant.id,type:'compliance'})"> Compliance Report  </a>
+                                    </li>
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'digitalPerformance'})"> Digital Performance Report </a>
+                                    </li>
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'GPTracker'})"> GP Tracker </a>
+                                    </li>
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'mysteryGuestReports'})"> Mystery Guest Reports   </a>
+                                    </li>
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframWithYear({id:restaurant.id,type:'nightlyFeedback'})"> Nightly Feedback  </a>
+                                    </li>
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframWithYear({id:restaurant.id,type:'salesMix'})"> Sales Mix Report   </a>
+                                    </li>
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'tripAdvisor'})"> TripAdvisor Report </a>
+                                    </li>
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'users'})"> Users Report </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <li>
+                                <a href="javascript:;"> <span>Submission Upload</span> <i class="text-green icon-arrow"></i> </a>
+                                <ul class="sub-menu">
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframeWithButton({id:restaurant.id,type:'nightlyFeedback'})"> Nightly Feedback Upload  </a>
+                                    </li>
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframeWithForm({id:restaurant.id,type:'nightlyFeedback'})"> Nightly Feedback Form  </a>
+                                    </li>
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframeWithForm({id:restaurant.id,type:'adjustment'})"> Adjustment Form   </a>
+                                    </li>
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframeWithButton({id:restaurant.id,type:'salesMix'})"> Sales Mix Upload  </a>
+                                    </li>
+                                    <li ui-sref-active="active">
+                                        <a href="" ui-sref="app.restaurantView.iframeWithForm({id:restaurant.id,type:'salesMix'})"> Sales Mix Form </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
                     </li>
                 </ul>
             </li>
@@ -85,7 +160,7 @@
 
 
 
-    <li ui-sref-active="active" ng-if="!params.fetching_data" permission permission-only="['SUPER_USER','ADMIN']">
+    <li ui-sref-active="active"  permission permission-only="['SUPER_USER','ADMIN']">
         <a ui-sref="app.users">
             <div class="item-content">
                 <div class="item-media">
@@ -97,42 +172,87 @@
             </div>
         </a>
     </li>
-    <li ui-sref-active="active" ng-if="!params.fetching_data" permission permission-only="['SUPER_USER','ADMIN']">
-        <a ui-sref="login.registration">
+
+
+
+    <li ui-sref-active="active"  permission permission-only="['SUPER_USER','ADMIN']">
+        <a href="">
             <div class="item-content">
                 <div class="item-media">
-                    <letter-icon data="New User" char-count="2" size="sm"></letter-icon>
+                    <letter-icon data="MGT" char-count="3" size="sm"></letter-icon>
                 </div>
                 <div class="item-inner">
-                    <span class="title"> New User </span>
+                    <span class="title"> Management </span>
                 </div>
             </div>
         </a>
     </li>
-    <li ui-sref-active="active" ng-if="!params.fetching_data">
-        <a ui-sref="login.signin">
+
+    <li ui-sref-active="active">
+        <a href="">
             <div class="item-content">
                 <div class="item-media">
-                    <letter-icon data="Sign In" char-count="2" size="sm"></letter-icon>
+                    <letter-icon data="BS" char-count="2" size="sm"></letter-icon>
                 </div>
                 <div class="item-inner">
-                    <span class="title"> Sign in </span>
+                    <span class="title">  Brand Standards </span>
                 </div>
             </div>
         </a>
     </li>
-    <li ng-if="!params.fetching_data">
-        <a ui-sref="login.signin">
+
+    <li ui-sref-active="active">
+        <a href="">
             <div class="item-content">
                 <div class="item-media">
-                    <letter-icon data="Log Out" char-count="2" size="sm"></letter-icon>
+                    <letter-icon data="FS" char-count="2" size="sm"></letter-icon>
                 </div>
                 <div class="item-inner">
-                    <span class="title">Log Out</span>
+                    <span class="title"> Food Standards </span>
                 </div>
             </div>
         </a>
     </li>
+
+    <li ui-sref-active="active">
+        <a href="">
+            <div class="item-content">
+                <div class="item-media">
+                    <letter-icon data="M" char-count="1" size="sm"></letter-icon>
+                </div>
+                <div class="item-inner">
+                    <span class="title"> Marketing </span>
+                </div>
+            </div>
+        </a>
+    </li>
+
+    <li ui-sref-active="active">
+        <a href="">
+            <div class="item-content">
+                <div class="item-media">
+                    <letter-icon data="?" char-count="1" size="sm"></letter-icon>
+                </div>
+                <div class="item-inner">
+                    <span class="title"> Help </span>
+                </div>
+            </div>
+        </a>
+    </li>
+
+
+    <!--<li ui-sref-active="active"  permission permission-only="['SUPER_USER','ADMIN']">-->
+        <!--<a ui-sref="login.registration">-->
+            <!--<div class="item-content">-->
+                <!--<div class="item-media">-->
+                    <!--<letter-icon data="New User" char-count="2" size="sm"></letter-icon>-->
+                <!--</div>-->
+                <!--<div class="item-inner">-->
+                    <!--<span class="title"> New User </span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</a>-->
+    <!--</li>-->
 
 
 
@@ -579,10 +699,10 @@
 <!-- start: FEATURES -->
 
 
-<div class="navbar-title">
-    <span translate="sidebar.heading.FEATURES">Core Features</span>
+<div class="navbar-title" ng-if="!params.fetching_data">
+    <span>Core Features</span>
 </div>
-<ul class="folders">
+<ul class="folders" ng-if="!params.fetching_data">
     <li>
         <a ui-sref="landing.welcome">
             <div class="item-content">
@@ -595,18 +715,43 @@
             </div>
         </a>
     </li>
-    <li>
-        <a href="http://www.cliptheme.com/demo/packet/LAYOUT-RTL-1/" target="_blank">
+    <li ui-sref-active="active" >
+        <a ui-sref="login.signin">
             <div class="item-content">
                 <div class="item-media">
-                    <letter-icon data="{{ 'sidebar.nav.rtl.MAIN' | translate }}" char-count="2" size="sm"></letter-icon>
+                    <letter-icon data="Sign In" char-count="2" size="sm"></letter-icon>
                 </div>
                 <div class="item-inner">
-                    <span class="title" translate="sidebar.nav.rtl.MAIN"> RTL Version </span>
+                    <span class="title"> Sign in </span>
                 </div>
             </div>
         </a>
     </li>
+    <li >
+        <a ui-sref="login.signin">
+            <div class="item-content">
+                <div class="item-media">
+                    <letter-icon data="Log Out" char-count="2" size="sm"></letter-icon>
+                </div>
+                <div class="item-inner">
+                    <span class="title">Log Out</span>
+                </div>
+            </div>
+        </a>
+    </li>
+
+    <!--<li>-->
+        <!--<a href="http://www.cliptheme.com/demo/packet/LAYOUT-RTL-1/" target="_blank">-->
+            <!--<div class="item-content">-->
+                <!--<div class="item-media">-->
+                    <!--<letter-icon data="{{ 'sidebar.nav.rtl.MAIN' | translate }}" char-count="2" size="sm"></letter-icon>-->
+                <!--</div>-->
+                <!--<div class="item-inner">-->
+                    <!--<span class="title" translate="sidebar.nav.rtl.MAIN"> RTL Version </span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</a>-->
+    <!--</li>-->
 </ul>
 
 

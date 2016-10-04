@@ -17,6 +17,173 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
     };
 
 
+    var restaurant_iframes = {
+        iframe_with_button: {
+            nightlyFeedback: {
+                1: {
+                    action: 'Liverpool',
+                    value: 2
+                },
+                2: {
+                    action: 'Liverpool',
+                    value: 2
+                }
+            },
+            salesMix: {
+                1: {
+                    action: 'Liverpool',
+                    value: 2
+                },
+                2: {
+                    action: 'Liverpool',
+                    value: 2
+                }
+            }
+        },
+        iframe_with_form: {
+            nightlyFeedback: {
+                1: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                },
+                2: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+            },
+            adjustment: {
+                1: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                },
+                2: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+            },
+            salesMix: {
+                1: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                },
+                2: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+            }
+        },
+        iframe_only: {
+            invoice: {
+                1: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                },
+                2: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+            },
+            audit: {
+                1: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                },
+                2: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+            },
+            digitalPerformance: {
+                1: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                },
+                2: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+            },
+            GPTracker: {
+                1: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                },
+                2: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+            },
+            mysteryGuestReports: {
+                1: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                },
+                2: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+            },
+            tripAdvisor: {
+                1: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                },
+                2: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+            },
+            users: {
+                1: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                },
+                2: {
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                }
+            }
+        },
+        iframe_with_year: {
+            compliance: {
+                2016: {
+                    1: {
+                        iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    },
+                    2: {
+                        iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    }
+                },
+                2015: {
+                    1: {
+                        iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    },
+                    2: {
+                        iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    }
+                }
+            },
+            nightlyFeedback: {
+                2016: {
+                    1: {
+                        iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    },
+                    2: {
+                        iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    }
+                },
+                2015: {
+                    1: {
+                        iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    },
+                    2: {
+                        iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    }
+                }
+            },
+            salesMix: {
+                2016: {
+                    1: {
+                        iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    },
+                    2: {
+                        iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    }
+                },
+                2015: {
+                    1: {
+                        iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    },
+                    2: {
+                        iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    }
+                }
+            }
+        }
+
+    };
+
+
     return {
         fetchTotalRevenues: function (params, doRefresh) {
             var deferred = $q.defer();
@@ -69,7 +236,7 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
             var deferred = $q.defer();
             doRefresh = doRefresh || false;
             params = params || null;
-            if (doRefresh || !coversExists(params.filter, params.period,params.restaurant_id)) {
+            if (doRefresh || !coversExists(params.filter, params.period, params.restaurant_id)) {
 
                 $http({
                     url: $rootScope.pathToBackend + "restaurant/covers/" + params.filter + "/get.php",
@@ -207,7 +374,7 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
 
             return deferred.promise;
         },
-        restaurantRevenueCoverResponseYearPadding:function(data){
+        restaurantRevenueCoverResponseYearPadding: function (data) {
 
             var new_labels = angular.copy(data.labels);
             var new_data = angular.copy(data.data);
@@ -242,7 +409,7 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
 
             return data;
         },
-        restaurantRevenueCoverResponseMonthPadding:function(data){
+        restaurantRevenueCoverResponseMonthPadding: function (data) {
 
             var new_labels = angular.copy(data.labels);
             var new_data = angular.copy(data.data);
@@ -269,7 +436,7 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
             data.data = new_data;
 
             return data;
-        }
-
+        },
+        restaurant_iframes: restaurant_iframes
     }
 }]);

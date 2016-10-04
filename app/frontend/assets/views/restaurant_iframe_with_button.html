@@ -1,0 +1,44 @@
+<div ng-controller="restaurantIframeWithButtonCtrl">
+    <!-- start: BREADCRUMB -->
+    <div class="breadcrumb-wrapper">
+        <h4 class="mainTitle no-margin" translate="dashboard.WELCOME" translate-values="{ appName: app.name }">WELCOME
+            TO
+            CLIP-TWO</h4>
+        <span class="mainDescription">overview &amp; stats </span>
+        <div class="pull-right">
+            <ul class="pull-right breadcrumb">
+                <li><a ui-sref="app.dashboard" href="#/app/dashboard"><i
+                        class="fa fa-home margin-right-5 text-large text-dark"></i>Home</a></li>
+                <li>{{params.title}}</li>
+            </ul>
+
+
+        </div>
+    </div>
+    <!-- end: BREADCRUMB -->
+    <div class="container-fluid container-fullw">
+        <div class="row">
+            <div class="col-sm-12">
+                Download a copy of the CSV Template.
+                <a href="https://drive.google.com/open?id=0Bxb_-zitIdWQbHdBb0Y3VTM1U1U">Click Here</a>
+                <form action="{{params.action}}"
+                      enctype="multipart/form-data" method="post"><input name="res_id" type="hidden" value="{{params.res_id}}"/>
+                    <p align="left">Select file to upload:
+                        <span class="btn btn-primary btn-o btn-file">
+                                            Select File
+                            <input id="fileToUpload" name="fileToUpload" type="file"/>
+                        </span>
+                    </p>
+                    <p align="left"></p>
+
+
+                    <p align="left"><input name="submit" class="btn btn-primary" type="submit" value="Upload CVS File"/></p>
+                </form>
+                ** Please note you are unable to add/remove any of the rows within the CSV file as this will not upload
+                correctly, if you need support please contact reports@blackandwhitehospitality.com **
+            </div>
+        </div>
+    </div>
+</div>
+
+

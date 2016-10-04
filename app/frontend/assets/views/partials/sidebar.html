@@ -17,9 +17,12 @@
             <a class="profile-card-photo" href="#"><img alt="" src="assets/images/avatar-1.jpg"></a>
         </div>
         <div class="media-body">
-            <span class="media-heading text-white">{{$root.user.name}}</span>
+            <span class="media-heading text-white">{{$root.user.nickname}}</span>
             <div class="text-small text-white-transparent">
-                {{$root.user.position}}
+                Position not defined
+            </div>
+            <div class="text-small text-white-transparent">
+                <a ui-sref="login.signin">Sign out</a>
             </div>
         </div>
 
@@ -50,5 +53,5 @@
 </div>
 <!-- end: USER OPTIONS -->
 <!-- start: SIDEBAR -->
-<nav data-ng-include=" 'assets/views/partials/nav.html' "></nav>
+<nav data-ng-include=" 'assets/views/partials/nav.html' " ng-controller="navCtrl"></nav>
 <!-- end: SIDEBAR -->

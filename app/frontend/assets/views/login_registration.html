@@ -12,22 +12,25 @@
         </p>
         <!-- start: REGISTER BOX -->
         <div class="box-register">
+            <div class="clearfix">
+                <span class="pull-right">Required Inputs <span class="symbol required"></span> </span>
+            </div>
             <form class="form-register" novalidate ng-submit="submitForm()">
                 <div class="form-group" ng-class="{ 'has-error' : params.errors.firstName }">
-                    <label> Required Input <span class="symbol required"></span> </label>
+
+                    <label>First Name<span class="symbol required"></span> </label>
                     <input type="text" class="form-control" ng-model="formData.firstName" name="firstName"
                            placeholder="First Name">
                     <span class="help-block" ng-show="params.errors.firstName">{{ params.errors.firstName }}</span>
                 </div>
                 <div class="form-group" ng-class="{ 'has-error' : params.errors.lastName }">
-                    <label> Required Input <span class="symbol required"></span> </label>
+                    <label>Last Name<span class="symbol required"></span> </label>
                     <input type="text" class="form-control" ng-model="formData.lastName" name="lastName"
                            placeholder="Last Name">
                     <span class="help-block" ng-show="params.errors.lastName">{{ params.errors.lastName }}</span>
                 </div>
                 <div class="form-group" ng-class="{ 'has-error' : params.errors.restaurant }">
-                    <label> Required Input <span class="symbol required"></span> </label>
-                    <label> Select your restaurant </label>
+                    <label> Select your restaurant <span class="symbol required"></span></label>
                     <tags-input ng-model="formData.restaurants"
                                 display-property="full_name"
                                 add-from-autocomplete-only="true"
@@ -43,7 +46,7 @@
 
 
                 <div class="form-group" ng-class="{ 'has-error' : params.errors.position }">
-                    <label> Required Input <span class="symbol required"></span> </label>
+                    <label>Position<span class="symbol required"></span> </label>
                     <input type="text" class="form-control" ng-model="formData.position" name="position"
                            placeholder="Position">
                     <span class="help-block" ng-show="params.errors.position">{{ params.errors.position }}</span>
@@ -52,18 +55,18 @@
                     Enter your account details below:
                 </p>
                 <div class="form-group" ng-class="{ 'has-error' : params.errors.email }">
-                    <label> Required Input <span class="symbol required"></span> </label>
+                    <label>Email<span class="symbol required"></span> </label>
                     <input type="text" class="form-control" ng-model="formData.email" name="email" placeholder="Email">
                     <span class="help-block" ng-show="params.errors.email">{{ params.errors.email }}</span>
                 </div>
                 <div class="form-group" ng-class="{ 'has-error' : params.errors.password }">
-                    <label> Required Input <span class="symbol required"></span> </label>
+                    <label>Password<span class="symbol required"></span> </label>
                     <input type="password" class="form-control" ng-model="formData.password" id="password"
                            name="password" placeholder="Password">
                     <span class="help-block" ng-show="params.errors.password">{{ params.errors.password }}</span>
                 </div>
                 <div class="form-group" ng-class="{ 'has-error' : params.errors.password2 }">
-                    <label> Required Input <span class="symbol required"></span> </label>
+                    <label>Password again<span class="symbol required"></span> </label>
                     <input type="password" class="form-control" ng-model="formData.password2" name="password2"
                            placeholder="Password Again">
                     <span class="help-block" ng-show="params.errors.password2">{{ params.errors.password2 }}</span>

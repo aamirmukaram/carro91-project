@@ -42,10 +42,8 @@ function ($rootScope, $state, $stateParams) {
         job: 'ng-Dev',
         picture: 'app/img/user/02.jpg'
     };
-	//$rootScope.pathToBackend = 'http://www.aamirmukaram.com/freelancingFiles/carro91/layout-1/backend/';
-	//$rootScope.pathToBackend = 'http://localhost:8080/carro91/master-branch/app/backend/';
+    //$rootScope.pathToBackend = 'http://localhost:8080/carro91/project/carro91/app/backend/';
 	$rootScope.pathToBackend = 'http://dash.flintxsystems.com/app/backend/';
-	//$rootScope.pathToBackend = 'http://127.0.0.1:8080/packet-project/carro91-angularjs/LAYOUT-1/backend/';
 }]);
 // translate config
 app.config(['$translateProvider',
@@ -90,6 +88,46 @@ app.config(['$localStorageProvider',
     function ($localStorageProvider) {
         $localStorageProvider.setKeyPrefix('PacketLtr1');
     }]);
+
+// auth0
+//configuration
+app.config(['$httpProvider', 'lockProvider', 'jwtOptionsProvider', 'jwtInterceptorProvider','AUTH0_CLIENT_ID',
+    function ($httpProvider,lockProvider,jwtOptionsProvider,jwtInterceptorProvider,AUTH0_CLIENT_ID) {
+        // Initialization for the Lock widget
+        lockProvider.init({
+            clientID: AUTH0_CLIENT_ID,
+            domain: 'grahame.eu.auth0.com',
+            options: {
+                auth: {
+                    redirect: false
+                },
+                autoclose: true,
+                theme: {
+                    logo: 'assets/images/logo-collapsed.png',
+                    primaryColor: '#8dc63f'
+                },
+                signUpLink: window.location.origin + window.location.pathname + '#/login/registration'
+            }
+        });
+
+        // Configuration for angular-jwt
+        jwtOptionsProvider.config({
+            tokenGetter: function() {
+                return localStorage.getItem('id_token');
+            },
+            whiteListedDomains: ['localhost'],
+            unauthenticatedRedirector: ['$state', function($state) {
+               $state.go('login.signin');
+            }]
+        });
+
+        // Add the jwtInterceptor to the array of HTTP interceptors
+        // so that JWTs are attached as Authorization headers
+        $httpProvider.interceptors.push('jwtInterceptor');
+
+
+    }]);
+
 //filter to convert html to plain text
 app.filter('htmlToPlaintext', function () {
       return function (text) {
@@ -168,47 +206,28 @@ app.run(["$templateCache","$rootScope","PermRoleStore","$state", function ($temp
 	    "</table>\n" +
 	    "");
 
-//////////////// Authorisation section ////////////////
+}]);
 
-    PermRoleStore
-        .defineRole('SUPER_USER', function () {
-            if($rootScope.user.access_level && $rootScope.user.access_level == 2) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        });
-    PermRoleStore
-        .defineRole('MANAGEMENT', function () {
-            if($rootScope.user.access_level && $rootScope.user.access_level == 3) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        });
-    PermRoleStore
-        .defineRole('ADMIN', function () {
-            if($rootScope.user.access_level && $rootScope.user.access_level == 1) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        });
-    PermRoleStore
-        .defineRole('USER', function () {
-            if($rootScope.user.access_level && $rootScope.user.access_level == 4) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        });
+app.run(function($rootScope, authService, authManager) {
+    console.log('app run');
+    // Put the authService on $rootScope so its methods
+    // can be accessed from the nav bar
+    $rootScope.authService = authService;
 
-    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
-        $state.previous = fromState;
-    });
+    // Register the authentication listener that is
+    // set up in auth.service.js
+    authService.registerAuthenticationListener();
 
+    // Use the authManager from angular-jwt to check for
+    // the user's authentication state when the page is
+    // refreshed and maintain authentication
+    authManager.checkAuthOnRefresh();
+
+    // Listen for 401 unauthorized requests and redirect
+    // the user to the login page
+    authManager.redirectWhenUnauthenticated();
+});
+
+
+app.controller('mainController',[function(){
 }]);

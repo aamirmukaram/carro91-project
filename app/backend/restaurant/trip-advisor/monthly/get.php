@@ -1,6 +1,7 @@
 <?php
 require '../../../config/config.php';
 require '../../../helpers/helpers.php';
+require '../../../config/secure.php';
 
 // Optional : $_GET['period'] : 5
 // Required : $_GET['restaurant_id'] : 0

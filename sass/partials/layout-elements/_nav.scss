@@ -304,6 +304,7 @@ ul.sub-menu {
 
             .icon-arrow {
                 right: 5px !important;
+                color: $green !important;
             }
         }
 
@@ -329,7 +330,7 @@ ul.sub-menu {
         ul.sub-menu {
             li {
                 a {
-                    padding-left: 60px !important;
+                    padding-left: 10px !important;
 
                     .icon-arrow {
                         right: 10px !important;
@@ -339,7 +340,7 @@ ul.sub-menu {
                 ul.sub-menu {
                     li {
                         a {
-                            padding-left: 80px !important;
+                            padding-left: 20px !important;
                         }
                     }
                 }
