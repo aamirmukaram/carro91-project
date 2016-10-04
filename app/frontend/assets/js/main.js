@@ -103,10 +103,13 @@ app.config(['$httpProvider', 'lockProvider', 'jwtOptionsProvider', 'jwtIntercept
                 },
                 autoclose: true,
                 theme: {
-                    logo: 'assets/images/logo-collapsed.png',
+                    logo: 'assets/images/logo-auth.png',
                     primaryColor: '#8dc63f'
                 },
-                signUpLink: window.location.origin + window.location.pathname + '#/login/registration'
+                signUpLink: window.location.origin + window.location.pathname + '#/login/registration',
+                languageDictionary: {
+                    title: ''
+                }
             }
         });
 
