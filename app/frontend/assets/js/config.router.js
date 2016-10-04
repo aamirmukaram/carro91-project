@@ -590,13 +590,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
         }).state('login.registration', {
             url: '/registration',
             resolve: loadSequence('ngNotify', 'signupCtrl'),
-            templateUrl: "assets/views/login_registration.html",
-            data: {
-                permissions: {
-                    only: ['SUPER_USER', 'ADMIN'],
-                    redirectTo: 'login.signin'
-                }
-            }
+            templateUrl: "assets/views/login_registration.html"
         }).state('login.lockscreen', {
                 url: '/lock',
                 resolve: loadSequence('ngNotify', 'lockCtrl'),

@@ -2,8 +2,10 @@
 /**
  * controllers used for the signup
  */
-app.controller('signUpCtrl', ['$scope', 'userService','ngNotify','navCtrlService',
-    function ($scope, userService,ngNotify,navCtrlService) {
+app.controller('signUpCtrl', ['$scope', 'userService','ngNotify','navCtrlService','$state',
+    function ($scope, userService,ngNotify,navCtrlService,$state) {
+
+
         $scope.params = {
             errors: {
                 firstName: null,
@@ -55,7 +57,7 @@ app.controller('signUpCtrl', ['$scope', 'userService','ngNotify','navCtrlService
                 $scope.params.errors.email = 'Email is not correct';
             }
 
-            formValidated ?
+            if(formValidated){
                 userService.signup($scope.formData).then(function(){
                     ngNotify.set('Form submitted', {
                         theme: 'pure',
@@ -75,7 +77,10 @@ app.controller('signUpCtrl', ['$scope', 'userService','ngNotify','navCtrlService
                         password: null,
                         password2: null
                     };
-                }) :
+                    $state.go('login.signin');
+                })
+            }
+            else {
                 ngNotify.set('Form not submitted', {
                     theme: 'pure',
                     position: 'top',
@@ -83,6 +88,7 @@ app.controller('signUpCtrl', ['$scope', 'userService','ngNotify','navCtrlService
                     button: 'true',
                     sticky: 'false'
                 });
+            }
 
             $scope.toTheTop();
         };

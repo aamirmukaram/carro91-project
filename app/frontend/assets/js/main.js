@@ -91,18 +91,22 @@ app.config(['$localStorageProvider',
 
 // auth0
 //configuration
-app.config(['$httpProvider', 'lockProvider', 'jwtOptionsProvider', 'jwtInterceptorProvider',
-    function ($httpProvider,lockProvider,jwtOptionsProvider,jwtInterceptorProvider) {
-
+app.config(['$httpProvider', 'lockProvider', 'jwtOptionsProvider', 'jwtInterceptorProvider','AUTH0_CLIENT_ID',
+    function ($httpProvider,lockProvider,jwtOptionsProvider,jwtInterceptorProvider,AUTH0_CLIENT_ID) {
         // Initialization for the Lock widget
         lockProvider.init({
-            clientID: 'gL6JcPiKiYL6fzjBOUZydQb2HHJMeH24',
+            clientID: AUTH0_CLIENT_ID,
             domain: 'grahame.eu.auth0.com',
             options: {
                 auth: {
                     redirect: false
                 },
-                autoclose: true
+                autoclose: true,
+                theme: {
+                    logo: 'assets/images/logo-collapsed.png',
+                    primaryColor: '#8dc63f'
+                },
+                signUpLink: window.location.origin + window.location.pathname + '#/login/registration'
             }
         });
 

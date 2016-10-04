@@ -93,10 +93,17 @@ app.factory('authService', ['$rootScope', 'lock', 'authManager', '$state', 'user
         defineRoles();
     }
 
+    var hideLoginWidget = function(){
+        lock.hide();
+    }
+
+
     return {
         login: login,
         logout: logout,
+        hideLoginWidget:hideLoginWidget,
         registerAuthenticationListener: registerAuthenticationListener
     }
 
-}]);
+}])
+    .constant('AUTH0_CLIENT_ID','gL6JcPiKiYL6fzjBOUZydQb2HHJMeH24');

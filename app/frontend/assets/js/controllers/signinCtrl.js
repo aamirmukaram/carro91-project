@@ -2,8 +2,8 @@
 /**
  * controllers used for the signup
  */
-app.controller('signinCtrl', ['$scope', 'userService','ngNotify','navCtrlService','$state','lock','authService',
-    function ($scope, userService,ngNotify,navCtrlService,$state,lock,authService) {
+app.controller('signinCtrl', ['$scope', 'userService','ngNotify','navCtrlService','$state','lock','authService','$rootScope',
+    function ($scope, userService,ngNotify,navCtrlService,$state,lock,authService,$rootScope) {
         //$scope.params = {
         //    errors: {
         //        email: null,
@@ -73,6 +73,14 @@ app.controller('signinCtrl', ['$scope', 'userService','ngNotify','navCtrlService
         var init = function(){
             authService.logout();
             authService.login();
+
+            var changeState = $rootScope.$on('$stateChangeStart',
+                function(event, toState, toParams, fromState, fromParams){
+                    debugger;
+                    authService.hideLoginWidget();
+                    changeState();
+                })
+
         };
         init();
     }]);

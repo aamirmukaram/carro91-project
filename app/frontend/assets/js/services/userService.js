@@ -2,7 +2,7 @@
 /**
  * Service for restaurant revenues
  */
-app.factory('userService', ['$rootScope', '$q', '$http', function ($rootScope, $q, $http) {
+app.factory('userService', ['$rootScope', '$q', '$http', 'AUTH0_CLIENT_ID', function ($rootScope, $q, $http, AUTH0_CLIENT_ID) {
     var user = {};
     var userProfile = JSON.parse(localStorage.getItem('profile')) || {};
     angular.copy(userProfile,user);
@@ -22,12 +22,20 @@ app.factory('userService', ['$rootScope', '$q', '$http', function ($rootScope, $
                 deferred.reject();
             }
 
-            $http({
-                url: $rootScope.pathToBackend + "user/signup/post.php",
-                method: "POST",
-                data: params
-            }).success(signupComplete)
-                .catch(signupFailed);
+
+            $http.post('https://grahame.eu.auth0.com/dbconnections/signup',{
+                'client_id':AUTH0_CLIENT_ID,
+                'email':params.email,
+                'password':params.password,
+                'user_metadata':{
+                    'firstName':params.firstName,
+                    'lastName':params.lastName,
+                    'position':params.position,
+                    'restaurants':JSON.stringify(params.restaurants)
+                },
+                'connection':'Username-Password-Authentication'
+            }).then(signupComplete,signupFailed);
+
 
             return deferred.promise;
 
