@@ -87,7 +87,7 @@
                                 <a href="" ui-sref="app.restaurantView.restaurant({id:restaurant.id})"> <span>Dashboard</span></a>
                             </li>
 
-                            <li>
+                            <li permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
                                 <a href="javascript:;"> <span>Finance</span> <i class="text-green icon-arrow"></i> </a>
                                 <ul class="sub-menu">
                                     <li ui-sref-active="active">
@@ -99,7 +99,7 @@
                                 </ul>
                             </li>
 
-                            <li>
+                            <li permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
                                 <a href="javascript:;"> <span>Reports</span> <i class="text-green icon-arrow"></i> </a>
                                 <ul class="sub-menu">
                                     <li ui-sref-active="active">

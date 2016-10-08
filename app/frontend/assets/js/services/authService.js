@@ -85,7 +85,7 @@ app.factory('authService', ['$rootScope', 'lock', 'authManager', '$state', 'user
                 }
                 defineRoles();
                 $timeout(function(){
-                    if($rootScope.user.app_metadata.authorization.groups[0] == 'USER') {
+                    if($rootScope.user.app_metadata.authorization.groups[0] == 'USER' || $rootScope.user.app_metadata.authorization.groups[0] == 'SUPER_USER') {
                         $state.go('app.restaurantView.restaurant',{id:$rootScope.user.user_metadata.restaurants[0].id});
                     }
                     else {

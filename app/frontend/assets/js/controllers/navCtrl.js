@@ -31,7 +31,7 @@ app.controller('navCtrl', ["$scope", '$q', 'navCtrlService',
             };
 
             var isUserAuthorizedRetaurant = function (rest) {
-                if($scope.user.app_metadata.authorization.groups[0] == 'USER')
+                if($scope.user.app_metadata.authorization.groups[0] == 'USER' || $scope.user.app_metadata.authorization.groups[0] == 'SUPER_USER')
                 {
                     var authorized = false;
                     angular.forEach($scope.user.user_metadata.restaurants, function (restaurant) {

@@ -24,7 +24,7 @@ app.controller('restaurantAbstract',['$scope','$rootScope',function($scope,$root
 
     var verifyUser = function(restaurant_id){
         var user_is_verified = false;
-        if($rootScope.user.app_metadata.authorization.groups[0] == 'USER') {
+        if($rootScope.user.app_metadata.authorization.groups[0] == 'USER' || $rootScope.user.app_metadata.authorization.groups[0] == 'SUPER_USER') {
             var keepGoing = true;
             angular.forEach($rootScope.user.user_metadata.restaurants,function(restaurant){
                 if(keepGoing && restaurant.id == restaurant_id) {
