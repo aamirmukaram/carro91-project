@@ -80,7 +80,9 @@ app.factory('authService', ['$rootScope', 'lock', 'authManager', '$state', 'user
                 localStorage.setItem('profile', JSON.stringify(profile));
                 angular.copy(profile,userService.user);
                 angular.copy(profile,$rootScope.user);
-                $rootScope.user.user_metadata.restaurants = JSON.parse($rootScope.user.user_metadata.restaurants);
+                if($rootScope.user.user_metadata) {
+                    $rootScope.user.user_metadata.restaurants = JSON.parse($rootScope.user.user_metadata.restaurants);
+                }
                 defineRoles();
                 $timeout(function(){
                     if($rootScope.user.app_metadata.authorization.groups[0] == 'USER') {

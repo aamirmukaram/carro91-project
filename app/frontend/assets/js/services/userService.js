@@ -8,7 +8,9 @@ app.factory('userService', ['$rootScope', '$q', '$http', 'AUTH0_CLIENT_ID', func
     if(localStorage.getItem('profile') !== null) {
         angular.copy(userProfile,user);
         angular.copy(user,$rootScope.user);
-        $rootScope.user.user_metadata.restaurants = JSON.parse($rootScope.user.user_metadata.restaurants);
+        if($rootScope.user.user_metadata) {
+            $rootScope.user.user_metadata.restaurants = JSON.parse($rootScope.user.user_metadata.restaurants);
+        }
     }
 
     return {
