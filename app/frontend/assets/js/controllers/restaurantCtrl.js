@@ -34,6 +34,8 @@ app.controller('restaurantAbstract',['$scope','$rootScope',function($scope,$root
 
             });
             return user_is_verified;
+        }else {
+            return true;
         }
     };
 
