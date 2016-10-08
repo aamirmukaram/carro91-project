@@ -83,7 +83,12 @@ app.factory('authService', ['$rootScope', 'lock', 'authManager', '$state', 'user
                 $rootScope.user.user_metadata.restaurants = JSON.parse($rootScope.user.user_metadata.restaurants);
                 defineRoles();
                 $timeout(function(){
-                    $state.go('app.dashboard');
+                    if($rootScope.user.app_metadata.authorization.groups[0] == 'USER') {
+                        $state.go('app.restaurantView.restaurant',{id:$rootScope.user.user_metadata.restaurants[0].id});
+                    }
+                    else {
+                        $state.go('app.dashboard');
+                    }
                 },100);
             });
         });

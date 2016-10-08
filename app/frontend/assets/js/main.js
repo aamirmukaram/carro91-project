@@ -102,6 +102,7 @@ app.config(['$httpProvider', 'lockProvider', 'jwtOptionsProvider', 'jwtIntercept
                     redirect: false
                 },
                 autoclose: true,
+                avatar:null,
                 theme: {
                     logo: 'assets/images/logo-auth.png',
                     primaryColor: '#8dc63f'
@@ -212,7 +213,7 @@ app.run(["$templateCache","$rootScope","PermRoleStore","$state", function ($temp
 }]);
 
 app.run(function($rootScope, authService, authManager) {
-    console.log('app run');
+    //console.log('app run');
     // Put the authService on $rootScope so its methods
     // can be accessed from the nav bar
     //$rootScope.authService = authService;

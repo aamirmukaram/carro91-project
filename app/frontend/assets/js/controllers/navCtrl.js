@@ -30,17 +30,35 @@ app.controller('navCtrl', ["$scope", '$q', 'navCtrlService',
                 return result;
             };
 
-            angular.forEach(restaurants, function (rest) {
-                var result = isBrandIdExists(rest.brand_id);
-                if (result === false) {
-                    output.push({
-                        brand_id: rest.brand_id,
-                        brand_name: rest.brand_name,
-                        restaurants: [rest]
+            var isUserAuthorizedRetaurant = function (rest) {
+                if($scope.user.app_metadata.authorization.groups[0] == 'USER')
+                {
+                    var authorized = false;
+                    angular.forEach($scope.user.user_metadata.restaurants, function (restaurant) {
+                        if (restaurant.id == rest.id) {
+                            authorized = true;
+                        }
                     });
+                    return authorized;
                 }
                 else {
-                    output[result].restaurants.push(rest);
+                    return true;
+                }
+            };
+
+            angular.forEach(restaurants, function (rest) {
+                if(isUserAuthorizedRetaurant(rest)){
+                    var result = isBrandIdExists(rest.brand_id);
+                    if (result === false) {
+                        output.push({
+                            brand_id: rest.brand_id,
+                            brand_name: rest.brand_name,
+                            restaurants: [rest]
+                        });
+                    }
+                    else {
+                        output[result].restaurants.push(rest);
+                    }
                 }
             });
             return output;
