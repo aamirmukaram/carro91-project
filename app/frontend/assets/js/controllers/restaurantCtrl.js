@@ -17,6 +17,43 @@ app.filter('abs', function () {
     }
 });
 
+app.controller('restaurantAbstract',['$scope','$rootScope',function($scope,$rootScope){
+    var not_verified_action = function(){
+        $scope.$state.go('login.signin');
+    };
+
+    var verifyUser = function(restaurant_id){
+        var user_is_verified = false;
+        if($rootScope.user.app_metadata.authorization.groups[0] == 'USER') {
+            var keepGoing = true;
+            angular.forEach($rootScope.user.user_metadata.restaurants,function(restaurant){
+                if(keepGoing && restaurant.id == restaurant_id) {
+                    user_is_verified = true;
+                    keepGoing = false;
+                }
+
+            });
+            return user_is_verified;
+        }
+    };
+
+    if(!verifyUser($scope.$stateParams.id)) {
+        not_verified_action();
+    }
+
+    var checkForUserAuthListner = $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+        if(toState.name.indexOf("restaurantView") > -1) {
+            verifyUser(toParams.id) ? angular.noop():not_verified_action();
+        }
+    });
+
+
+    $scope.$on('$destroy', function() {
+        checkForUserAuthListner();
+    });
+
+}]);
+
 app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService", '$q', '$state',
     function ($scope, restaurantCtrlService, $q, $state) {
 

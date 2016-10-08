@@ -5,9 +5,11 @@
 app.factory('userService', ['$rootScope', '$q', '$http', 'AUTH0_CLIENT_ID', function ($rootScope, $q, $http, AUTH0_CLIENT_ID) {
     var user = {};
     var userProfile = JSON.parse(localStorage.getItem('profile')) || {};
-    angular.copy(userProfile,user);
-    angular.copy(user,$rootScope.user);
-
+    if(localStorage.getItem('profile') !== null) {
+        angular.copy(userProfile,user);
+        angular.copy(user,$rootScope.user);
+        $rootScope.user.user_metadata.restaurants = JSON.parse($rootScope.user.user_metadata.restaurants);
+    }
 
     return {
         signup: function (params) {

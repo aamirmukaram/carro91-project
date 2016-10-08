@@ -67,6 +67,8 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             .state('app.restaurantView', {
                 url: "/restaurant",
                 template: '<div ui-view class="fade-in-up"></div>',
+                resolve: loadSequence('restaurantCtrl'),
+                controller:'restaurantAbstract',
                 title: 'Restaurant',
                 ncyBreadcrumb: {
                     label: 'Restaurants'
