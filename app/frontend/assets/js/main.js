@@ -120,6 +120,7 @@ app.config(['$httpProvider', 'lockProvider', 'jwtOptionsProvider', 'jwtIntercept
                 return localStorage.getItem('id_token');
             },
             whiteListedDomains: ['localhost','dash.flintxsystems.com'],
+            authHeader: 'Auth-Token',
             unauthenticatedRedirector: ['$state', function($state) {
                $state.go('login.signin');
             }]

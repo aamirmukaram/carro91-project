@@ -1,6 +1,6 @@
 <?php
 
-if(isset(apache_request_headers()['Authorization'])) {
+if(isset(apache_request_headers()['Auth-Token'])) {
 
 }
 else{
