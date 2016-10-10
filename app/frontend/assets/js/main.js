@@ -101,7 +101,8 @@ app.config(['$httpProvider', 'lockProvider', 'jwtOptionsProvider', 'jwtIntercept
                 auth: {
                     redirect: false
                 },
-                autoclose: true,
+                autoclose: false,
+                closable: false,
                 avatar:null,
                 theme: {
                     logo: 'assets/images/logo-auth.png',

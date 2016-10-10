@@ -52,7 +52,7 @@ app.factory('authService', ['$rootScope', 'lock', 'authManager', '$state', 'user
     }
 
     function login() {
-        lock.show({autoclose: true});
+        lock.show();
     }
 
     // Logging out just requires removing the user's
@@ -84,6 +84,7 @@ app.factory('authService', ['$rootScope', 'lock', 'authManager', '$state', 'user
                     $rootScope.user.user_metadata.restaurants = JSON.parse($rootScope.user.user_metadata.restaurants);
                 }
                 defineRoles();
+                lock.hide();
                 $timeout(function(){
                     if($rootScope.user.app_metadata.authorization.groups[0] == 'USER' || $rootScope.user.app_metadata.authorization.groups[0] == 'SUPER_USER') {
                         $state.go('app.restaurantView.restaurant',{id:$rootScope.user.user_metadata.restaurants[0].id});
