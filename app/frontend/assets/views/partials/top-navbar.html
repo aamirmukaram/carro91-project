@@ -104,13 +104,16 @@
             </li>
             <!-- end: ACTIVITIES DROPDOWN -->
             <!-- start: LANGUAGE SWITCHER -->
-            <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
-                <a href class="dropdown-toggle" uib-dropdown-toggle> <i class="flag-icon" ng-class="'flagstyle'| translate"></i><span>&nbsp;{{language.selected}}</span> </a>
-                <ul role="menu" class="dropdown-menu dropdown-light animated fadeInUpShort ">
-                    <li ng-repeat="(localeId, langName) in language.available">
-                        <a ng-click="language.set(localeId, $event)" href="javascript:void(0)" class="menu-toggler"> {{langName}} </a>
-                    </li>
-                </ul>
+            <!--<li class="dropdown" uib-dropdown on-toggle="toggled(open)">-->
+                <!--<a href class="dropdown-toggle" uib-dropdown-toggle> <i class="flag-icon" ng-class="'flagstyle'| translate"></i><span>&nbsp;{{language.selected}}</span> </a>-->
+                <!--<ul role="menu" class="dropdown-menu dropdown-light animated fadeInUpShort ">-->
+                    <!--<li ng-repeat="(localeId, langName) in language.available">-->
+                        <!--<a ng-click="language.set(localeId, $event)" href="javascript:void(0)" class="menu-toggler"> {{langName}} </a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <li>
+                <a href=""> <i class="flag-icon flag-icon-gb"></i><span>&nbsp;UK</span> </a>
             </li>
             <!-- end: LANGUAGE SWITCHER -->
         </ul>

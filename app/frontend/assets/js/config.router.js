@@ -120,6 +120,14 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             ncyBreadcrumb: {
                 label: 'Restaurant Trip Advisor'
             }
+        }).state('app.restaurantView.nightlyFeedbackForm', {
+            url: "/:id/nightly-feedback-form",
+            templateUrl: "assets/views/restaurant_nightly_feedback_form.html",
+            resolve: loadSequence('d3', 'ui.knob', 'countTo','ngNotify', 'restaurantCtrl'),
+            title: 'Restaurant Nightly Feedback Form',
+            ncyBreadcrumb: {
+                label: 'Restaurant Nightly Feedback Form'
+            }
         }).state('app.restaurantView.bookaTable', {
             url: "/:id/booka-table",
             templateUrl: "assets/views/restaurant_booka_table.html",
