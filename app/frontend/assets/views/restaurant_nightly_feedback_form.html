@@ -25,31 +25,51 @@
                                         <a href ng-class="{'selected' : currentStep >= 1, 'done' : currentStep > 1}">
                                             <div class="stepNumber">
                                                 <!--1-->
-                                            </div> <span class="stepDesc text-small"> Covers </span>
+                                            </div>
+                                            <span class="stepDesc text-small"> Covers </span>
                                         </a>
                                     </li>
                                     <li ng-click="form.goTo(Form, 2)">
                                         <a href ng-class="{'selected' : currentStep >= 2, 'done' : currentStep > 2}">
                                             <div class="stepNumber">
                                                 <!--2-->
-                                            </div> <span class="stepDesc text-small"> Revenue </span>
+                                            </div>
+                                            <span class="stepDesc text-small"> Revenue </span>
                                         </a>
                                     </li>
                                     <li ng-click="form.goTo(Form, 3)">
                                         <a href ng-class="{'selected' : currentStep >= 3, 'done' : currentStep > 3}">
                                             <div class="stepNumber">
                                                 <!--3-->
-                                            </div> <span class="stepDesc text-small"> Commentary </span>
+                                            </div>
+                                            <span class="stepDesc text-small"> Commentary </span>
                                         </a>
                                     </li>
                                     <li ng-click="form.goTo(Form, 4)">
                                         <a href ng-class="{'selected' : currentStep >= 4, 'done' : currentStep > 4}">
                                             <div class="stepNumber">
                                                 <!--4-->
-                                            </div> <span class="stepDesc text-small"> Complete </span>
+                                            </div>
+                                            <span class="stepDesc text-small"> Complete </span>
                                         </a>
                                     </li>
                                 </ul>
+
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <p class="input-group">
+                                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
+                                                   ng-model="params.formData.date" is-open="params.opened"
+                                                   datepicker-options="params.dateOptions" ng-required="true"
+                                                   close-text="Close" alt-input-formats="params.altInputFormats"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="toggleDatePopover()"><i
+                    class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+                                        </p>
+                                    </div>
+                                </div>
+
                                 <!-- end: WIZARD SEPS -->
                                 <!-- start: WIZARD STEP 1 -->
                                 <div id="step-1" ng-show="currentStep == 1">
@@ -60,104 +80,158 @@
                                                     Covers
                                                 </legend>
                                                 <div class="row">
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Lunch Covers (Start of the day) <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Lunch Covers (Start of the day)" class="form-control" name="lunchCoversStartDay" ng-model="params.formData.lunchCoversStartDay" ng-required="currentStep == one" />
+                                                            <label> Lunch Covers (Start of the day) <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text"
+                                                                   placeholder="Lunch Covers (Start of the day)"
+                                                                   class="form-control" name="lunchCoversStartDay"
+                                                                   ng-model="params.formData.lunchCoversStartDay"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Dinner Covers (Start of the day)  <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Dinner Covers (Start of the day)" class="form-control" name="dinnerCoversStartDay" ng-model="params.formData.dinnerCoversStartDay" ng-required="currentStep == one" />
+                                                            <label> Dinner Covers (Start of the day) <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text"
+                                                                   placeholder="Dinner Covers (Start of the day)"
+                                                                   class="form-control" name="dinnerCoversStartDay"
+                                                                   ng-model="params.formData.dinnerCoversStartDay"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Afternoon Tea Covers <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Afternoon Tea Covers" class="form-control" name="afternoonTeaCover" ng-model="params.formData.afternoonTeaCover" ng-required="currentStep == one" />
+                                                            <label> Afternoon Tea Covers <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Afternoon Tea Covers"
+                                                                   class="form-control" name="afternoonTeaCover"
+                                                                   ng-model="params.formData.afternoonTeaCover"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Brunch Covers <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Brunch Covers" class="form-control" name="brunchCovers" ng-model="params.formData.brunchCovers" ng-required="currentStep == one" />
+                                                            <label> Brunch Covers <span class="symbol required"></span>
+                                                            </label>
+                                                            <input type="text" placeholder="Brunch Covers"
+                                                                   class="form-control" name="brunchCovers"
+                                                                   ng-model="params.formData.brunchCovers"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
 
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Lunch Covers (No Shows) <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Lunch Covers (No Shows)" class="form-control" name="lunchCoversNoShow" ng-model="params.formData.lunchCoversNoShow" ng-required="currentStep == one" />
+                                                            <label> Lunch Covers (No Shows) <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Lunch Covers (No Shows)"
+                                                                   class="form-control" name="lunchCoversNoShow"
+                                                                   ng-model="params.formData.lunchCoversNoShow"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Dinner Covers (No Shows) <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Dinner Covers (No Shows)" class="form-control" name="dinnerCoversNoShow" ng-model="params.formData.dinnerCoversNoShow" ng-required="currentStep == one" />
+                                                            <label> Dinner Covers (No Shows) <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Dinner Covers (No Shows)"
+                                                                   class="form-control" name="dinnerCoversNoShow"
+                                                                   ng-model="params.formData.dinnerCoversNoShow"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> In House Guests <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="In House Guests" class="form-control" name="inHouseGuests" ng-model="params.formData.inHouseGuests" ng-required="currentStep == one" />
-                                                        </div>
-                                                    </div>
-
-
-
-                                                </div>
-                                                <div class="row">
-
-                                                    <div class="col-xs-3">
-                                                        <div class="form-group">
-                                                            <label> Lunch Covers (Walk Ins) <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Lunch Covers (Walk Ins)" class="form-control" name="lunchCoversWalkIns" ng-model="params.formData.lunchCoversWalkIns" ng-required="currentStep == one" />
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-xs-3">
-                                                        <div class="form-group">
-                                                            <label> Dinner Covers (Walk Ins) <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Dinner Covers (Walk Ins)" class="form-control" name="dinnerCoversWalkIns" ng-model="params.formData.dinnerCoversWalkIns" ng-required="currentStep == one" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-3">
-                                                        <div class="form-group">
-                                                            <label> Resident Diners  <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Resident Diners" class="form-control" name="residentDiners" ng-model="params.formData.residentDiners" ng-required="currentStep == one" />
+                                                            <label> In House Guests <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="In House Guests"
+                                                                   class="form-control" name="inHouseGuests"
+                                                                   ng-model="params.formData.inHouseGuests"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
 
 
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-xs-3">
+
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Total Lunch Covers <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Total Lunch Covers" class="form-control" name="lunchCoversTotal" ng-model="params.formData.lunchCoversTotal" ng-required="currentStep == one" />
+                                                            <label> Lunch Covers (Walk Ins) <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Lunch Covers (Walk Ins)"
+                                                                   class="form-control" name="lunchCoversWalkIns"
+                                                                   ng-model="params.formData.lunchCoversWalkIns"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xs-3">
+
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Total Dinner Covers  <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Total Dinner Covers" class="form-control" name="dinnerCoversTotal" ng-model="params.formData.dinnerCoversTotal" ng-required="currentStep == one" />
+                                                            <label> Dinner Covers (Walk Ins) <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Dinner Covers (Walk Ins)"
+                                                                   class="form-control" name="dinnerCoversWalkIns"
+                                                                   ng-model="params.formData.dinnerCoversWalkIns"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Room Service Covers <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Room Service Covers" class="form-control" name="roomServiceCovers" ng-model="params.formData.roomServiceCovers" ng-required="currentStep == one" />
+                                                            <label> Resident Diners <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Resident Diners"
+                                                                   class="form-control" name="residentDiners"
+                                                                   ng-model="params.formData.residentDiners"
+                                                                   ng-required="currentStep == one"/>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <div class="form-group">
+                                                            <label> Total Lunch Covers <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Total Lunch Covers"
+                                                                   class="form-control" name="lunchCoversTotal"
+                                                                   ng-model="params.formData.lunchCoversTotal"
+                                                                   ng-required="currentStep == one"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <div class="form-group">
+                                                            <label> Total Dinner Covers <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Total Dinner Covers"
+                                                                   class="form-control" name="dinnerCoversTotal"
+                                                                   ng-model="params.formData.dinnerCoversTotal"
+                                                                   ng-required="currentStep == one"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <div class="form-group">
+                                                            <label> Room Service Covers <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Room Service Covers"
+                                                                   class="form-control" name="roomServiceCovers"
+                                                                   ng-model="params.formData.roomServiceCovers"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </fieldset>
                                             <div class="form-group">
-                                                <button class="btn btn-primary btn-o next-step btn-wide pull-right" ng-click="form.next(Form)">
+                                                <button class="btn btn-primary btn-o next-step btn-wide pull-right"
+                                                        ng-click="form.next(Form)">
                                                     Next <i class="fa fa-arrow-circle-right"></i>
                                                 </button>
                                             </div>
@@ -174,60 +248,88 @@
                                                     Revenue
                                                 </legend>
                                                 <div class="row">
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Lunch Food Revenue <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Lunch Food Revenue" class="form-control" name="lunchFoodRevenues" ng-model="params.formData.lunchFoodRevenues" ng-required="currentStep == one" />
+                                                            <label> Lunch Food Revenue <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Lunch Food Revenue"
+                                                                   class="form-control" name="lunchFoodRevenues"
+                                                                   ng-model="params.formData.lunchFoodRevenues"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Dinner Food Revenue  <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Dinner Food Revenue" class="form-control" name="dinnerFoodRevenue" ng-model="params.formData.dinnerFoodRevenue" ng-required="currentStep == one" />
+                                                            <label> Dinner Food Revenue <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Dinner Food Revenue"
+                                                                   class="form-control" name="dinnerFoodRevenue"
+                                                                   ng-model="params.formData.dinnerFoodRevenue"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Bar Food Revenue <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Bar Food Revenue" class="form-control" name="barFoodRevenue" ng-model="params.formData.barFoodRevenue" ng-required="currentStep == one" />
+                                                            <label> Bar Food Revenue <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Bar Food Revenue"
+                                                                   class="form-control" name="barFoodRevenue"
+                                                                   ng-model="params.formData.barFoodRevenue"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Afternoon Tea Revenue <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Afternoon Tea Revenue" class="form-control" name="afternoonTeaRevenue" ng-model="params.formData.afternoonTeaRevenue" ng-required="currentStep == one" />
+                                                            <label> Afternoon Tea Revenue <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Afternoon Tea Revenue"
+                                                                   class="form-control" name="afternoonTeaRevenue"
+                                                                   ng-model="params.formData.afternoonTeaRevenue"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
 
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Lunch Liquor Revenue <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Lunch Liquor Revenue" class="form-control" name="lunchLiquorRevenue" ng-model="params.formData.lunchLiquorRevenue" ng-required="currentStep == one" />
+                                                            <label> Lunch Liquor Revenue <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Lunch Liquor Revenue"
+                                                                   class="form-control" name="lunchLiquorRevenue"
+                                                                   ng-model="params.formData.lunchLiquorRevenue"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Dinner Liquor Revenue <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Dinner Liquor Revenue" class="form-control" name="dinnerLiquorRevenue" ng-model="params.formData.dinnerLiquorRevenue" ng-required="currentStep == one" />
+                                                            <label> Dinner Liquor Revenue <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Dinner Liquor Revenue"
+                                                                   class="form-control" name="dinnerLiquorRevenue"
+                                                                   ng-model="params.formData.dinnerLiquorRevenue"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-xs-3">
+                                                    <div class="col-sm-3">
                                                         <div class="form-group">
-                                                            <label> Bar Liquor Revenue <span class="symbol required"></span> </label>
-                                                            <input type="text" placeholder="Bar Liquor Revenue" class="form-control" name="barLiquorRevenue" ng-model="params.formData.barLiquorRevenue" ng-required="currentStep == one" />
+                                                            <label> Bar Liquor Revenue <span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text" placeholder="Bar Liquor Revenue"
+                                                                   class="form-control" name="barLiquorRevenue"
+                                                                   ng-model="params.formData.barLiquorRevenue"
+                                                                   ng-required="currentStep == one"/>
                                                         </div>
                                                     </div>
-
 
 
                                                 </div>
                                             </fieldset>
                                             <div class="form-group">
-                                                <button class="btn btn-primary btn-o next-step btn-wide pull-right" ng-click="form.next(Form)">
+                                                <button class="btn btn-primary btn-o next-step btn-wide pull-right"
+                                                        ng-click="form.next(Form)">
                                                     Next <i class="fa fa-arrow-circle-right"></i>
                                                 </button>
                                             </div>
@@ -238,87 +340,124 @@
                                 <!-- start: WIZARD STEP 3 -->
                                 <div id="step-3" ng-show="currentStep == 3">
                                     <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="padding-30">
-                                                <h2 class="StepTitle">Enter billing details</h2>
-                                                <p class="text-large">
-                                                    You will need to enter your billing address and select your payment method.
-                                                </p>
-                                                <p class="text-small">
-                                                    You can use most major credit card, as well as PayPal.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7">
+                                        <div class="col-xs-12">
                                             <fieldset>
                                                 <legend>
-                                                    Payment Method
+                                                    Commentary
                                                 </legend>
-                                                <label> Payment type </label>
-                                                <div class="form-group">
-                                                    <div class="btn-group">
-                                                        <label class="btn btn-primary btn-sm" ng-model="myModel.paymentMethod" uib-btn-radio="'creditcard'"> <i class="fa fa-cc-visa"></i> <i class="fa fa-cc-mastercard"></i> Credit Card </label>
-                                                        <label class="btn btn-primary btn-sm" ng-model="myModel.paymentMethod" uib-btn-radio="'paypal'"> <i class="fa fa-cc-paypal"></i> PayPal </label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label> Card Number </label>
-                                                    <input type="text" class="form-control" name="cardNumber" ng-model="myModel.cardNumber" placeholder="Enter Your Card Number">
-                                                </div>
-                                                <label> Expires </label>
                                                 <div class="row">
-                                                    <div class="col-md-4 col-sm-6">
+                                                    <div class="col-sm-12">
                                                         <div class="form-group">
-                                                            <select class="cs-select cs-skin-slide" ng-model="myModel.expiresMonth">
-                                                                <option value="" disabled>Month</option>
-                                                                <option value="January">January</option>
-                                                                <option value="February">February</option>
-                                                                <option value="March">March</option>
-                                                                <option value="April">April</option>
-                                                                <option value="May">May</option>
-                                                                <option value="June">June</option>
-                                                                <option value="July">July</option>
-                                                                <option value="August">August</option>
-                                                                <option value="September">September</option>
-                                                                <option value="October">October</option>
-                                                                <option value="November">November</option>
-                                                                <option value="December">December</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4 col-sm-6">
-                                                        <div class="form-group">
-                                                            <select class="cs-select cs-skin-slide" ng-model="myModel.expiresYear">
-                                                                <option value="" disabled>Year</option>
-                                                                <option value="2015">2015</option>
-                                                                <option value="2016">2016</option>
-                                                                <option value="2017">2017</option>
-                                                                <option value="2018">2018</option>
-                                                                <option value="2019">2019</option>
-                                                                <option value="2020">2020</option>
-                                                            </select>
+                                                            <label>Sales</label><br><label>Comment on performance
+                                                            against forecast/expected, including reasons for no shows &
+                                                            walk ins.</label>
+                                                            <textarea placeholder="Sales" rows="10" class="form-control"
+                                                                      name="commentarySales"
+                                                                      ng-model="params.formData.commentarySales"
+                                                                      ng-required="currentStep == one"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-xs-12">
-                                                        <label> Security code </label>
-                                                        <div class="row">
-                                                            <div class="col-xs-3">
-                                                                <div class="form-group">
-                                                                    <input type="text" class="form-control" name="securityCode" placeholder="Security code" ng-model="myModel.securityCode">
-                                                                </div>
-                                                            </div>
-                                                            <span class="help-inline col-xs-4"> <a href uib-popover="The security code is a three-digit number on the back of your credit card, immediately following your main card number." popover-placement="top" popover-title="How to find the security code"><i class="ti-help-alt text-large text-primary"></i></a> </span>
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Payroll</label><br><label>Comment on levels of
+                                                            staffing on shift appropriate to the level of covers, if not
+                                                            state reasons such as staff illness level of walkins
+                                                            etc</label>
+                                                            <textarea placeholder="Payroll" rows="10"
+                                                                      class="form-control" name="commentaryPayroll"
+                                                                      ng-model="params.formData.commentaryPayroll"
+                                                                      ng-required="currentStep == one"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Maintenance Issues</label><br><label>Include here any
+                                                            maintenance issues, broken equipment etc.</label>
+                                                            <textarea placeholder="Maintenance Issues" rows="10"
+                                                                      class="form-control"
+                                                                      name="commentaryMaintenanceIssues"
+                                                                      ng-model="params.formData.commentaryMaintenanceIssues"
+                                                                      ng-required="currentStep == one"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>People</label><br><label>Include here any HR issues,
+                                                            recruitment requirements, positive & negative feedback RE
+                                                            FOH staff.</label>
+                                                            <textarea placeholder="People" rows="10"
+                                                                      class="form-control" name="commentaryPeople"
+                                                                      ng-model="params.formData.commentaryPeople"
+                                                                      ng-required="currentStep == one"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Product</label><br><label>Include here customer
+                                                            feedback regarding food & beverage. Any suggestions,
+                                                            specials that have sold well.</label>
+                                                            <textarea placeholder="People" rows="10"
+                                                                      class="form-control" name="commentaryProduct"
+                                                                      ng-model="params.formData.commentaryProduct"
+                                                                      ng-required="currentStep == one"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Marketing</label><br><label>Include here comments on
+                                                            promotion up takes, any offers and how well they have been
+                                                            received. Any suggestions</label>
+                                                            <textarea placeholder="Marketing" rows="10"
+                                                                      class="form-control" name="commentaryMarketing"
+                                                                      ng-model="params.formData.commentaryMarketing"
+                                                                      ng-required="currentStep == one"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label> Name of person completing form<span
+                                                                    class="symbol required"></span> </label>
+                                                            <input type="text"
+                                                                   placeholder="Name of person completing form"
+                                                                   class="form-control" name="commentaryPersonName"
+                                                                   ng-model="params.formData.commentaryPersonName"
+                                                                   ng-required="currentStep == one"/>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label> Email address where confirmation of responses will
+                                                                be sent</label>
+                                                            <input type="email"
+                                                                   placeholder="Email address where confirmation of responses will be sent"
+                                                                   class="form-control" name="commentaryEmail"
+                                                                   ng-model="params.formData.commentaryEmail"
+                                                                   ng-required="currentStep == one"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                             </fieldset>
                                             <div class="form-group">
-                                                <button class="btn btn-primary btn-o back-step btn-wide pull-left" ng-click="form.prev(Form)">
-                                                    <i class="fa fa-circle-arrow-left"></i> Back
-                                                </button>
-                                                <button class="btn btn-primary btn-o next-step btn-wide pull-right" ng-click="form.next(Form)">
+                                                <button class="btn btn-primary btn-o next-step btn-wide pull-right"
+                                                        ng-click="form.next(Form)">
                                                     Next <i class="fa fa-arrow-circle-right"></i>
                                                 </button>
                                             </div>
@@ -337,9 +476,12 @@
                                                     Your tutorial is complete.
                                                 </p>
                                                 <p class="text-small">
-                                                    Thank you for your registration. Your transaction has been completed, and a receipt for your purchase has been emailed to you.  You may log into your account to view details of this transaction.
+                                                    Thank you for your registration. Your transaction has been
+                                                    completed, and a receipt for your purchase has been emailed to you.
+                                                    You may log into your account to view details of this transaction.
                                                 </p>
-                                                <a class="btn btn-primary btn-o" href ng-click="form.goTo(Form, 1)"> Back to first step </a>
+                                                <a class="btn btn-primary btn-o" href ng-click="form.goTo(Form, 1)">
+                                                    Back to first step </a>
                                             </div>
                                         </div>
                                     </div>

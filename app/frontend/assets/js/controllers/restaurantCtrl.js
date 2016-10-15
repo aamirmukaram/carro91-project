@@ -17,8 +17,35 @@ app.filter('abs', function () {
     }
 });
 
-app.controller('restaurantNightlyFeedbackForm',['$scope', 'ngNotify',
+app.controller('restaurantNightlyFeedbackForm', ['$scope', 'ngNotify',
     function ($scope, ngNotify) {
+
+        $scope.params = {
+            formData: {
+                date: new Date()
+            },
+            opened:false,
+            dateOptions:{
+                dateDisabled: disabled,
+                formatYear: 'yy',
+                maxDate: new Date(2020, 5, 22),
+                minDate: new Date(),
+                startingDay: 1
+            },
+            altInputFormats:['M!/d!/yyyy']
+        };
+
+        $scope.toggleDatePopover = function(){
+            $scope.params.opened = !$scope.params.opened;
+        };
+
+
+        // Disable weekend selection
+        function disabled(data) {
+            var date = data.date,
+                mode = data.mode;
+            return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+        }
         $scope.currentStep = 1;
 
         // Initial Value
@@ -98,40 +125,40 @@ app.controller('restaurantNightlyFeedbackForm',['$scope', 'ngNotify',
     }]);
 
 
-app.controller('restaurantAbstract',['$scope','$rootScope',function($scope,$rootScope){
-    var not_verified_action = function(){
+app.controller('restaurantAbstract', ['$scope', '$rootScope', function ($scope, $rootScope) {
+    var not_verified_action = function () {
         $scope.$state.go('login.signin');
     };
 
-    var verifyUser = function(restaurant_id){
+    var verifyUser = function (restaurant_id) {
         var user_is_verified = false;
-        if($rootScope.user.app_metadata.authorization.groups[0] == 'USER' || $rootScope.user.app_metadata.authorization.groups[0] == 'SUPER_USER') {
+        if ($rootScope.user.app_metadata.authorization.groups[0] == 'USER' || $rootScope.user.app_metadata.authorization.groups[0] == 'SUPER_USER') {
             var keepGoing = true;
-            angular.forEach($rootScope.user.user_metadata.restaurants,function(restaurant){
-                if(keepGoing && restaurant.id == restaurant_id) {
+            angular.forEach($rootScope.user.user_metadata.restaurants, function (restaurant) {
+                if (keepGoing && restaurant.id == restaurant_id) {
                     user_is_verified = true;
                     keepGoing = false;
                 }
 
             });
             return user_is_verified;
-        }else {
+        } else {
             return true;
         }
     };
 
-    if(!verifyUser($scope.$stateParams.id)) {
+    if (!verifyUser($scope.$stateParams.id)) {
         not_verified_action();
     }
 
     var checkForUserAuthListner = $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-        if(toState.name.indexOf("restaurantView") > -1) {
-            verifyUser(toParams.id) ? angular.noop():not_verified_action();
+        if (toState.name.indexOf("restaurantView") > -1) {
+            verifyUser(toParams.id) ? angular.noop() : not_verified_action();
         }
     });
 
 
-    $scope.$on('$destroy', function() {
+    $scope.$on('$destroy', function () {
         checkForUserAuthListner();
     });
 
@@ -162,19 +189,19 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
                 response.fetchTotalCovers = responsePadding(response.fetchTotalCovers);
 
 
-                $scope.params.total_covers = response.fetchTotalCovers.data.reduce(function(current_value,next_value,ind,arry){
+                $scope.params.total_covers = response.fetchTotalCovers.data.reduce(function (current_value, next_value, ind, arry) {
                     return Number(current_value) + Number(next_value);
-                },0);
+                }, 0);
                 $scope.params.total_covers = Math.round($scope.params.total_covers);
 
 
-                $scope.params.total_revenues = response.fetchTotalRevenues.data.reduce(function(current_value,next_value,ind,arry){
+                $scope.params.total_revenues = response.fetchTotalRevenues.data.reduce(function (current_value, next_value, ind, arry) {
                     return Number(current_value) + Number(next_value);
-                },0);
+                }, 0);
                 $scope.params.total_revenues = Math.round($scope.params.total_revenues);
 
                 $scope.params.average = ($scope.params.total_revenues / $scope.params.total_covers);
-                $scope.params.average > -1 ?  $scope.params.average = $scope.params.average.toFixed(2) : $scope.params.average = 0.00;
+                $scope.params.average > -1 ? $scope.params.average = $scope.params.average.toFixed(2) : $scope.params.average = 0.00;
 
 
                 $scope.labels = response.fetchTotalRevenues.labels;
@@ -182,18 +209,18 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
                 $scope.data.push(response.fetchTotalRevenues.data);
                 $scope.data.push(response.fetchTotalCovers.data);
 
-                angular.copy(response.fetchTotalRevenues.labels,$scope.params.revenue_labels);
-                angular.copy(response.fetchTotalRevenues.data,$scope.params.revenue_data);
+                angular.copy(response.fetchTotalRevenues.labels, $scope.params.revenue_labels);
+                angular.copy(response.fetchTotalRevenues.data, $scope.params.revenue_data);
 
 
-                angular.copy(response.fetchTotalCovers.labels,$scope.params.covers_labels);
-                angular.copy(response.fetchTotalCovers.data,$scope.params.covers_data);
+                angular.copy(response.fetchTotalCovers.labels, $scope.params.covers_labels);
+                angular.copy(response.fetchTotalCovers.data, $scope.params.covers_data);
 
                 $scope.params.fetching_data = false;
             });
         };
 
-        var init = function(){
+        var init = function () {
             $scope.params = {
                 chartsJs: {
                     datasetOverride: [
@@ -201,7 +228,7 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
                             label: 'Total Revenues',
                             borderWidth: 1,
                             type: 'bar',
-                            yAxisID:'A'
+                            yAxisID: 'A'
                         },
                         {
                             label: 'Total Counts',
@@ -209,10 +236,10 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
                             hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                             hoverBorderColor: 'rgba(255,99,132,1)',
                             type: 'line',
-                            yAxisID:'B'
+                            yAxisID: 'B'
                         }
                     ],
-                    options:{
+                    options: {
                         scales: {
                             yAxes: [{
                                 id: 'A',
@@ -238,14 +265,14 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
                 current_period: null,
                 current_year: (new Date().getFullYear()),
                 fetching_data: true,
-                total_covers : null,
-                total_revenues : null,
-                average:null,
-                refresh_signal : 'restaurant-revenue-cover-year-refresh',
-                revenue_labels:[],
-                revenue_data:[],
-                covers_labels:[],
-                covers_data:[],
+                total_covers: null,
+                total_revenues: null,
+                average: null,
+                refresh_signal: 'restaurant-revenue-cover-year-refresh',
+                revenue_labels: [],
+                revenue_data: [],
+                covers_labels: [],
+                covers_data: [],
                 period: (new Date().getFullYear())
             };
             fetchChartData();
@@ -271,7 +298,7 @@ app.controller('restaurantRevenueCoverMonth', ["$scope", "restaurantCtrlService"
                         label: 'Total Revenues',
                         borderWidth: 1,
                         type: 'bar',
-                        yAxisID:'A'
+                        yAxisID: 'A'
                     },
                     {
                         label: 'Total Counts',
@@ -279,10 +306,10 @@ app.controller('restaurantRevenueCoverMonth', ["$scope", "restaurantCtrlService"
                         hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                         hoverBorderColor: 'rgba(255,99,132,1)',
                         type: 'line',
-                        yAxisID:'B'
+                        yAxisID: 'B'
                     }
                 ],
-                options:{
+                options: {
                     scales: {
                         yAxes: [{
                             id: 'A',
@@ -308,14 +335,14 @@ app.controller('restaurantRevenueCoverMonth', ["$scope", "restaurantCtrlService"
             current_period: null,
             current_month: (new Date().getMonth()) + 1,
             fetching_data: true,
-            total_covers : null,
-            total_revenues : null,
-            refresh_signal : 'restaurant-revenue-cover-month-refresh',
-            average : null,
-            revenue_labels:[],
-            revenue_data:[],
-            covers_labels:[],
-            covers_data:[],
+            total_covers: null,
+            total_revenues: null,
+            refresh_signal: 'restaurant-revenue-cover-month-refresh',
+            average: null,
+            revenue_labels: [],
+            revenue_data: [],
+            covers_labels: [],
+            covers_data: [],
             period: (new Date().getMonth()) + 1
         };
 
@@ -340,37 +367,37 @@ app.controller('restaurantRevenueCoverMonth', ["$scope", "restaurantCtrlService"
                 response.fetchTotalRevenues = responsePadding(response.fetchTotalRevenues);
                 response.fetchTotalCovers = responsePadding(response.fetchTotalCovers);
 
-                $scope.params.total_covers = response.fetchTotalCovers.data.reduce(function(current_value,next_value,ind,arry){
+                $scope.params.total_covers = response.fetchTotalCovers.data.reduce(function (current_value, next_value, ind, arry) {
                     return Number(current_value) + Number(next_value);
-                },0);
+                }, 0);
                 $scope.params.total_covers = Math.round($scope.params.total_covers);
 
-                $scope.params.total_revenues = response.fetchTotalRevenues.data.reduce(function(current_value,next_value,ind,arry){
+                $scope.params.total_revenues = response.fetchTotalRevenues.data.reduce(function (current_value, next_value, ind, arry) {
                     return Number(current_value) + Number(next_value);
-                },0);
+                }, 0);
                 $scope.params.total_revenues = Math.round($scope.params.total_revenues);
 
                 $scope.params.average = ($scope.params.total_revenues / $scope.params.total_covers);
-                $scope.params.average > -1 ?  $scope.params.average = $scope.params.average.toFixed(2) : $scope.params.average = 0.00;
+                $scope.params.average > -1 ? $scope.params.average = $scope.params.average.toFixed(2) : $scope.params.average = 0.00;
 
                 $scope.labels = response.fetchTotalRevenues.labels;
                 $scope.data = [];
                 $scope.data.push(response.fetchTotalRevenues.data);
                 $scope.data.push(response.fetchTotalCovers.data);
 
-                angular.copy(response.fetchTotalRevenues.labels,$scope.params.revenue_labels);
-                angular.copy(response.fetchTotalRevenues.data,$scope.params.revenue_data);
+                angular.copy(response.fetchTotalRevenues.labels, $scope.params.revenue_labels);
+                angular.copy(response.fetchTotalRevenues.data, $scope.params.revenue_data);
 
 
-                angular.copy(response.fetchTotalCovers.labels,$scope.params.covers_labels);
-                angular.copy(response.fetchTotalCovers.data,$scope.params.covers_data);
+                angular.copy(response.fetchTotalCovers.labels, $scope.params.covers_labels);
+                angular.copy(response.fetchTotalCovers.data, $scope.params.covers_data);
 
                 $scope.params.fetching_data = false;
 
             });
         };
 
-        var init = function(){
+        var init = function () {
             fetchChartData();
         };
 
@@ -586,10 +613,7 @@ app.controller('restaurantBookATableWeek', ["$scope", "restaurantCtrlService", '
                 });
 
 
-
                 $scope.params.eventSources = [[], $scope.params.bookings, $scope.params.covers, $scope.params.cancelled];
-
-
 
 
                 $scope.params.fetching_data = false;
