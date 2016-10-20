@@ -12,30 +12,31 @@ app.filter('monthName', [function () {
 }]);
 app.filter('abs', function () {
     return function (val) {
-        val = val || 0
+        val = val || 0;
         return Math.abs(val);
     }
 });
 
-app.controller('restaurantNightlyFeedbackForm', ['$scope', 'ngNotify',
-    function ($scope, ngNotify) {
+app.controller('restaurantNightlyFeedbackForm', ['$scope', 'ngNotify', 'restaurantCtrlService', '$stateParams',
+    function ($scope, ngNotify, restaurantCtrlService, $stateParams) {
 
         $scope.params = {
             formData: {
                 date: new Date()
             },
-            opened:false,
-            dateOptions:{
+            opened: false,
+            dateOptions: {
                 dateDisabled: disabled,
                 formatYear: 'yy',
                 maxDate: new Date(2020, 5, 22),
                 minDate: new Date(),
                 startingDay: 1
             },
-            altInputFormats:['M!/d!/yyyy']
+            altInputFormats: ['M!/d!/yyyy'],
+            show: restaurantCtrlService.restaurant_nightly_feedback_forms[$stateParams.id]
         };
 
-        $scope.toggleDatePopover = function(){
+        $scope.toggleDatePopover = function () {
             $scope.params.opened = !$scope.params.opened;
         };
 
@@ -46,6 +47,7 @@ app.controller('restaurantNightlyFeedbackForm', ['$scope', 'ngNotify',
                 mode = data.mode;
             return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
         }
+
         $scope.currentStep = 1;
 
         // Initial Value
@@ -57,6 +59,11 @@ app.controller('restaurantNightlyFeedbackForm', ['$scope', 'ngNotify',
 
                 if (form.$valid) {
                     form.$setPristine();
+                    ngNotify.dismiss();
+                    if ($scope.currentStep == 3) {
+                        this.submit();
+                        return;
+                    }
                     nextStep();
                 } else {
                     var field = null, firstError = null;
@@ -95,6 +102,15 @@ app.controller('restaurantNightlyFeedbackForm', ['$scope', 'ngNotify',
                 }
             },
             submit: function () {
+                restaurantCtrlService.restaurant_nightly_feedback_forms_post({
+                    restaurant_id: $stateParams.id,
+                    data: $scope.params.formData
+                }).then(function () {
+                    nextStep();
+                }, function () {
+                    errorMessage('Something went.Please try again');
+                });
+
 
             },
             reset: function () {
@@ -112,9 +128,10 @@ app.controller('restaurantNightlyFeedbackForm', ['$scope', 'ngNotify',
         var goToStep = function (i) {
             $scope.currentStep = i;
         };
-        var errorMessage = function (i) {
+        var errorMessage = function (message) {
+            message = message || 'please complete the form in this step before proceeding';
 
-            ngNotify.set('please complete the form in this step before proceeding', {
+            ngNotify.set(message, {
                 theme: 'pure',
                 position: 'top',
                 type: 'error',

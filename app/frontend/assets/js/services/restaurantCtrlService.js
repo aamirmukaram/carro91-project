@@ -1408,6 +1408,74 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
         }
     };
 
+    var restaurant_nightly_feedback_forms = {
+        1: {
+            date: true,
+            lunchCoversStartDay: true,
+            dinnerCoversStartDay: true,
+            afternoonTeaCover: true,
+            brunchCovers: true,
+            lunchCoversWalkIns: true,
+            dinnerCoversWalkIns: true,
+            residentDiners: true,
+            lunchCoversTotal: true,
+            dinnerCoversTotal: true,
+            roomServiceCovers: true,
+            lunchFoodRevenues: true,
+            dinnerFoodRevenue: true,
+            barFoodRevenue: true,
+            afternoonTeaRevenue: true,
+            lunchLiquorRevenue: true,
+            dinnerLiquorRevenue: true,
+            barLiquorRevenue: true,
+            commentarySales: true,
+            commentaryPayroll: true,
+            lunchCoversNoShow: true,
+            commentaryMaintenanceIssues: true,
+            commentaryPeople: true,
+            commentaryProduct: true,
+            commentaryPersonName: true,
+            commentaryEmail: true,
+            commentaryMarketing: true,
+            dinnerCoversNoShow: true,
+            inHouseGuests: true
+
+        },
+        2: {
+            date: true,
+            lunchCoversStartDay: true,
+            dinnerCoversStartDay: true,
+            afternoonTeaCover: true,
+            brunchCovers: true,
+            lunchCoversWalkIns: true,
+            dinnerCoversWalkIns: true,
+            residentDiners: true,
+            lunchCoversTotal: true,
+            dinnerCoversTotal: true,
+            roomServiceCovers: true,
+            lunchFoodRevenues: true,
+            dinnerFoodRevenue: true,
+            barFoodRevenue: true,
+            afternoonTeaRevenue: true,
+            lunchLiquorRevenue: true,
+            dinnerLiquorRevenue: true,
+            barLiquorRevenue: true,
+            commentarySales: true,
+            commentaryPayroll: true,
+            lunchCoversNoShow: true,
+            commentaryMaintenanceIssues: true,
+            commentaryPeople: true,
+            commentaryProduct: true,
+            commentaryPersonName: true,
+            commentaryEmail: true,
+            commentaryMarketing: true,
+            dinnerCoversNoShow: true,
+            inHouseGuests: true
+
+        }
+
+    };
+
 
     return {
         fetchTotalRevenues: function (params, doRefresh) {
@@ -1663,6 +1731,15 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
 
             return data;
         },
-        restaurant_iframes: restaurant_iframes
+        restaurant_iframes: restaurant_iframes,
+        restaurant_nightly_feedback_forms: restaurant_nightly_feedback_forms,
+        restaurant_nightly_feedback_forms_post: function (data) {
+            return $http({
+                url: $rootScope.pathToBackend + "restaurant/form/nightly-feedback/post.php",
+                method: "POST",
+                data: data
+            })
+
+        }
     }
 }]);
