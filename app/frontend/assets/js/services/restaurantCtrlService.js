@@ -510,7 +510,7 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
             },
             salesMix: {
                 1: {
-                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/150ta9khDf2lBF_Uyg_BMkcpCff7PjQToEOyz4CM-gyU/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
                 },
                 2: {
                     iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
@@ -1265,7 +1265,7 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
                 salesMix: {
                     2016: {
                         1: {
-                            iframe: '<iframe src="https://docs.google.com/spreadsheets/d/12cpxmFc-0ZMQRe_nItu-vDyC4T0HFRV-o_PuUOpsOnI/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                            iframe: '<iframe src="https://docs.google.com/spreadsheets/d/150ta9khDf2lBF_Uyg_BMkcpCff7PjQToEOyz4CM-gyU/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
                         },
                         2: {
                             iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1RXzLJ1R7ZZ7wX8fg90OBuoX3LJiHfayTImGLD7zpxaI/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
