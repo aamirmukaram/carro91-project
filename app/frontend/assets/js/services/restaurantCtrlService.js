@@ -1408,6 +1408,24 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
         }
     };
 
+    var brand_standards_iframes = {
+        1: {
+            iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQUzdaRnRORl9QT2M#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+        },
+        2: {
+            iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQUzdaRnRORl9QT2M#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+        }
+    }
+
+    var food_standards_iframes = {
+        1: {
+            iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQUzdaRnRORl9QT2M#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+        },
+        2: {
+            iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQUzdaRnRORl9QT2M#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+        }
+    }
+
     var restaurant_nightly_feedback_forms = {
         1: {
             date: true,
