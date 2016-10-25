@@ -21,139 +21,139 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
         iframe_with_button: {
             nightlyFeedback: {
                 1: {
-                    action: 'Chester',
+                    action: 'Current',
                     value: 1
                 },
                 2: {
-                    action: 'Bristol',
+                    action: 'Current',
                     value: 2
                 },
                 3: {
-                    action: 'Liverpool',
+                    action: 'Current',
                     value: 3
                 },
                 4: {
-                    action: 'Birmingham',
+                    action: 'Current',
                     value: 4
                 },
                 5: {
-                    action: 'Exeter',
+                    action: 'Current',
                     value: 5
                 },
                 6: {
-                    action: 'Hoylake',
+                    action: 'Current',
                     value: 6
                 },
                 7: {
-                    action: 'Newcastle',
+                    action: 'Current',
                     value: 7
                 },
                 8: {
-                    action: 'Sheffield',
+                    action: 'Current',
                     value: 8
                 },
                 9: {
-                    action: 'Cambridge',
+                    action: 'Current',
                     value: 9
                 },
                 10: {
-                    action: 'Syon',
+                    action: 'Current',
                     value: 10
                 },
                 11: {
-                    action: 'Stratford',
+                    action: 'Current',
                     value: 11
                 },
                 12: {
-                    action: 'Glasgow',
+                    action: 'Current',
                     value: 12
                 },
                 13: {
-                    action: 'Manchester',
+                    action: 'Current',
                     value: 13
                 },
                 14: {
-                    action: 'Leicester',
+                    action: 'Current',
                     value: 14
                 },
                 15: {
-                    action: 'Oxford',
+                    action: 'Current',
                     value: 15
                 },
                 16: {
-                    action: 'Kenilworth',
+                    action: 'Current',
                     value: 16
                 },
                 17: {
-                    action: 'London_Bank',
+                    action: 'Current',
                     value: 17
                 },
                 18: {
-                    action: 'Kegworth',
+                    action: 'Current',
                     value: 18
                 },
                 19: {
-                    action: 'Birmingham_Airport',
+                    action: 'Current',
                     value: 19
                 },
                 20: {
-                    action: 'Hinckley_Island',
+                    action: 'Current',
                     value: 20
                 },
                 21: {
-                    action: 'Nottingham',
+                    action: 'Current',
                     value: 21
                 },
                 22: {
-                    action: 'Camberley',
+                    action: 'Current',
                     value: 22
                 },
                 23: {
-                    action: 'Belfast',
+                    action: 'Current',
                     value: 23
                 },
                 24: {
-                    action: 'Hotel_La_Tour',
+                    action: 'Current',
                     value: 24
                 },
                 25: {
-                    action: 'London_Bridge',
+                    action: 'Current',
                     value: 25
                 },
                 26: {
-                    action: 'Windsor',
+                    action: 'Current',
                     value: 26
                 },
                 27: {
-                    action: 'Islington',
+                    action: 'Current',
                     value: 27
                 },
                 28: {
-                    action: 'Bristol_B',
+                    action: 'Current',
                     value: 28
                 },
                 29: {
-                    action: 'Birmingham_B',
+                    action: 'Current',
                     value: 29
                 },
                 30: {
-                    action: 'Lincoln',
+                    action: 'Current',
                     value: 30
                 },
                 31: {
-                    action: 'Edinburgh',
+                    action: 'Current',
                     value: 31
                 },
                 32: {
-                    action: 'Brimingham_B_Van',
+                    action: 'Current',
                     value: 32
                 },
                 33: {
-                    action: 'Bloomsbury',
+                    action: 'Current',
                     value: 33
                 },
                 34: {
-                    action: 'Southampton',
+                    action: 'Current',
                     value: 34
                 }
 
@@ -161,139 +161,139 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
             },
             salesMix: {
                 1: {
-                    action: 'SM_Chester',
+                    action: 'SM_SH',
                     value: 1
                 },
                 2: {
-                    action: 'SM_Bristol',
+                    action: 'SM_SH',
                     value: 2
                 },
                 3: {
-                    action: 'SM_Liverpool',
+                    action: 'SM_SH',
                     value: 3
                 },
                 4: {
-                    action: 'SM_Birmingham',
+                    action: 'SM_SH',
                     value: 4
                 },
                 5: {
-                    action: 'SM_Exeter',
+                    action: 'SM_NYI',
                     value: 5
                 },
                 6: {
-                    action: 'SM_Hoylake',
+                    action: 'SM_NYI',
                     value: 6
                 },
                 7: {
-                    action: 'SM_Newcastle',
+                    action: 'SM_SH',
                     value: 7
                 },
                 8: {
-                    action: 'SM_Sheffield',
+                    action: 'SM_NYI',
                     value: 8
                 },
                 9: {
-                    action: 'SM_Cambridge',
+                    action: 'SM_SH',
                     value: 9
                 },
                 10: {
-                    action: 'SM_Syon',
+                    action: 'SM_SH',
                     value: 10
                 },
                 11: {
-                    action: 'SM_Stratford',
+                    action: 'SM_NYI',
                     value: 11
                 },
                 12: {
-                    action: 'SM_Glasgow',
+                    action: 'SM_SH',
                     value: 12
                 },
                 13: {
-                    action: 'SM_Manchester',
+                    action: 'SM_NYI',
                     value: 13
                 },
                 14: {
-                    action: 'SM_Leicester',
+                    action: 'SM_NYI',
                     value: 14
                 },
                 15: {
-                    action: 'SM_Oxford',
+                    action: 'SM_NYI',
                     value: 15
                 },
                 16: {
-                    action: 'SM_Kenilworth',
+                    action: 'SM_NYI',
                     value: 16
                 },
                 17: {
-                    action: 'SM_London_Bank',
+                    action: 'SM_WSJ',
                     value: 17
                 },
                 18: {
-                    action: 'SM_Kegworth',
+                    action: 'SM_NYI',
                     value: 18
                 },
                 19: {
-                    action: 'SM_Birmingham_Airport',
+                    action: 'SM_NYI',
                     value: 19
                 },
                 20: {
-                    action: 'SM_Hinckley_Island',
+                    action: 'SM_SH',
                     value: 20
                 },
                 21: {
-                    action: 'SM_Nottingham',
+                    action: 'SM_SH',
                     value: 21
                 },
                 22: {
-                    action: 'SM_Camberley',
+                    action: 'SM_WSJ',
                     value: 22
                 },
                 23: {
-                    action: 'SM_Belfast',
+                    action: 'SM_SH',
                     value: 23
                 },
                 24: {
-                    action: 'SM_Hotel_La_Tour',
+                    action: 'SM_CH',
                     value: 24
                 },
                 25: {
-                    action: 'SM_London_Bridge',
+                    action: 'SM_NYI',
                     value: 25
                 },
                 26: {
-                    action: 'SM_Windsor',
+                    action: 'SM_SH',
                     value: 26
                 },
                 27: {
-                    action: 'SM_Islington',
+                    action: 'SM_SH',
                     value: 27
                 },
                 28: {
-                    action: 'SM_Bristol_B',
+                    action: 'SM_BAR',
                     value: 28
                 },
                 29: {
-                    action: 'SM_Birmingham_B',
+                    action: 'SM_BAR',
                     value: 29
                 },
                 30: {
-                    action: 'SM_Lincoln',
+                    action: 'SM_SH',
                     value: 30
                 },
                 31: {
-                    action: 'SM_Edinburgh',
+                    action: 'SM_SH',
                     value: 31
                 },
                 32: {
-                    action: 'SM_Brimingham_B_Van',
+                    action: 'SM_BAR',
                     value: 32
                 },
                 33: {
-                    action: 'SM_Bloomsbury',
+                    action: 'SM_SH',
                     value: 33
                 },
                 34: {
-                    action: 'SM_Southampton',
+                    action: 'SM_SH',
                     value: 34
                 }
 
@@ -728,7 +728,7 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
             },
             digitalPerformance: {
                 1: {
-                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
+                    iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1ZOha5EtAYSGriZ65pHY-zGeHsJfT5EUaopXwrX3quUg/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
                 },
                 2: {
                     iframe: '<iframe src="https://docs.google.com/spreadsheets/d/1jqNVESNrtG8VmXZOHsYK2xWO8Xw7BiAmT4W2-calq5E/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>'
