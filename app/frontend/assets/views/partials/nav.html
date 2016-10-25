@@ -221,10 +221,25 @@
                     <letter-icon data="M" char-count="1" size="sm"></letter-icon>
                 </div>
                 <div class="item-inner">
-                    <span class="title"> Marketing </span>
+                    <span class="title"> Marketing </span><i class="text-green icon-arrow"></i>
                 </div>
             </div>
         </a>
+        <ul class="sub-menu">
+            <li ui-sref-active="active">
+                <a href="javascript:;">Menu 1<i class="text-green icon-arrow"></i> </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="javascript:;"> Menu 2<i class="text-green icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+                            <li ui-sref-active="active">
+                                <a href=""><span>Menu 3</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </li>
 
     <li ui-sref-active="active">
