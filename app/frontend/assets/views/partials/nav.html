@@ -10,7 +10,7 @@
 <ul class="main-navigation-menu" ng-if="!params.fetching_data">
 
     <!-- Dashboard -->
-    <li ui-sref-active="active" permission permission-only="['MANAGEMENT','ADMIN']">
+    <li ui-sref-active="active" permission permission-only="['ADMIN']">
         <a ui-sref="app.dashboard">
             <div class="item-content">
                 <div class="item-media">
@@ -24,7 +24,7 @@
         </a>
     </li>
 
-    <li ng-class="{'active open':$state.includes('app.brandView')}"  permission permission-only="['MANAGEMENT','ADMIN']">
+    <li ng-class="{'active open':$state.includes('app.brandView')}"  permission permission-only="['ADMIN']">
         <a href="javascript:void(0)">
             <div class="item-content">
                 <div class="item-media">
@@ -102,7 +102,7 @@
                             <li permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
                                 <a href="javascript:;"> <span>Reports</span> <i class="text-green icon-arrow"></i> </a>
                                 <ul class="sub-menu">
-                                    <li ui-sref-active="active">
+                                    <li ui-sref-active="active" permission permission-only="['ADMIN']">
                                         <a href="" ui-sref="app.restaurantView.iframWithYear({id:restaurant.id,type:'compliance'})"> Compliance Report  </a>
                                     </li>
                                     <li ui-sref-active="active">
@@ -160,7 +160,7 @@
 
 
 
-    <li ui-sref-active="active"  permission permission-only="['MANAGEMENT','ADMIN']">
+    <li ui-sref-active="active"  permission permission-only="['ADMIN']">
         <a ui-sref="app.users">
             <div class="item-content">
                 <div class="item-media">
@@ -718,7 +718,7 @@
     <span>Core Features</span>
 </div>
 <ul class="folders" ng-if="!params.fetching_data">
-    <li permission permission-only="['MANAGEMENT','ADMIN']">
+    <li permission permission-only="['ADMIN']">
         <a ui-sref="landing.welcome">
             <div class="item-content">
                 <div class="item-media">
