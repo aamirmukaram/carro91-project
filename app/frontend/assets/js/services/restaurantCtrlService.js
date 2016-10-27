@@ -1601,6 +1601,8 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
 
     };
 
+    var marketing_iframes = {};
+
 
     return {
         fetchTotalRevenues: function (params, doRefresh) {
