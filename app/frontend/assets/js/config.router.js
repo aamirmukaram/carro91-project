@@ -164,6 +164,30 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             ncyBreadcrumb: {
                 label: 'Brand'
             }
+        }).state('app.help', {
+            url: "/help",
+            templateUrl: "assets/views/restaurant_help.html",
+            resolve: loadSequence('d3', 'ui.knob', 'countTo', 'restaurantCtrl'),
+            title: 'Help',
+            ncyBreadcrumb: {
+                label: 'Help'
+            }
+        }).state('app.brands_standard', {
+            url: "/brands-standard",
+            templateUrl: "assets/views/restaurant_brands_standard.html",
+            resolve: loadSequence('d3', 'ui.knob', 'countTo', 'restaurantCtrl'),
+            title: 'Brands Standard',
+            ncyBreadcrumb: {
+                label: 'Brands Standard'
+            }
+        }).state('app.food_standard', {
+            url: "/food-standard",
+            templateUrl: "assets/views/restaurant_food_standard.html",
+            resolve: loadSequence('d3', 'ui.knob', 'countTo', 'restaurantCtrl'),
+            title: 'Food Standard',
+            ncyBreadcrumb: {
+                label: 'Food Standard'
+            }
         }).state('app.pagelayouts', {
             url: '/ui',
             template: '<div ui-view class="fade-in-up"></div>',

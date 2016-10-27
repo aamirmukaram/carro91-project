@@ -261,7 +261,12 @@ app.controller('restaurantRevenueCoverYear', ["$scope", "restaurantCtrlService",
                             yAxes: [{
                                 id: 'A',
                                 type: 'linear',
-                                position: 'left'
+                                position: 'left',
+                                ticks: {
+                                    callback: function (value, index, values) {
+                                        return '£ ' + value;
+                                    }
+                                }
                             }, {
                                 id: 'B',
                                 type: 'linear',
@@ -331,7 +336,12 @@ app.controller('restaurantRevenueCoverMonth', ["$scope", "restaurantCtrlService"
                         yAxes: [{
                             id: 'A',
                             type: 'linear',
-                            position: 'left'
+                            position: 'left',
+                            ticks: {
+                                callback: function (value, index, values) {
+                                    return '£ ' + value;
+                                }
+                            }
                         }, {
                             id: 'B',
                             type: 'linear',
