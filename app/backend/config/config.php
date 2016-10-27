@@ -17,10 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 //$password = "redhat@123";
 //$dbname = "aamirmuk_caro91";
 
-$servername = "a2ls15.a2hosting.com";
-$username = "gateway2_dbuser";
-$password = "D@FFYduck2";
-$dbname = "gateway2_restaurant";
+//$servername = "a2ls15.a2hosting.com";
+//$username = "gateway2_dbuser";
+//$password = "D@FFYduck2";
+//$dbname = "gateway2_restaurant";
+
+$adminEmail = "ADMIN EMAIL WHERE EMAIL NOTIFICATION WILL BE SENT";
+$adminEmailPassword = "PASSWORD FOR ABOVE EMAIL";
+$adminName = "NAME OF A PERSON";
 
 error_reporting( E_ALL );
 

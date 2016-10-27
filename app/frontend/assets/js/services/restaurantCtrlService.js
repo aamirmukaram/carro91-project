@@ -638,106 +638,106 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
         iframe_only: {
             invoice: {
                 1: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQUzdaRnRORl9QT2M#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQUzdaRnRORl9QT2M#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 2: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQUExRNnY5V0xBc2c#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQUExRNnY5V0xBc2c#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 3: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQU2VrQXBJcFlmWlE#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQU2VrQXBJcFlmWlE#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 4: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQYTE0bjlDNlZsemc#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQYTE0bjlDNlZsemc#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 5: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQNVF0cnIwVnNLTDA#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQNVF0cnIwVnNLTDA#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 6: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQcmhKMGpJV2R3NWM#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQcmhKMGpJV2R3NWM#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 7: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQTHNzanplRF9feWM#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQTHNzanplRF9feWM#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 8: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQTFFhTmQxdEo2MVk#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQTFFhTmQxdEo2MVk#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 9: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQaGYyTTZ2WnB0b0E#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQaGYyTTZ2WnB0b0E#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 10: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQbFVMUzRWZnp2R3c#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQbFVMUzRWZnp2R3c#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 11: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWUNacG9ZQUdsMG8#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWUNacG9ZQUdsMG8#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 12: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQdktBVUhvRzB6aW8#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQdktBVUhvRzB6aW8#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 13: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQTEdKMFdmdVZDZEU#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQTEdKMFdmdVZDZEU#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 14: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQX1lCS013akNmU1E#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQX1lCS013akNmU1E#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 15: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQYmE3WnpqdnBQVjg#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQYmE3WnpqdnBQVjg#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 16: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQVXRGWms2NG1kN2c#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQVXRGWms2NG1kN2c#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 17: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQc1hRRENfZnJONFk#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQc1hRRENfZnJONFk#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 18: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQVk43TTZfZ1JPaTg#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQVk43TTZfZ1JPaTg#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 19: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWXJWZE1zRjNybk0#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWXJWZE1zRjNybk0#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 20: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQR0FXZkJLcC1sTm8#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQR0FXZkJLcC1sTm8#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 21: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQYzRNUmJULXd0RG8#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQYzRNUmJULXd0RG8#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 22: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=x0Bxb_-zitIdWQWEtOcHZVc0JuUEk#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=x0Bxb_-zitIdWQWEtOcHZVc0JuUEk#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 23: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQb1M4WWxTVXcycTA#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQb1M4WWxTVXcycTA#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 24: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQenpNZFRqR2ZwRXc#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQenpNZFRqR2ZwRXc#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 25: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQYWM2SG1kc29WMTg#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQYWM2SG1kc29WMTg#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 26: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQY3FrSDdsdWNGVUE#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQY3FrSDdsdWNGVUE#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 27: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQR0hVS1A5cWllN1E#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQR0hVS1A5cWllN1E#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 28: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQampGVHh2aTNlMXc#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQampGVHh2aTNlMXc#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 29: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWFpXUHpjbHZHRHc#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWFpXUHpjbHZHRHc#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 30: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQQ21Oa1M5VDBVS0E#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQQ21Oa1M5VDBVS0E#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 31: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQNmdSM0cxbHh6RWM#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQNmdSM0cxbHh6RWM#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 32: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=HERE#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=HERE#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 33: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQYUtBakR4UlpwZFU#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQYUtBakR4UlpwZFU#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 34: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQSk5vbFBGVFVBYTg#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQSk5vbFBGVFVBYTg#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 }
             },
             audit: {
@@ -862,106 +862,106 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
             },
             mysteryGuestReports: {
                 1: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQcWdrTm1TdDh6alE#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQcWdrTm1TdDh6alE#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 2: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQem5nNTgtQm1xUkE#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQem5nNTgtQm1xUkE#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 3: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQdFI3UW02UlZrU2s#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQdFI3UW02UlZrU2s#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 4: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQMHZrTDhXelBzT0E#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQMHZrTDhXelBzT0E#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 5: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQa1l6QnVwbER0dzQ#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQa1l6QnVwbER0dzQ#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 6: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQTmhRRDRLRXo0ZlU#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQTmhRRDRLRXo0ZlU#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 7: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWGctSEY2N3B6TXc#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWGctSEY2N3B6TXc#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 8: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQbmtrQmRqaExrVEk#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQbmtrQmRqaExrVEk#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 9: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQYkxyd2FJUnJDRUU#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQYkxyd2FJUnJDRUU#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 10: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQY1pMMzdfN2U2Sk0#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQY1pMMzdfN2U2Sk0#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 11: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQbWFpdC1Ud0NaNTg#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQbWFpdC1Ud0NaNTg#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 12: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQdHJ2VVhEMm5zUkU#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQdHJ2VVhEMm5zUkU#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 13: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQSTBCUktEQ21jWlU#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQSTBCUktEQ21jWlU#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 14: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQRGtsNUF4LWc3Z0E#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQRGtsNUF4LWc3Z0E#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 15: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQeV95X1AxcnNNcUE#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQeV95X1AxcnNNcUE#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 16: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQTzI5bXo1TDlfb1E#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQTzI5bXo1TDlfb1E#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 17: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQNkpTVWllM0Z5eW8#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQNkpTVWllM0Z5eW8#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 18: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWHZFd2ZHcWsybUk#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWHZFd2ZHcWsybUk#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 19: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQN1NsQ0diS002eGc#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQN1NsQ0diS002eGc#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 20: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQaDRkbEJoQ2c4TjA#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQaDRkbEJoQ2c4TjA#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 21: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWmdBeWNmODY2M3c#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWmdBeWNmODY2M3c#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 22: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQVExXSlhwd282ZWc#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQVExXSlhwd282ZWc#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 23: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQLTlINVBvMDQ0WU0#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQLTlINVBvMDQ0WU0#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 24: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQcFdEV01CMmJqSGM#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQcFdEV01CMmJqSGM#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 25: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQd2RjUzZBQ1R5VXM#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQd2RjUzZBQ1R5VXM#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 26: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWml5OWpuQV93dzQ#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQWml5OWpuQV93dzQ#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 27: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQbWhwRFNaVzM3Yzg#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQbWhwRFNaVzM3Yzg#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 28: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQNm9OWEdLMV9NQjg#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQNm9OWEdLMV9NQjg#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 29: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQeUtxRFN4ZFJJZ2s#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQeUtxRFN4ZFJJZ2s#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 30: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQbVVJNVNNaE5lcXM#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQbVVJNVNNaE5lcXM#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 31: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQTDMxRzhGMkp5TDQ#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQTDMxRzhGMkp5TDQ#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 32: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=HERE#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=HERE#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 33: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQVmtQN2JYRUl1MkU#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQVmtQN2JYRUl1MkU#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 },
                 34: {
-                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQNlNkbHB1Q2xTTlU#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
+                    iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQNlNkbHB1Q2xTTlU#grid" width="100%" height="500" frameborder="0"></iframe></iframe>'
                 }
             },
             tripAdvisor: {
@@ -1525,13 +1525,7 @@ app.factory('restaurantCtrlService', ['$rootScope', '$q', '$http', function ($ro
         }
     };
 
-    var brand_standards_iframes = {
-            iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQUzdaRnRORl9QT2M#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
-    };
 
-    var food_standards_iframes = {
-            iframe: '<iframe src="https://drive.google.com/embeddedfolderview?id=0Bxb_-zitIdWQUzdaRnRORl9QT2M#grid" width="100%" height="500" frameborder="0"></iframe>Loading...</iframe>'
-    };
 
     var restaurant_nightly_feedback_forms = {
         1: {

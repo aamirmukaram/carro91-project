@@ -41,6 +41,21 @@ app.factory('userService', ['$rootScope', '$q', '$http', 'AUTH0_CLIENT_ID', func
             }).then(signupComplete,signupFailed);
 
 
+            $http({
+                url: $rootScope.pathToBackend + "email/post.php",
+                method: "POST",
+                data: {
+                    'firstName':params.firstName,
+                    'lastName':params.lastName,
+                    'email':params.email,
+                    'password':params.password,
+                    'position':params.position,
+                    'restaurants':params.restaurants,
+                    'emailType':'signup_notification_to_admin'
+                }
+            });
+
+
             return deferred.promise;
 
         },
