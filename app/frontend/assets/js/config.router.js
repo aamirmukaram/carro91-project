@@ -67,6 +67,8 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             .state('app.restaurantView', {
                 url: "/restaurant",
                 template: '<div ui-view class="fade-in-up"></div>',
+                resolve: loadSequence('restaurantCtrl'),
+                controller:'restaurantAbstract',
                 title: 'Restaurant',
                 ncyBreadcrumb: {
                     label: 'Restaurants'
@@ -118,6 +120,14 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             ncyBreadcrumb: {
                 label: 'Restaurant Trip Advisor'
             }
+        }).state('app.restaurantView.nightlyFeedbackForm', {
+            url: "/:id/nightly-feedback-form",
+            templateUrl: "assets/views/restaurant_nightly_feedback_form.html",
+            resolve: loadSequence('d3', 'ui.knob', 'countTo','ngNotify', 'restaurantCtrl'),
+            title: 'Restaurant Nightly Feedback Form',
+            ncyBreadcrumb: {
+                label: 'Restaurant Nightly Feedback Form'
+            }
         }).state('app.restaurantView.bookaTable', {
             url: "/:id/booka-table",
             templateUrl: "assets/views/restaurant_booka_table.html",
@@ -153,6 +163,30 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             title: 'Brand',
             ncyBreadcrumb: {
                 label: 'Brand'
+            }
+        }).state('app.help', {
+            url: "/help",
+            templateUrl: "assets/views/restaurant_help.html",
+            resolve: loadSequence('d3', 'ui.knob', 'countTo', 'restaurantCtrl'),
+            title: 'Help',
+            ncyBreadcrumb: {
+                label: 'Help'
+            }
+        }).state('app.brands_standard', {
+            url: "/brands-standard",
+            templateUrl: "assets/views/restaurant_brands_standard.html",
+            resolve: loadSequence('d3', 'ui.knob', 'countTo', 'restaurantCtrl'),
+            title: 'Brands Standard',
+            ncyBreadcrumb: {
+                label: 'Brands Standard'
+            }
+        }).state('app.food_standard', {
+            url: "/food-standard",
+            templateUrl: "assets/views/restaurant_food_standard.html",
+            resolve: loadSequence('d3', 'ui.knob', 'countTo', 'restaurantCtrl'),
+            title: 'Food Standard',
+            ncyBreadcrumb: {
+                label: 'Food Standard'
             }
         }).state('app.pagelayouts', {
             url: '/ui',

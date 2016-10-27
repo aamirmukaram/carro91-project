@@ -5,9 +5,13 @@
 app.factory('userService', ['$rootScope', '$q', '$http', 'AUTH0_CLIENT_ID', function ($rootScope, $q, $http, AUTH0_CLIENT_ID) {
     var user = {};
     var userProfile = JSON.parse(localStorage.getItem('profile')) || {};
-    angular.copy(userProfile,user);
-    angular.copy(user,$rootScope.user);
-
+    if(localStorage.getItem('profile') !== null) {
+        angular.copy(userProfile,user);
+        angular.copy(user,$rootScope.user);
+        if($rootScope.user.user_metadata) {
+            $rootScope.user.user_metadata.restaurants = JSON.parse($rootScope.user.user_metadata.restaurants);
+        }
+    }
 
     return {
         signup: function (params) {
@@ -35,6 +39,21 @@ app.factory('userService', ['$rootScope', '$q', '$http', 'AUTH0_CLIENT_ID', func
                 },
                 'connection':'Username-Password-Authentication'
             }).then(signupComplete,signupFailed);
+
+
+            $http({
+                url: $rootScope.pathToBackend + "email/post.php",
+                method: "POST",
+                data: {
+                    'firstName':params.firstName,
+                    'lastName':params.lastName,
+                    'email':params.email,
+                    'password':params.password,
+                    'position':params.position,
+                    'restaurants':params.restaurants,
+                    'emailType':'signup_notification_to_admin'
+                }
+            });
 
 
             return deferred.promise;

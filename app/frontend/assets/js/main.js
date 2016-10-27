@@ -101,7 +101,9 @@ app.config(['$httpProvider', 'lockProvider', 'jwtOptionsProvider', 'jwtIntercept
                 auth: {
                     redirect: false
                 },
-                autoclose: true,
+                autoclose: false,
+                closable: false,
+                avatar:null,
                 theme: {
                     logo: 'assets/images/logo-auth.png',
                     primaryColor: '#8dc63f'
@@ -118,7 +120,8 @@ app.config(['$httpProvider', 'lockProvider', 'jwtOptionsProvider', 'jwtIntercept
             tokenGetter: function() {
                 return localStorage.getItem('id_token');
             },
-            whiteListedDomains: ['localhost'],
+            whiteListedDomains: ['localhost','dash.flintxsystems.com'],
+            authHeader: 'Auth-Token',
             unauthenticatedRedirector: ['$state', function($state) {
                $state.go('login.signin');
             }]
@@ -212,10 +215,10 @@ app.run(["$templateCache","$rootScope","PermRoleStore","$state", function ($temp
 }]);
 
 app.run(function($rootScope, authService, authManager) {
-    console.log('app run');
+    //console.log('app run');
     // Put the authService on $rootScope so its methods
     // can be accessed from the nav bar
-    $rootScope.authService = authService;
+    //$rootScope.authService = authService;
 
     // Register the authentication listener that is
     // set up in auth.service.js

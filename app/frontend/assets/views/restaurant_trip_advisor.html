@@ -7,14 +7,14 @@
 <!-- start: BASIC TABLE -->
 <div class="container-fluid container-fullw" ng-controller="restaurantTripAdvisorYear">
     <div ng-if="params.fetching_data">fetching data...</div>
-    <div class="row margin-bottom-15" ng-if="!params.fetching_data">
-        <div class="col-xs-6">
-            <a class="btn btn-wide btn-primary" href="" ng-click="params.changePeriod(-1)">{{params.period - 1}}</a>
-        </div>
-        <div class="col-xs-6" ng-if="params.period !== params.current_year">
-            <a class="btn btn-wide btn-primary pull-right" href="" ng-click="params.changePeriod(+1)">{{params.period + 1}}</i></a>
-        </div>
-    </div>
+    <!--<div class="row margin-bottom-15" ng-if="!params.fetching_data">-->
+        <!--<div class="col-xs-6">-->
+            <!--<a class="btn btn-wide btn-primary" href="" ng-click="params.changePeriod(-1)">{{params.period - 1}}</a>-->
+        <!--</div>-->
+        <!--<div class="col-xs-6" ng-if="params.period !== params.current_year">-->
+            <!--<a class="btn btn-wide btn-primary pull-right" href="" ng-click="params.changePeriod(+1)">{{params.period + 1}}</i></a>-->
+        <!--</div>-->
+    <!--</div>-->
     <div class="row" ng-if="!params.fetching_data">
         <div class="col-xs-12">
             <div class="panel panel-white">

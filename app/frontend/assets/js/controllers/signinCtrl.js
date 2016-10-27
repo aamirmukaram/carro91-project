@@ -76,7 +76,6 @@ app.controller('signinCtrl', ['$scope', 'userService','ngNotify','navCtrlService
 
             var changeState = $rootScope.$on('$stateChangeStart',
                 function(event, toState, toParams, fromState, fromParams){
-                    debugger;
                     authService.hideLoginWidget();
                     changeState();
                 })

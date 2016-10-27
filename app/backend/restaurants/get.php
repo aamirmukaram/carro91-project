@@ -1,7 +1,6 @@
 <?php
 require '../config/config.php';
 require '../helpers/helpers.php';
-require '../config/secure.php';
 
 $data = array();
 

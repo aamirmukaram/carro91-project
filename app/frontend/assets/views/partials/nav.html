@@ -10,7 +10,7 @@
 <ul class="main-navigation-menu" ng-if="!params.fetching_data">
 
     <!-- Dashboard -->
-    <li ui-sref-active="active" permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
+    <li ui-sref-active="active" permission permission-only="['ADMIN']">
         <a ui-sref="app.dashboard">
             <div class="item-content">
                 <div class="item-media">
@@ -24,7 +24,7 @@
         </a>
     </li>
 
-    <li ng-class="{'active open':$state.includes('app.brandView')}"  permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
+    <li ng-class="{'active open':$state.includes('app.brandView')}"  permission permission-only="['ADMIN']">
         <a href="javascript:void(0)">
             <div class="item-content">
                 <div class="item-media">
@@ -87,29 +87,29 @@
                                 <a href="" ui-sref="app.restaurantView.restaurant({id:restaurant.id})"> <span>Dashboard</span></a>
                             </li>
 
-                            <li>
+                            <li permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
                                 <a href="javascript:;"> <span>Finance</span> <i class="text-green icon-arrow"></i> </a>
                                 <ul class="sub-menu">
                                     <li ui-sref-active="active">
                                         <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'invoice'})"> Invoices  </a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'audit'})"> Audit  </a>
+                                        <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'GPTracker'})"> Missing Data </a>
                                     </li>
                                 </ul>
                             </li>
 
-                            <li>
+                            <li permission permission-only="['SUPER_USER','MANAGEMENT','ADMIN']">
                                 <a href="javascript:;"> <span>Reports</span> <i class="text-green icon-arrow"></i> </a>
                                 <ul class="sub-menu">
-                                    <li ui-sref-active="active">
+                                    <li ui-sref-active="active" permission permission-only="['ADMIN']">
                                         <a href="" ui-sref="app.restaurantView.iframWithYear({id:restaurant.id,type:'compliance'})"> Compliance Report  </a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'digitalPerformance'})"> Digital Performance Report </a>
+                                        <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'audit'})"> Audit  </a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'GPTracker'})"> GP Tracker </a>
+                                        <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'digitalPerformance'})"> Digital Performance Report </a>
                                     </li>
                                     <li ui-sref-active="active">
                                         <a href="" ui-sref="app.restaurantView.iframOnly({id:restaurant.id,type:'mysteryGuestReports'})"> Mystery Guest Reports   </a>
@@ -137,7 +137,7 @@
                                         <a href="" ui-sref="app.restaurantView.iframeWithButton({id:restaurant.id,type:'nightlyFeedback'})"> Nightly Feedback Upload  </a>
                                     </li>
                                     <li ui-sref-active="active">
-                                        <a href="" ui-sref="app.restaurantView.iframeWithForm({id:restaurant.id,type:'nightlyFeedback'})"> Nightly Feedback Form  </a>
+                                        <a href="" ui-sref="app.restaurantView.nightlyFeedbackForm({id:restaurant.id})"> Nightly Feedback Form  </a>
                                     </li>
                                     <li ui-sref-active="active">
                                         <a href="" ui-sref="app.restaurantView.iframeWithForm({id:restaurant.id,type:'adjustment'})"> Adjustment Form   </a>
@@ -160,7 +160,7 @@
 
 
 
-    <li ui-sref-active="active"  permission permission-only="['SUPER_USER','ADMIN']">
+    <li ui-sref-active="active"  permission permission-only="['ADMIN']">
         <a ui-sref="app.users">
             <div class="item-content">
                 <div class="item-media">
@@ -175,7 +175,7 @@
 
 
 
-    <li ui-sref-active="active"  permission permission-only="['SUPER_USER','ADMIN']">
+    <li ui-sref-active="active"  permission permission-only="['MANAGEMENT','ADMIN']">
         <a href="">
             <div class="item-content">
                 <div class="item-media">
@@ -189,7 +189,7 @@
     </li>
 
     <li ui-sref-active="active">
-        <a href="">
+        <a href="" ui-sref="app.brands_standard">
             <div class="item-content">
                 <div class="item-media">
                     <letter-icon data="BS" char-count="2" size="sm"></letter-icon>
@@ -202,7 +202,7 @@
     </li>
 
     <li ui-sref-active="active">
-        <a href="">
+        <a href="" ui-sref="app.food_standard">
             <div class="item-content">
                 <div class="item-media">
                     <letter-icon data="FS" char-count="2" size="sm"></letter-icon>
@@ -221,14 +221,396 @@
                     <letter-icon data="M" char-count="1" size="sm"></letter-icon>
                 </div>
                 <div class="item-inner">
-                    <span class="title"> Marketing </span>
+                    <span class="title"> Marketing </span><i class="text-green icon-arrow"></i>
                 </div>
             </div>
         </a>
+        <ul class="sub-menu">
+
+
+            <li ui-sref-active="active">
+                <a href="javascript:;">Images - Food & Drink<i class="text-green icon-arrow"></i> </a>
+                <ul class="sub-menu">
+
+
+                    <li>
+                        <a href="javascript:;">Afternoon Tea<i class="text-green icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+
+
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">Afternoon Tea<i class="text-green icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+
+
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:;">Afternoon Tea<i class="text-green icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+
+
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:;">Afternoon Tea<i class="text-green icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+
+
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:;">Afternoon Tea<i class="text-green icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+
+
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:;">Afternoon Tea<i class="text-green icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+
+
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+
+
+
+
+                    <li>
+                        <a href="javascript:;">Afternoon Tea<i class="text-green icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+
+
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+
+
+
+                </ul>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href=""><span>NYI - Afternoon Tea</span></a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href="javascript:;">Images - Food & Drink<i class="text-green icon-arrow"></i> </a>
+                <ul class="sub-menu">
+
+
+                    <li>
+                        <a href="javascript:;">Afternoon Tea<i class="text-green icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+
+
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">Afternoon Tea<i class="text-green icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+
+
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:;">Afternoon Tea<i class="text-green icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+
+
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:;">Afternoon Tea<i class="text-green icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+
+
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:;">Afternoon Tea<i class="text-green icon-arrow"></i> </a>
+                        <ul class="sub-menu">
+
+
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a href=""><span>NYI - Afternoon Tea</span></a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href=""><span>NYI - Afternoon Tea</span></a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href=""><span>NYI - Afternoon Tea</span></a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href=""><span>NYI - Afternoon Tea</span></a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href=""><span>NYI - Afternoon Tea</span></a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href=""><span>NYI - Afternoon Tea</span></a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href=""><span>NYI - Afternoon Tea</span></a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href=""><span>NYI - Afternoon Tea</span></a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href=""><span>NYI - Afternoon Tea</span></a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href=""><span>NYI - Afternoon Tea</span></a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href=""><span>NYI - Afternoon Tea</span></a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href=""><span>NYI - Afternoon Tea</span></a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a href=""><span>NYI - Afternoon Tea</span></a>
+            </li>
+
+
+        </ul>
     </li>
 
     <li ui-sref-active="active">
-        <a href="">
+        <a href="" ui-sref="app.help">
             <div class="item-content">
                 <div class="item-media">
                     <letter-icon data="?" char-count="1" size="sm"></letter-icon>
@@ -703,7 +1085,7 @@
     <span>Core Features</span>
 </div>
 <ul class="folders" ng-if="!params.fetching_data">
-    <li>
+    <li permission permission-only="['ADMIN']">
         <a ui-sref="landing.welcome">
             <div class="item-content">
                 <div class="item-media">
@@ -715,18 +1097,18 @@
             </div>
         </a>
     </li>
-    <li ui-sref-active="active" >
-        <a ui-sref="login.signin">
-            <div class="item-content">
-                <div class="item-media">
-                    <letter-icon data="Sign In" char-count="2" size="sm"></letter-icon>
-                </div>
-                <div class="item-inner">
-                    <span class="title"> Sign in </span>
-                </div>
-            </div>
-        </a>
-    </li>
+    <!--<li ui-sref-active="active" >-->
+        <!--<a ui-sref="login.signin">-->
+            <!--<div class="item-content">-->
+                <!--<div class="item-media">-->
+                    <!--<letter-icon data="Sign In" char-count="2" size="sm"></letter-icon>-->
+                <!--</div>-->
+                <!--<div class="item-inner">-->
+                    <!--<span class="title"> Sign in </span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</a>-->
+    <!--</li>-->
     <li >
         <a ui-sref="login.signin">
             <div class="item-content">

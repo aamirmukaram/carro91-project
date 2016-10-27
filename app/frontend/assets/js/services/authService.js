@@ -52,7 +52,7 @@ app.factory('authService', ['$rootScope', 'lock', 'authManager', '$state', 'user
     }
 
     function login() {
-        lock.show({autoclose: true});
+        lock.show();
     }
 
     // Logging out just requires removing the user's
@@ -80,9 +80,18 @@ app.factory('authService', ['$rootScope', 'lock', 'authManager', '$state', 'user
                 localStorage.setItem('profile', JSON.stringify(profile));
                 angular.copy(profile,userService.user);
                 angular.copy(profile,$rootScope.user);
+                if($rootScope.user.user_metadata) {
+                    $rootScope.user.user_metadata.restaurants = JSON.parse($rootScope.user.user_metadata.restaurants);
+                }
                 defineRoles();
+                lock.hide();
                 $timeout(function(){
-                    $state.go('app.dashboard');
+                    if($rootScope.user.app_metadata.authorization.groups[0] == 'USER' || $rootScope.user.app_metadata.authorization.groups[0] == 'SUPER_USER') {
+                        $state.go('app.restaurantView.restaurant',{id:$rootScope.user.user_metadata.restaurants[0].id});
+                    }
+                    else {
+                        $state.go('app.dashboard');
+                    }
                 },100);
             });
         });
