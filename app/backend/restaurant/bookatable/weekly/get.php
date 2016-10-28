@@ -21,6 +21,10 @@ if (isset($_GET['restaurant_id']) && is_numeric($_GET['restaurant_id'])) {
 
         $data = array();
 
+        // DEBUG CHANGE --v
+        $period = $period - 7;
+        //echo $sql; // Frank was here
+
         $sql = "SELECT DAYNAME(DATE(`booking_timestamp`)) as day_name, DATE_FORMAT(DATE(`booking_timestamp`),'%d') as date,
 		SUM(CASE WHEN `restaurant_bookatable`.`booking_status` = 'Booked' THEN 1 ELSE 0 END) AS `new_bookings` ,
 		SUM(CASE WHEN `restaurant_bookatable`.`booking_status` = 'Re Confirmed' THEN 1 ELSE 0 END) AS `re_booked` ,
@@ -33,6 +37,6 @@ if (isset($_GET['restaurant_id']) && is_numeric($_GET['restaurant_id'])) {
         while ($row = $result->fetch_assoc()) {
             $data[] = $row;
         }
-        echo json_encode(array('success' => true, 'data' => $data, 'message' => 'Your data has been fetched'));
+        echo json_encode(array('success' => true, 'data' => $data, 'message' => 'Your data has been fetched bookatable'));
     }
 }
