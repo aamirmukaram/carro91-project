@@ -22,9 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 //$password = "D@FFYduck2";
 //$dbname = "gateway2_restaurant";
 
-$adminEmail = "ADMIN EMAIL WHERE EMAIL NOTIFICATION WILL BE SENT";
-$adminEmailPassword = "PASSWORD FOR ABOVE EMAIL";
-$adminName = "NAME OF A PERSON";
+$adminEmail = "grahamecarrington@gmail.com";
+$adminEmailPassword = "fleming1981";
+$adminName = "Grahame Carrington";
 
 error_reporting( E_ALL );
 
