@@ -1,43 +1,26 @@
 'use strict';
-$(function () {
-    /* BOOTSNIPP FULLSCREEN FIX */
-    if (window.location == window.parent.location) {
-        $('#back-to-bootsnipp').removeClass('hide');
-    }
+app.directive('maxlength', function () {
+    return {
+        restrict: 'A',
+        link: function ($scope, $element, $attributes) {
 
+            var limit = $attributes.maxlength;
+            $element.bind('keyup', function (event) {
+                var element = $element.closest(".form-group");
 
-    $('[data-toggle="tooltip"]').tooltip();
+                element.toggleClass('has-warning', limit - $element.val().length <= 10);
+                element.toggleClass('has-error', $element.val().length >= limit);
+            });
 
-    $('#fullscreen').on('click', function(event) {
-        event.preventDefault();
-        window.parent.location = "http://bootsnipp.com/iframe/4l0k2";
-    });
-    $('a[href="#cant-do-all-the-work-for-you"]').on('click', function(event) {
-        event.preventDefault();
-        $('#cant-do-all-the-work-for-you').modal('show');
-    })
-
-    $('[data-command="toggle-search"]').on('click', function(event) {
-        event.preventDefault();
-        $(this).toggleClass('hide-search');
-
-        if ($(this).hasClass('hide-search')) {
-            $('.c-search').closest('.row').slideUp(100);
-        }else{
-            $('.c-search').closest('.row').slideDown(100);
+            $element.bind('keypress', function (event) {
+                // Once the limit has been met or exceeded, prevent all keypresses from working
+                if ($element.val().length >= limit) {
+                    // Except backspace
+                    if (event.keyCode != 8) {
+                        event.preventDefault();
+                    }
+                }
+            });
         }
-    })
-
-    $('#contact-list').searchable({
-        searchField: '#contact-list-search',
-        selector: 'li',
-        childSelector: '.col-xs-12',
-        show: function( elem ) {
-            elem.slideDown(100);
-        },
-        hide: function( elem ) {
-            elem.slideUp( 100 );
-        }
-    })
+    };
 });
-
