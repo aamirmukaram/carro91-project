@@ -164,6 +164,14 @@ app.config(['$stateProvider', '$urlRouterProvider', '$controllerProvider', '$com
             ncyBreadcrumb: {
                 label: 'Brand'
             }
+        }).state('app.contact-info', {
+            url: "/contact-info",
+            templateUrl: "assets/views/restaurant_contact-info.html",
+            resolve: loadSequence('d3', 'ui.knob', 'countTo', 'restaurantCtrl'),
+            title: 'Contacts',
+            ncyBreadcrumb: {
+                label: 'Contacts'
+            }
         }).state('app.help', {
             url: "/help",
             templateUrl: "assets/views/restaurant_help.html",
